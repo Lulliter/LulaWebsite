@@ -1,5 +1,5 @@
-name: "lulliter.com"
-title: "lulliter.com"
+name: "www.lulliter.com"
+title: "www.lulliter.com"
 # description: |
 #   The personal website of Luisa M. Mimmi
 base_url: https://www.lulliter.com
@@ -22,6 +22,8 @@ navbar:
       href: projects.html
     - text: "Projects"
 
+
+favicon: images/favicon.ico
 #output: distill::distill_article
 output:
   distill::distill_article:

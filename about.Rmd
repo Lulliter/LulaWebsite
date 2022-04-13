@@ -15,7 +15,7 @@ My name is **Luisa M. Mimmi**. I was born and raised in Italy, although I spent 
 
 I am passionate about using data to understand and tackle various dimensions of economic development, with a focus on the provision of essential housing and infrastructure services. 
 
-For more details about my 'official' job see my [**CV (English)**](https://raw.githubusercontent.com/Lulliter/cv/master/01_CV_Rmarkdown/Luisa-M-Mimmi_CV.pdf) or [**CV (Italian)**](https://raw.githubusercontent.com/Lulliter/cv/master/02_CV_Rmarkdown_ITA/Luisa-M-Mimmi_CV_ITA.pdf)  
+For more details about my 'official' job see my [**CV (English)**](https://raw.githubusercontent.com/Lulliter/cv/master/01_CV_Rmarkdown/Luisa-M-Mimmi_CV.pdf)/[**CV (Italian)**](https://raw.githubusercontent.com/Lulliter/cv/master/02_CV_Rmarkdown_ITA/Luisa-M-Mimmi_CV_ITA.pdf)  
 
 <!-- ---
 

@@ -49,7 +49,7 @@ Too sophisticated: [maybe later](https://github.com/joelnitta/joelnitta-home) or
 /*.Rcheck/
 
 # RStudio files
-.Rproj.user/
+.Rproj.user/*
 
 # produced vignettes
 vignettes/*.html

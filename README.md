@@ -8,8 +8,8 @@ New website created with `distill`
 
 + **Local Repo** - in /Users/luisamimmi/My Drive/Github/LulaWebsite
 + **Github Repo** - at [GH](https://github.com/Lulliter/LulaWebsite)
-+ Deployed on **Github Pages website** - at [GH PAges](https://lulliter.github.io/LulaWebsite/)
-+ re-sent to **custom domain registered with AWS** Route 53  - at [domain](https:www.lulliter.com) 
++ Deployed on **Github Pages website** - at [https://github.com/Lulliter/LulaWebsite](https://lulliter.github.io/LulaWebsite/)
++ re-sent to **custom domain registered with AWS** Route 53  - at [lulliter.com](https:www.lulliter.com) 
 		+ Configure AWS **Route 53** to use your custom vanity domain (see instructions [here](https://medium.com/@benwiz/how-to-deploy-github-pages-with-aws-route-53-registered-custom-domain-and-force-https-bbea801e5ea3))
 		+ Set up AWS **Cloudfront Distributions** to link github.io/xxx to custom vanity domain (see instructions [here](https://medium.com/@bschandu67/host-your-website-using-github-pages-aws-route53-and-aws-cloudfront-7345493d2ea6))
 
