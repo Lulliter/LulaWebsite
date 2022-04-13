@@ -13,7 +13,7 @@ R -e 'rmarkdown::render_site(encoding = "UTF-8")' # install to default location.
 git status
 
 # ..... Add ALL changes to git Index.
-			git add --All
+			git add -A
 # ..... Add TRACKED items changes to git Index.
 			# git add -u
 # ..... Add site `/docs` items changes to git Index.
@@ -43,10 +43,13 @@ cd ./docs
 #	cd ./MexicoWaterSurvey
 	ls
 
- ## ================== # How to add a blog post # ================== #
-# ----- 1. create it
-#`date = Sys.Date()`
-
-
+## ================== # ERRORS  # ================== #
+# ----- 1. git push origin master REJECTED
+#( error: failed to push some refs to 'https://github.com/Lulliter/LulaWebsite.git')
+# ----- SOLUTION
+git fetch origin
+git merge origin YOUR_BRANCH_NAME # Merges updates made online with your local work
+# OR
+git pull origin YOUR_BRANCH_NAME # Grabs online updates and merges them with your local work
 #
 # Rscript -e 'distill::create_post(ti '
