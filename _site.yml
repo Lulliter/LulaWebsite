@@ -1,8 +1,8 @@
-name: "luisamimmi.com"
-title: "luisamimmi.com"
-description: |
-  The personal website of Luisa M. Mimmi
-base_url: https://www.luisamimmi.com
+name: "lulliter.com"
+title: "lulliter.com"
+# description: |
+#   The personal website of Luisa M. Mimmi
+base_url: https://www.lulliter.com
 output_dir: "docs"
 navbar:
   right:

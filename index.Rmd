@@ -4,22 +4,24 @@ image: "images/LulaSalvador2015.png"
 # description: |
 #   Welcome to the website. I hope you enjoy it!
 links:
-  - label: '`r fontawesome::fa("linkedin")`'
-    url: "https://www.linkedin.com/in/luisa-m-mimmi/"
-  - label: '`r fontawesome::fa("twitter")`'
+#  - label: '<i class="fas fa-envelope"></i> Email'  # with
+  - label: '<i class="fas fa-envelope"></i>'
+    url: "mailto:lmm76@georgetown.edu"
+  - label: '<i class="fab fa-linkedin-in"></i>'
+    url: "https://www.linkedin.com/in/luisa-m-mimmi"  
+  - label: '<i class="fab fa-twitter"></i>'
     url: "https://twitter.com/Lulliter"
-  - label: '`r fontawesome::fa("github")`'
+  - label: '<i class="fab fa-github"></i>'
     url: "https://github.com/Lulliter"
-  - label: '`r icons::academicons("google-scholar")`' # fa non ha Google Scholar!!!!!
-    url: "https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao"
+  - label: '<i class="ai ai-google-scholar"></i>' # added a line in jnitta.css for Academicons
+    url: "https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao"  
+  # - label: '<i class="ai ai-researchgate"></i>' 
+  #   url: "https://www.researchgate.net/profile/Luisa-Mimmi"
+  # - label: '<i class="ai ai-orcid"></i>' 
+  #   url: "https://orcid.org/0000-0002-2244-8282"
+  # - label: '<i class="ai ai-osf"></i>' 
+  #   url: "https://osf.io/na8w7/"
 
-  # - label: '<i class="ai ai-orcid"></i> ORCID'
-  #   url: "https://orcid.org/0000-0003-4719-7472"
-  # - label: '`r fontawesome::fa("medium")`'
-  #   url: "https://jeagleson.medium.com/"
-  # - label: '`r fontawesome::fa("envelope")`'
-  #   url: "mailto:eagleson.jenna@gmail.com"
-    
 site: distill::distill_website    
 output:
   postcards::jolla
@@ -37,10 +39,11 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 <br>
-I am an I/O Psychologist working in People Analytics. Nothing makes my day like a beautifully made data viz or an understated wit. You can normally find me in Washington DC or Seattle... or somewhere inbetween. 
-<br><br>
-[About](about.html) 🙋
-<br>
-[Blog](blog.html) 📝
-<br>
-[Projects](projects.html) 🛠
+Policy Analyst, `r fontawesome::fa("mug-hot",  fill = "#161A1D")` coffee addict and `r fontawesome::fa("r-project", fill = "#5F85A7")` enthusiast
+<!-- <a href = "https://www.r-project.org/">R</a> Enthusiast  -->
+<!-- <br><br> -->
+<!-- [About](about.html) 🙋 -->
+<!-- <br> -->
+<!-- [Blog](blog.html) 📝 -->
+<!-- <br> -->
+<!-- [Projects](projects.html) 🛠 -->

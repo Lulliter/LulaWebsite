@@ -2,38 +2,37 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
+      "title": "About",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2022-04-13T11:41:28+02:00"
+      "contents": "\n… me\n\nMy name is Luisa M. Mimmi. I was born and raised in Italy, although I spent 14 years in the US based in Washington, DC. working for multilateral development banks.\nI am passionate about using data to understand and tackle various dimensions of economic development, with a focus on the provision of essential housing and infrastructure services.\nFor more details about my ‘official’ job see my CV (English) or CV (Italian)\n\n… and this website\nThis is intended as a place to collect notes-to-self,  code snippets, half-baked ideas, and side-projects that stay tenaciously planted on my “To-Do” list.\n\n\n\n",
+      "last_modified": "2022-04-13T18:33:25+02:00"
     },
     {
       "path": "blog.html",
       "title": "Featured posts",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-04-13T11:41:29+02:00"
+      "last_modified": "2022-04-13T18:33:26+02:00"
     },
     {
       "path": "index.html",
       "title": "Luisa M. Mimmi",
       "author": [],
-      "contents": "\n\n          \n          \n          luisamimmi.com\n          \n          \n          \n          \n          \n          Home\n          \n          \n          \n          About\n          \n          \n          \n          Blog\n          \n          \n          \n          Projects\n          ☰\n          \n          \n      \n        \n          \n            Luisa M. Mimmi\n          \n          \n            \n               I am an I/O Psychologist working in People Analytics. Nothing makes my day like a beautifully made data viz or an understated wit. You can normally find me in Washington DC or Seattle… or somewhere inbetween. About 🙋 Blog 📝 Projects 🛠\n            \n            \n               I am an I/O Psychologist working in People Analytics. Nothing makes my day like a beautifully made data viz or an understated wit. You can normally find me in Washington DC or Seattle… or somewhere inbetween. About 🙋 Blog 📝 Projects 🛠\n            \n          \n\n          \n            \n              \n                  \n                    \n                      \n                  \n                \n                                \n                  \n                    \n                      \n                  \n                \n                                \n                  \n                    \n                      \n                  \n                \n                                \n                  \n                    \n                      \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    \n                \n                                \n                  \n                    \n                \n                                \n                  \n                    \n                \n                                \n                  \n                    \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2022-04-13T11:41:29+02:00"
+      "contents": "\n\n          \n          \n          lulliter.com\n          \n          \n          \n          \n          \n          Home\n          \n          \n          \n          About\n          \n          \n          \n          Blog\n          \n          \n          \n          Projects\n          ☰\n          \n          \n      \n        \n          \n            Luisa M. Mimmi\n          \n          \n            \n               Policy Analyst,  coffee addict and  enthusiast       \n            \n            \n               Policy Analyst,  coffee addict and  enthusiast       \n            \n          \n\n          \n            \n              \n                  \n                    \n                      \n                    \n                  \n                \n                                \n                  \n                    \n                      \n                    \n                  \n                \n                                \n                  \n                    \n                      \n                    \n                  \n                \n                                \n                  \n                    \n                      \n                    \n                  \n                \n                                \n                  \n                    \n                      \n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    \n                  \n                \n                                \n                  \n                    \n                  \n                \n                                \n                  \n                    \n                  \n                \n                                \n                  \n                    \n                  \n                \n                                \n                  \n                    \n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    \n          © Luisa M. Mimmi 2018 - 2022\n          \n          \n\n    \n  ",
+      "last_modified": "2022-04-13T18:33:26+02:00"
     },
     {
       "path": "projects.html",
       "title": "Projects",
       "author": [],
       "contents": "\nBelow is a list of research, class, and fun projects that I’m either currently working on or have completed.\nResearch\nCurrent\nproject\nrepo\npdf\nslides\nEstimating the Baseball Aging Curves Using Missing Data Methods\n\n\n\nAn Examination of Sport Climbing Combined Format\n\n\n\nPast\nproject\nrepo\npdf\nhtml\nslides\nvideo\nPoisson Modeling and Predicting English Premier League Goal Scoring (poster presented at UCSAS 2020)\n\n\n\n\n\nAnalysis of Russell Westbrook’s Triple-Doubles\n\n\n\n\n\nAnalysis of CSV File Reading in R\n\n\n\n\n\nPredicting Vaccine Hesitancy (2021 Humana-Mays Healthcare Analytics Case Competition)\n\n\n\n\n\nTitanic - Machine Learning from Disaster (Kaggle Competition)\n\n\n\n\n\nMiscellaneous\nSHAP and Shapley values\nSentiment analysis\nMaking a bingo board with ggplot2\nWimbledon seeding heatmap (as of 2021)\nData wrangling with dplyr/tidyverse\nEssays on The Lady Tasting Tea\nGauss and the parallel postulate\nIntro to Proofs portfolio and reflections\nMe, myself, and Man United (written in 2018 - my first exposure to bookdown)\nIntro to Data Science portfolio\n\n\n\n",
-      "last_modified": "2022-04-13T11:41:29+02:00"
+      "last_modified": "2022-04-13T18:33:26+02:00"
     },
     {
       "path": "README.html",
       "author": [],
-      "contents": "\nLulaWebsite\nWhat this is\nNew website created with distill\nHow to generate local version\nFrom the Build pane, clicking on Build Website hammer icon\nType rmarkdown::render_site() into the R console.\nStructure\nThe file ./index.Rmd = the main landing page of your website | fill it with the content you want on your main page.\nThe file ./_site.yml = (called a YAML file) contains the main settings for your site that control the overall look.\nThe ./docs/* folder = created and updated when you build the website. It contains the html files that are created from your Rmd files. Those files will be used by Github to display your website\nmore content…. all you need to do is edit existing or create new R Markdown (.Rmd) files (or,)if you don’t use R code in your file, you could just use plain Markdown/md files)\nAcknowledgements\nThis great tutorial\n\n\n",
-      "last_modified": "2022-04-13T11:41:29+02:00"
+      "contents": "\nLulaWebsite\nWhat this is\nNew personal website created with distill\nHow to generate local version\nFrom the Build pane, clicking on Build Website hammer icon\nType rmarkdown::render_site() into the R console.\nStructure\nThe file ./index.Rmd = the main landing page of your website | fill it with the content you want on your main page.\nThe file ./_site.yml = (called a YAML file) contains the main settings for your site that control the overall look.\nThe ./docs/* folder = created and updated when you build the website. It contains the html files that are created from your Rmd files. Those files will be used by Github to display your website\nmore content…. all you need to do is edit existing or create new R Markdown (.Rmd) files (or,)if you don’t use R code in your file, you could just use plain Markdown/md files)\nAcknowledgements\nThis great tutorial This impressive example Too sophisticated: maybe later or after\n\n\n",
+      "last_modified": "2022-04-13T18:33:26+02:00"
     }
   ],
   "collections": ["posts/posts.json"]

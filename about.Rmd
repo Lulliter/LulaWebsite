@@ -1,10 +1,36 @@
 ---
-title: "About this site"
-description: |
-  Some additional details about the website
+title: "About"
+# description: |
+#   Some additional details about the website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+
+### ... me  
+<!-- _`whoami`_ -->
+My name is **Luisa M. Mimmi**. I was born and raised in Italy, although I spent 14 years in the US based in Washington, DC. working for multilateral development banks. 
+
+I am passionate about using data to understand and tackle various dimensions of economic development, with a focus on the provision of essential housing and infrastructure services. 
+
+For more details about my 'official' job see my [**CV (English)**](https://raw.githubusercontent.com/Lulliter/cv/master/01_CV_Rmarkdown/Luisa-M-Mimmi_CV.pdf) or [**CV (Italian)**](https://raw.githubusercontent.com/Lulliter/cv/master/02_CV_Rmarkdown_ITA/Luisa-M-Mimmi_CV_ITA.pdf)  
+
+<!-- ---
+
+### Presently busy with: 
+
+- [Survey of WSS Suppliers in Brazil (as part of my IADB work)](https://lulliter.github.io/BrazilWaterSurvey/)
+- [Survey of WSS Suppliers in Mexico (as part of my IADB work)](https://lulliter.github.io/MexicoWaterSurvey/)
+ 
+
+- "If You Give a Judge a Risk Score: Evidence from Kentucky Bail Decisions"
+    - [Full text](/about_files/albright_judge_score.pdf) & [Slides](/about_files/slides/ecineq_19.pdf) & [Blog post](https://thelittledataset.com/2019/07/15/if-you-give-a-judge-a-risk-score/)     
+    
+-->
+
+
+### ... and this website
+
+This is intended as a place to collect notes-to-self, `r fontawesome::fa("r-project", fill = "#5F85A7")` code snippets, half-baked ideas, and side-projects that stay tenaciously planted on my "To-Do" list. 
