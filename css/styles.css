@@ -1,0 +1,31 @@
+/*  CSS style of https://qntkhvn.netlify.app/projects.html */
+.distill-site-nav {
+  color: white;
+  background-color: #004f8f; /* rosso scuro #990033 */
+}
+
+.posts-with-sidebar .posts-sidebar {
+  float: right;
+  width: 10%;
+  margin-top: 60px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.posts-with-sidebar .posts-list {
+  width: 67%;
+  margin-left: 10%;
+}
+
+.posts-sidebar {
+  font-size: 75%;
+  margin-right: 10%;
+}
+
+p a, aside a, li a, d-appendix a, a.footnote-backlink, table a {
+    color:  #990033; /* blu link #3366BB */
+    display: inline-block;
+    text-decoration: none;
+    transition: background-size .4s ease;
+    border-bottom: 0px solid;
+}

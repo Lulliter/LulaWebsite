@@ -1,0 +1,48 @@
+---
+title: "Projects"
+---
+
+Below is a list of research, class, and fun projects that I'm either currently working on or have completed.
+
+## Research
+
+### Current
+
+|project|repo|pdf|slides|
+|-|-|-|-|
+|Estimating the Baseball Aging Curves Using Missing Data Methods| [`r fontawesome::fa("github")`](https://github.com/qntkhvn/agingcurve)||[`r fontawesome::fa("laptop")`](projects/aging.pdf)|
+|An Examination of Sport Climbing Combined Format|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/cmsac_rrc)|[`r fontawesome::fa("file-pdf")`](https://arxiv.org/pdf/2111.05310.pdf)|[`r fontawesome::fa("laptop")`](projects/climbing_cmsac_rrc.html)|
+
+### Past
+
+|project|repo|pdf|html|slides|video|
+|---------------------------|-|-|-|-|-|
+|Poisson Modeling and Predicting English Premier League Goal Scoring (poster presented at UCSAS 2020)|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/eplgoals)|[`r fontawesome::fa("file-pdf")`](https://arxiv.org/pdf/2105.09881.pdf)|[`r fontawesome::fa("file-code")`](https://bookdown.org/theqdata/honors_thesis)|[`r fontawesome::fa("laptop")`](https://statds.org/events/ucsas2020/posters/ucsas-1-Poster_UCSAS.pdf)|[`r fontawesome::fa("play-circle")`](https://www.dropbox.com/s/6xe2pntw25kzwpq/posterVideo.mp4?dl=0)|
+|Analysis of Russell Westbrook's Triple-Doubles|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/tripledouble)||[`r fontawesome::fa("file-code")`](https://bookdown.org/theqdata/data_science_capstone_project_report)||||
+|Analysis of CSV File Reading in `R`|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/read_speed)|[`r fontawesome::fa("file-pdf")`](projects/csv_paper.pdf)||[`r fontawesome::fa("laptop")`](projects/csv_slides.pdf)||
+|Predicting Vaccine Hesitancy (2021 Humana-Mays Healthcare Analytics Case Competition)|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/tamu_healthcare)|[`r fontawesome::fa("file-pdf")`](projects/humana.pdf)||||
+|Titanic - Machine Learning from Disaster (Kaggle Competition)|||[`r fontawesome::fa("file-code")`](projects/titanic.html)|||
+
+<!-- |Predicting NFL Field Goal Outcomes||[`r fontawesome::fa("file-pdf")`](projects/nflfg.pdf)||[`r fontawesome::fa("laptop")`](projects/nflfg_pres.pdf)|[`r fontawesome::fa("play-circle")`](projects/nflfg.mp4)| -->
+
+## Miscellaneous
+
+*   [SHAP and Shapley values](projects/shap.pdf)
+
+*   [Sentiment analysis](projects/sentiment.html)
+
+*   [Making a bingo board with `ggplot2`](projects/bingo.html)
+
+*   [Wimbledon seeding heatmap](https://qntkhvn.github.io/wimbledon) (as of 2021)
+
+*   [Data wrangling with `dplyr`/`tidyverse`](projects/tidy.html)
+
+*   [Essays on The Lady Tasting Tea](projects/ltt.pdf)
+
+*   [Gauss and the parallel postulate](projects/gauss.pdf)
+
+*   [Intro to Proofs portfolio and reflections](projects/proof.pdf)
+
+*   [Me, myself, and Man United](projects/mu/mu.html) (written in 2018 - my first exposure to `bookdown`)
+
+*   [Intro to Data Science portfolio](projects/dsportfolio/index.html)

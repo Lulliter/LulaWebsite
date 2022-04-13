@@ -3,7 +3,7 @@
     "path": "~/My Drive/Github/LulaWebsite/_site.yml",
     "project_path": "_site.yml",
     "type": "yaml",
-    "hash": "0",
+    "hash": "2969183312",
     "contents": "",
     "dirty": false,
     "created": 1649835298983.0,
@@ -11,14 +11,16 @@
     "relative_order": 3,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "27,19",
+        "scrollLine": "10"
     },
     "folds": "",
-    "lastKnownWriteTime": 1649835292,
+    "lastKnownWriteTime": 1649841960,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1649835292,
+    "last_content_update": 1649841960817,
     "read_only": false,
     "read_only_alternatives": []
 }
