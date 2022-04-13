@@ -1,26 +1,52 @@
-## ================== # How to add a blog post # ================== #
+########################################################
+# ===== Build LOCAL version
+# R -e 'rmarkdown::render("_posts/slug/slud.Rmd")' # basically knit each post...
+
+########################################################
+# ===== Build PUBLIC version
+R -e 'rmarkdown::render_site(encoding = "UTF-8")' # install to default location.
+########################################################
+
+
+#=========================================== (Push to Github repo) ================================================#
+# check status
+git status
+
+# ..... Add ALL changes to git Index.
+			git add --All
+# ..... Add TRACKED items changes to git Index.
+			# git add -u
+# ..... Add site `/docs` items changes to git Index.
+			# cd docs
+			# git add . #cd .. # (back to ./blog)
+# ....Create Std commit "message"....
+NOW=$(date +"%d-%b-%Y %R")
+# echo "$NOW"
+msg="rebuilt on $NOW"
+
+# ... Commit Those changes.
+git commit -m "$msg"
+		# git commit -m "upd cv"
+		# git commit -m "revised CVs"
+
+# ... Push source and build repos.
+git push origin master
+
+
+#=========================================== (tracked by mistake ) ================================================#
+git rm -r --cached .Rproj.user
+#=========================================== (check to ./docs) ================================================#
+########################################################
+cd ./docs
+
+# Go To (git) ./sub-folder (one below the Rproj wdir)
+#	cd ./MexicoWaterSurvey
+	ls
+
+ ## ================== # How to add a blog post # ================== #
 # ----- 1. create it
 #`date = Sys.Date()`
 
-Rscript -e  'R script distill::create_post(title = "Sussidiarietà e sviluppo: \n
-l’elettricità nelle favelas dell’America Latina",\n
-collection = "posts",\n
-author = "auto", \n
-slug = "auto",\n
-# Sys.Date(),\n
-date = '2009-02-21' \n
-draft = FALSE)'
 
-
-Rscript -e 'distill::create_post(title = "Sussidiarietà e sviluppo: l’elettricità nelle favelas dell’America Latina",
-							collection = "posts",
-							author = "auto",
-							slug = "auto",
-							# Sys.Date(),
-							date = '2009-02-21',
-							draft = FALSE)'
-
-
-2. knit it or run `rmarkdown::render("_posts/2022-04-13-prova/prova.Rmd")`
-(_posts are considered standalone documents that are not re-rendered when the site is built_)
-3. build site
+#
+# Rscript -e 'distill::create_post(ti '

@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2019-09-29-r-stuff/",
+    "title": "Useful R stuff",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Luisa M. Mimmi",
+        "url": {}
+      }
+    ],
+    "date": "2019-09-29",
+    "categories": [],
+    "contents": "\n\n\nHere are some useful links and resources for R programming.\nGeneral\nRstudio Community: forum and discussions organized by macro-topic.\nRseek: a sort of wiki R page!\nFrom rstudioconf2019: a collection of R resources by @littlemissdata\nCheatsheets: self-explanatory\nWTF.. or “What They Forgot to Teach You About R” :wink: Another life-changing guide from Jenny Bryan\nGoogle’s R Style Guide\nProject Management\nBest Practices Handling Packages\nR-Bloggers blog (scroll to) reference: collection of links…\nanalytical work reproducibly using R: Pre-print article\nKarl Broman slides\nJoris Muller’s Blog on The “ten simple rules for reproducible computational research” in R\nJoris Muller’s Blog on A basic reproducible data analysis workflow - principles\nR studio TERMINAL\nGreat post Using rstudio-terminal/\nMore on Using the RStudio Terminal\nDATABASES\nDatabases using R RStudio list\nAPI & R\nAmanda Gadrow Resources\nSaving tokens Various Ways\nSaving tokens WTF… to tell you\nggplot2 & GRAPHS\nGreat line by line tutorial ggplot flipbook\nModern Dive Chapter Grammar of Graphics\nTable Packages to discover\nDataExplorer EDA, See github\nFormattable Tables, See more info\ntable1 Tables, See more info\nggstatsplot Graphs, See more info Extension of ggplot2 package for creating graphics with details from statistical tests included in the plots themselves and targeted primarily at behavioral sciences community.\nWorking with strings, regex\nGreat post How to work with strings in base R…\nSilly\nEMOJI CHEAT SHEET: for adding :gem:, :sparkles:, :cool: in markdown\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-04-14T00:24:35+02:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2016-11-15-ramani-huria/",
     "title": "Open spatial data for resilience in Tanzania: Lessons learned from 'Dar Ramani Huria'",
     "description": {},

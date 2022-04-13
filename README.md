@@ -41,3 +41,4 @@ New website created with `distill`
 This great [tutorial](https://www.andreashandel.com/posts/distill-github-website/)
 This impressive [example](https://qntkhvn.netlify.app/)
 Too sophisticated: [maybe later](https://github.com/joelnitta/joelnitta-home) or [after](https://github.com/jhelvy/jhelvy_distill)
+Nice boxes in my posts copied from [Desirée De Leon](https://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/)

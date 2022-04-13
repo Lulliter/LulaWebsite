@@ -12,9 +12,9 @@ rmarkdown::render("_posts/2009-02-21-sussidiariet-e-sviluppo-lelettricit-nelle-f
 distill::rename_post_dir(post_dir = "_posts/2009-02-21-sussidiariet-e-sviluppo-lelettricit-nelle-favelas-dellamerica-latina/", slug = "2009-02-21-sussidiar")
 
 
-distill::create_post(title = "plan2implem",
+distill::create_post(title = "Useful R stuff",
 							collection = "posts",
 							author ="Luisa M. Mimmi",
-							slug = "plan2implem",
-							date = '2020-09-07', # Sys.Date(),
-							draft = TRUE)
+							slug = "R-stuff",
+							date = '2019-09-29', # Sys.Date(),
+							draft = FALSE)

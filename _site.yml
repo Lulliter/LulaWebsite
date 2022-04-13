@@ -5,6 +5,10 @@ title: "www.lulliter.com"
 base_url: https://www.lulliter.com
 output_dir: "docs"
 navbar:
+  # logo:
+  #   image: images/logo.png
+  #   href: https://www.rstudio.com
+  search: false
   right:
     - icon: fas fa-home
       href: index.html
@@ -23,7 +27,7 @@ navbar:
     - text: "Projects"
 
 
-favicon: images/favicon.ico
+favicon: images/favicon.ico # coffee in teh browser tab!!!
 #output: distill::distill_article
 output:
   distill::distill_article:
