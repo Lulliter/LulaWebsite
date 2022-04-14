@@ -9,9 +9,11 @@ My new personal website created with `distill`
 + **Local Repo** - in /Users/luisamimmi/My Drive/Github/LulaWebsite
 + **Github Repo** - at [github](https://github.com/Lulliter/LulaWebsite)
 + Deployed via **Github Pages website** - at [https://github.com/Lulliter/LulaWebsite](https://lulliter.github.io/LulaWebsite/)
-+ ...re-directed to **custom domain** registered with AWS Route 53 - at [lulliter.com](https:www.lulliter.com) 
++ ...re-directed to **custom domain** registered with AWS Route 53 - at [lulliter.com](https:www.lulliter.com)
+		
 		+ How to configure AWS **Route 53** to use your custom vanity domain (see instructions [here](https://medium.com/@benwiz/how-to-deploy-github-pages-with-aws-route-53-registered-custom-domain-and-force-https-bbea801e5ea3))
 		+ Set up AWS **Cloudfront Distributions** to link github.io/xxx to custom vanity domain (see instructions [here](https://medium.com/@bschandu67/host-your-website-using-github-pages-aws-route53-and-aws-cloudfront-7345493d2ea6))
+		+ (*) QUIRK: I had  to add `CNAME` otherwise in every push, the domain gets cancelled .... 
 
 
 ## How to generate local version
@@ -24,6 +26,7 @@ My new personal website created with `distill`
 ## Structure 
 + The file `./index.Rmd` = the main landing page of your website | fill it with the content you want on your main page.
 + The file `./_site.yml` = (called a YAML file) contains the main settings for your site that control the overall look.
+		
 		+ this include what files are included and excluded from the site
 + The `./docs/*` (or `_site/*`) folder =  created and updated when you build the website. It contains the html files that are created from your Rmd files. Those files will be used by Github to display your website 
 + more content.... all you need to do is edit existing or create new R Markdown (`.Rmd`) files (or,)if you don’t use R code in your file, you could just use plain Markdown/md files)
