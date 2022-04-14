@@ -10,7 +10,6 @@ My new personal website created with `distill`
 + **Github Repo** - at [github](https://github.com/Lulliter/LulaWebsite)
 + Deployed via **Github Pages website** - at [https://github.com/Lulliter/LulaWebsite](https://lulliter.github.io/LulaWebsite/)
 + ...re-directed to **custom domain** registered with AWS Route 53 - at [lulliter.com](https:www.lulliter.com)
-		
 		+ How to configure AWS **Route 53** to use your custom vanity domain (see instructions [here](https://medium.com/@benwiz/how-to-deploy-github-pages-with-aws-route-53-registered-custom-domain-and-force-https-bbea801e5ea3))
 		+ Set up AWS **Cloudfront Distributions** to link github.io/xxx to custom vanity domain (see instructions [here](https://medium.com/@bschandu67/host-your-website-using-github-pages-aws-route53-and-aws-cloudfront-7345493d2ea6))
 		+ (*) QUIRK: I had  to add `CNAME` otherwise in every push, the domain gets cancelled .... 
@@ -48,4 +47,5 @@ My new personal website created with `distill`
 This great [tutorial](https://www.andreashandel.com/posts/distill-github-website/)
 This impressive [example](https://qntkhvn.netlify.app/)
 I took 'inspiration' from Joel Nitta's [wbesite](https://github.com/joelnitta/joelnitta-home) for the theme. Here's [another](https://github.com/jhelvy/jhelvy_distill) nice example.
-Nice boxes in my posts copied from [Desirée De Leon](https://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/)
+
+<!-- Nice boxes in my posts copied from [Desirée De Leon](https://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/) --> 
