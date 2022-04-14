@@ -2,6 +2,13 @@
 # ===== Build LOCAL version
 # R -e 'rmarkdown::render("_posts/slug/slud.Rmd")' # basically knit each post...
 
+
+#=====  (Clean Everiting *INSIDE* ./docs/*)
+setopt rmstarsilent # prevent from asking me permission
+rm -rf  docs/*
+unsetopt rmstarsilent
+
+
 ########################################################
 # ===== Build PUBLIC version
 R -e 'rmarkdown::render_site(encoding = "UTF-8")' # install to default location.

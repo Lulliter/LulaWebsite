@@ -4,7 +4,7 @@ title: "www.lulliter.com"
 #   The personal website of Luisa M. Mimmi
 output_dir: "docs"
 # include: ["import.R"]                 # Manually include/exclude from output_dir {* BUT they ware STILL rendered}
-exclude: "CNAME" # ["docs.txt", "*.csv"]
+# exclude: ["docs.txt", "*.csv"]
 navbar:
   # logo:
   #   image: images/logo.png
