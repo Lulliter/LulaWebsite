@@ -2,32 +2,31 @@ name: "www.lulliter.com"
 title: "www.lulliter.com"
 # description: |
 #   The personal website of Luisa M. Mimmi
-base_url: https://www.lulliter.com
 output_dir: "docs"
+# include: ["import.R"]                 # Manually include/exclude from output_dir {* BUT they ware STILL rendered}
+# exclude: ["docs.txt", "*.csv"]
 navbar:
   # logo:
   #   image: images/logo.png
   #   href: https://www.rstudio.com
+  source_url: https://github.com/Lulliter/LulaWebsite     # link to the source code for your website
   search: false
   right:
     - icon: fas fa-home
       href: index.html
     - text: "Home"
-
     - icon: fas fa-address-card
       href: about.html
     - text: "About"
-
     - icon: fas fa-pencil-alt
       href: blog.html
     - text: "Blog"
-
     - icon: fas fa-wrench
       href: projects.html
     - text: "Projects"
-
-
-favicon: images/favicon.ico # coffee in teh browser tab!!!
+# === METADATA values that help 2 index, cite, and share.
+base_url: https://www.lulliter.com
+favicon: images/favicon.ico # image (coffee) in teh browser tab!!!
 #output: distill::distill_article
 output:
   distill::distill_article:
