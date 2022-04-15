@@ -44,8 +44,6 @@ My new personal website created with `distill`
 
 
 # Acknowledgements
-This great [tutorial](https://www.andreashandel.com/posts/distill-github-website/)
-This impressive [example](https://qntkhvn.netlify.app/)
-I took 'inspiration' from Joel Nitta's [wbesite](https://github.com/joelnitta/joelnitta-home) for the theme. Here's [another](https://github.com/jhelvy/jhelvy_distill) nice example.
+I started from this great [tutorial](https://www.andreashandel.com/posts/distill-github-website/); borrowed the solution of [Quang Nguyen](https://qntkhvn.netlify.app/) to design the Project page; took 'inspiration' from Joel Nitta's [website](https://github.com/joelnitta/joelnitta-home) for the theme. Here's another [nice example](https://github.com/jhelvy/jhelvy_distill) for later.
 
 <!-- Nice boxes in my posts copied from [Desirée De Leon](https://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/) --> 
