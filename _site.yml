@@ -4,7 +4,7 @@ title: "www.lulliter.com"
 #   The personal website of Luisa M. Mimmi
 output_dir: "docs"
 # include: ["import.R"]                 # Manually include/exclude from output_dir {* BUT they ware STILL rendered}
-exclude: ["R"] #, "*.csv"]
+exclude: ["R", "Publications_Helvy.Rmd"] #, "*.csv"]
 navbar:
   # logo:
   #   image: images/logo.png
@@ -21,9 +21,13 @@ navbar:
     - icon: fas fa-pencil-alt
       href: blog.html
     - text: "Blog"
+    - icon: fas fa-file-alt
+      href: publications.html
+    - text: "Research"
     - icon: fas fa-wrench
       href: projects.html
     - text: "Projects"
+
 # === METADATA values that help 2 index, cite, and share.
 base_url: https://www.lulliter.com
 favicon: images/favicon.ico # image (coffee) in teh browser tab!!!

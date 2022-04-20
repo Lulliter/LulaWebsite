@@ -2,10 +2,9 @@
 
 
 ## What this is 
-My new personal website created with `distill`
+My new personal website created with R pckg [`distill`](https://www.rstudio.com/blog/distill/) 
 
 ## Where it lives 
-
 + **Local Repo** - in /Users/luisamimmi/My Drive/Github/LulaWebsite
 + **Github Repo** - at [github](https://github.com/Lulliter/LulaWebsite)
 + Deployed via **Github Pages website** - at [https://github.com/Lulliter/LulaWebsite](https://lulliter.github.io/LulaWebsite/)
@@ -13,7 +12,6 @@ My new personal website created with `distill`
 		+ How to configure AWS **Route 53** to use your custom vanity domain (see instructions [here](https://medium.com/@benwiz/how-to-deploy-github-pages-with-aws-route-53-registered-custom-domain-and-force-https-bbea801e5ea3))
 		+ Set up AWS **Cloudfront Distributions** to link github.io/xxx to custom vanity domain (see instructions [here](https://medium.com/@bschandu67/host-your-website-using-github-pages-aws-route53-and-aws-cloudfront-7345493d2ea6))
 		+ (*) QUIRK: I had  to add `CNAME` otherwise in every push, the domain gets cancelled .... 
-
 
 ## How to generate local version
 1. From the Build pane, clicking on `Build Website` hammer icon
@@ -43,7 +41,18 @@ My new personal website created with `distill`
 3. build site 
 
 
+## Publication page
+I _imitate_ the smart model of [Joel Nitta](https://www.joelnitta.com/publications.html). To make it work, I had to figure out a few tweaks:
+
+	+. Some type of my bib entries from Zotero were not being exported, but you can add in Zotero an "extra" field. see instructions [here](https://retorque.re/zotero-better-bibtex/exporting/extra-fields/).
+		1.  Adding in in Extra `tex.referencetype: proceedings` --> makes the bibtex key become `@proceedings{g20-italy_g20_2021, ...`
+		2. Adding in in Extra `tex.type: conference Proceedings` --> makes the bibtex key become `@proc ..., type = {conferenceProceedings},....`
+	+ In the functions I had to replace `if (is.na (url)) return(NULL)` (error when knit ) with ->  `if (anyNA(url)) return(NULL)`  	
+	+ adding `./header.html` allows to use the [Academicons icons](https://jpswalsh.github.io/academicons/) (only fontawesome ones are inthe distill website by default)
+	
+	
+	
 # Acknowledgements
-I started from this great [tutorial](https://www.andreashandel.com/posts/distill-github-website/); borrowed the solution of [Quang Nguyen](https://qntkhvn.netlify.app/) to design the Project page; took 'inspiration' from Joel Nitta's [website](https://github.com/joelnitta/joelnitta-home) for the theme. Here's another [nice example](https://github.com/jhelvy/jhelvy_distill) for later.
+I started from this great [tutorial](https://www.andreashandel.com/posts/distill-github-website/); borrowed the solution of [Quang Nguyen](https://qntkhvn.netlify.app/) to design the Project page; took 'inspiration' from Joel Nitta's [website](https://github.com/joelnitta/joelnitta-home) for the theme. Here's another [nice example](https://github.com/jhelvy/jhelvy_distill) for later (with [tutorial blog](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/)).
 
 <!-- Nice boxes in my posts copied from [Desirée De Leon](https://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/) --> 

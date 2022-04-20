@@ -22,7 +22,7 @@ git status
 # ..... Add ALL changes to git Index.
 			git add -A
 # ..... Add TRACKED items changes to git Index.
-			# git add -u
+			git add -u
 # ..... Add site `/docs` items changes to git Index.
 			# cd docs
 			# git add . #cd .. # (back to ./blog)

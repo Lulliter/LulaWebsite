@@ -9,9 +9,14 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-### ... me  
+### This website
+
+This is mainly intended as a place to collect notes-to-self, `r fontawesome::fa("r-project", fill = "#5F85A7")` code snippets, half-baked ideas, and side-projects. 
+
+
+### ... and me  
 <!-- _`whoami`_ -->
-My name is **Luisa M. Mimmi**. I was born and raised in Italy, although I spent 14 years in the US based in Washington, DC. working for multilateral development banks. 
+My name is **Luisa M. Mimmi**. I was born and raised in Italy, although I spent 14 years in the US based in Washington, DC. working for multilateral development banks. Upon returning to Italy, I have been working as policy analyst advisor for the Italian government. 
 
 I am passionate about using data to understand and tackle various dimensions of economic development, with a focus on the provision of essential housing and infrastructure services. 
 
@@ -31,6 +36,3 @@ For more details about my 'official' job see my [**CV (English)**](https://raw.g
 -->
 
 
-### ... and this website
-
-This is intended as a place to collect notes-to-self, `r fontawesome::fa("r-project", fill = "#5F85A7")` code snippets, half-baked ideas, and side-projects that stay tenaciously planted on my "To-Do" list. 

@@ -1,0 +1,327 @@
+---
+title: "Publications"
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+editor_options: 
+  chunk_output_type: console
+---
+ 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+if (!require(pacman)) {install.packages(pacman)} 
+p_load(# distilltools,
+		 RefManageR,
+		 #  bib2df,
+		 bibtex,
+		 janitor,
+		 lubridate,
+		 glue,
+		 tidyverse, 
+		 htmltools)
+p_load_gh("EllaKaye/distilltools")
+p_load_gh("ropensci/bib2df") # otherwise warns `as_data_frame() was deprecated in tibble 2.0.0.`
+```
+
+ 
+```{r  refs_zot_link}
+# - Load bibliography (exported from Zotero)
+bib_path <- here::here ("data", "Lula-MyPublications-Broad.bib")
+
+# - as list
+mybib <- RefManageR::ReadBib(bib_path, check = FALSE )  #bibtex::do_read_bib(file = bib_path, encoding = "unknown", srcfile)
+
+# - as dataframe
+mybib_df_raw <- bib2df::bib2df(bib_path)  
+ 
+# - Format dataframe version of bibliography
+mybib_df <-
+	mybib_df_raw %>%
+	clean_names() %>%
+	select(key = bibtexkey, date, author, 
+			 title, journaltitle, doi, 
+			 category,type, url, 
+			 url_preprint, # added in Zotero tex.url_preprint: https://...
+			 file, abstract ) %>%
+	mutate(
+		# date = parse_date_time(date, "ymd",
+		# 							  #select_formats = .select_formats
+		# 							  drop = FALSE),
+		yyyy_mm = str_sub(date, start = 1, end = 7), # I have some irregularities in format  
+		date_parsed = parse_date_time(yyyy_mm,  "ym", truncated = 2 ),
+		year = year(date_parsed), 
+		month = month(date_parsed)) %>%
+	arrange(desc(year), key) %>% 
+	dplyr::relocate(c("yyyy_mm" ,    "year" ,        "month"  ), .after =date)
+
+# Set RefManageR options
+oldopts <- BibOptions(
+	style = "text",
+	bib.style = "authoryear", 
+	no.print.fields = c("doi", "url", "urldate", "eprint", "eprinttype"),
+	max.names = 50, # maximum number of names to display before using “et al.”
+	dashed = FALSE, 
+	sorting = "ydnt"
+	)
+
+# - Load other metadata
+mybib_meta <- tibble::tribble( 
+	  ~"url_pub", ~"url_pdf",~ "url_rg", ~"url_repo", ~"url_arch", ~"url_osf", ~"url_other" ) 
+
+mybib_meta[1:nrow(mybib_df), ] <- as.character(NA)
+
+mybib_df2 <- cbind(mybib_df, mybib_meta)
+# names(mybib_df2)
+# rm(mybib, mybib_df, mybib_df_raw, mybib_meta)
+
+#--- Distribute **url** column to right columns (which will have the names of icons later)
+# Column A [for this value of col C] <- (like)    Column B [for THE SAME value of col C]
+mybib_df2$url_pub[mybib_df2$category == "ARTICLE"] <- mybib_df2$url[mybib_df2$category == "ARTICLE"]
+
+# blogs --> url_other
+mybib_df2$url_other[mybib_df2$category == "ONLINE"] <- mybib_df2$url[mybib_df2$category == "ONLINE"]
+
+# G20 proceedings -> url_pdf  
+mybib_df2$url_pdf[mybib_df2$category == "PROCEEDINGS"] <- mybib_df2$url[mybib_df2$category =="PROCEEDINGS"]
+
+# THESIS in --> repo 
+mybib_df2$url_arch[mybib_df2$category == "THESIS"] <- mybib_df2$url[mybib_df2$category =="THESIS"]
+
+# Work Paper in RG --> url_rg
+mybib_df2$url_rg <- ifelse(str_detect(mybib_df2$url, "researchgate.net"),  mybib_df2$url, NA)
+
+# Se c'e' 1 PFD in --> url_pdf may cause double-counting
+mybib_df2$url_pdf <- ifelse(str_detect(mybib_df2$url, ".pdf"),  mybib_df2$url, NA)
+
+# url_preprint ERA GIA SALVATO GIUSTO DA SOLO!!!!
+
+# - add some empty column for later 
+# mybib_df2$bibtex <- as.character(NA)
+mybib_df2$image <- as.logical(NA)
+
+# Restrict options `category2`
+mybib_df2$category2[mybib_df2$type == "Peer-reviewed" ] <- "peer-reviewed"
+mybib_df2$category2[mybib_df2$type == "Working Paper" ] <- "working"
+mybib_df2$category2[mybib_df2$type == "Policy Brief" ] <- "working"
+
+mybib_df2$category2[mybib_df2$type == "Discussion Paper" ] <- "other"
+mybib_df2$category2[mybib_df2$type == "G20 Background Report" ] <- "other"
+mybib_df2$category2[mybib_df2$type == "Conference proceedings" ] <- "other"
+
+mybib_df2$category2[mybib_df2$type == "Invited Talk" ] <- "conference"
+mybib_df2$category2[mybib_df2$type == "Presentation" ] <- "conference"
+mybib_df2$category2[mybib_df2$type == "Thesis" ] <- "theses"
+
+
+mybib_df2$category2[mybib_df2$type == "World Bank Blogs" ] <- "media"
+mybib_df2$category2[mybib_df2$type == "Personal Blog" ] <- "media"
+mybib_df2$category2[mybib_df2$type == "IDB blog" ] <- "media"
+
+# names(mybib_df2)
+#  [1] "key" "file-pdf"     "date"         "yyyy_mm"      "year"         "month"        "date_parsed"  "author"       "title"       
+# [10] "journaltitle" "doi"          "type"         "category"     "category2"    "url"          "url_pub"      "url_preprint" "url_pdf"     
+# [19] "url_repo"     "url_arch"     "url_rg"       "url_osf"      "url_other"    "abstract"     "image"       
+
+mybib_df2 <- mybib_df2 %>% 
+	select ( key,  file,
+				date, yyyy_mm, year, month, date_parsed,  
+				author, title, journaltitle,   doi,
+				type, category, category2, 
+				 url, url_pub, url_preprint, url_pdf, url_repo,   url_arch, url_rg, url_osf, url_other, 
+				abstract,   image)
+
+
+# names of column like Academicons 
+# added in `header.html`
+mybib_df_acad <- mybib_df2
+
+names(mybib_df_acad)[names(mybib_df2) == "url_pub"] <- "elsevier"
+names(mybib_df_acad)[names(mybib_df2) == "url_preprint"] <- "preprint"
+names(mybib_df_acad)[names(mybib_df2) == "url_pdf"] <- "pdf"
+names(mybib_df_acad)[names(mybib_df2) == "url_repo"] <- "github"
+names(mybib_df_acad)[names(mybib_df2) == "url_rg"] <- "researchgate"
+names(mybib_df_acad)[names(mybib_df2) == "url_osf"] <- "osf"
+names(mybib_df_acad)[names(mybib_df2) == "url_other"] <- "open-access"
+names(mybib_df_acad)[names(mybib_df2) == "url_arch"] <- "archive"
+
+```
+
+ 
+ 
+<!-- # Joel Nitta -->
+<!-- #' @param link_type Type of link ("github", "biorxiv", "figshare", "dryad", "pdf") -->
+
+<!-- https://jpswalsh.github.io/academicons/ -->
+
+
+```{r cite-func}
+# Define functions for formatting a citation
+# Roxygen comments start with #' and come before a function.
+
+#' Make a link button
+#'
+#' @param key_select Bibtex key
+#' @param link_type Type of link ("elsevier", "pdf", "github", "archive", "researchgate", "osf", "open-access")
+#' 
+#' Should be one of column names in bibliography metadata!!!!!
+#' @param text Text to include next to to icon.
+#' @param bib_df Bibliography data (`mybib_df_acad`)
+#'
+#' @return HTML to make a link button
+link_button <- function(key_select, link_type, text, bib_df = mybib_df_acad) {
+	url <- filter(bib_df, key == key_select)[[link_type]] # link_type = column name
+	if (anyNA(url)) return(NULL) 	#	if (is.na (url)) return(NULL) #-> error when knit
+	# uses  {distilltools::make_icon}
+	icon_link(icon = link_type, 
+				 text = text, 
+				 url = url)
+}
+
+# EXE 
+#link_button(key_select = "mimmi_informal_2014", link_type = "elsevier", text = "Publication" )
+
+
+#' Make a DOI link
+#'
+#' @param key_select Bibtex key
+#' @param bib_df Bibliography data as dataframe
+#'
+#' @return HTML with link to DOI corresponding to citation specified with key
+doi_link <- function(key_select, bib_df = mybib_df_acad) {
+	doi <- filter(bib_df, key == key_select) %>% pull(doi)
+	if (anyNA(doi)) return(NULL) #	if (is.na (doi)) return(NULL) #-> error when knit
+	glue("DOI: [{doi}](https://doi.org/{doi})")
+}
+
+# EXE 
+#doi_link("mimmi_demand-driven_2008")
+
+#' Print a simple reference
+#'
+#' @param key_select Bibtex key
+#' @param bib Bibtex bibliography read in with RefManageR::ReadBib()
+#'
+#' @return Text of reference
+print_ref_simple <- function(key_select, bib = mybib) {
+	# Silently cite the key
+	NoCite(bib, key_select)
+	# Capture the output of printing the reference
+	capture.output(foo <- print(bib[[key_select]] , .opts = list(check.entries = FALSE))) %>%
+		paste(collapse = " ") %>%
+		# Make my name in bold
+		str_replace_all("Mimmi, L. M.", "__Mimmi, L. M.__") %>%
+		str_replace_all("L. M. Mimmi", "__L. M. Mimmi__")
+}
+
+# EXE 
+#print_ref_simple("mimmi_informal_2014")
+#print_ref_simple("mimmi_demand-driven_2008")
+ 
+
+#' Print a reference with link buttons
+#'
+#' @param key_select Bibtex key
+#' @param bib Bibtex bibliography read in with RefManageR::ReadBib()
+#' @param bib_df Bibliography data as dataframe, including metadata
+#' (links to github, biorxiv, dryad, etc)
+#'
+#' @return Text of reference, with HTML buttons to links below it
+
+#  "elsevier"  "preprint"  "pdf" "github" "archive" "researchgate" "osf" "open-access"  
+# <!-- https://jpswalsh.github.io/academicons/ --> Academicons 
+# https://www.w3schools.com/icons/fontawesome5_icons_writing.asp  --> fontawsome 
+
+print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
+	ref <- print_ref_simple(key_select = key_select, bib = bib)
+	# USES ABOVE FUNCTION `doi_link`
+	doi <- doi_link(key_select, bib_df = bib_df)
+	# USE ABOVE FUNCTION  `link_button` - Academicons:
+	elsevier <- link_button(key_select, "elsevier", "Journal", bib_df) # x
+	preprint <- link_button(key_select, "preprint", "Preprint", bib_df) # ????
+	`open-access` <- link_button(key_select, "open-access", "Other", bib_df) # x 
+	github <- link_button(key_select, "github", "Repo", bib_df) # na 
+	archive <- link_button(key_select, "archive", "Univ Archive", bib_df) # ????
+	researchgate <- link_button(key_select, "researchgate", "Research Gate", bib_df)
+	osf <- link_button(key_select, "osf", "OSF", bib_df)
+	pdf <- link_button(key_select, "pdf", "PDF", bib_df)
+	
+	main_ref <- paste(ref, doi, sep = " ")
+	buttons <- paste(elsevier, preprint, archive, `open-access`, github, researchgate, osf, pdf)
+	paste(main_ref, buttons, sep = "<br>")
+}
+
+# EXE 
+# print_ref("mimmi_informal_2014")
+# print_ref("mimmi_demand-driven_2008")
+ 
+```
+
+ 
+`r icon_link("google-scholar", "Google Scholar", "https://scholar.google.com/citations?hl=en&user=OBYla5gAAAAJ")`  
+
+## Forthcoming
+
+<!-- **Nitta, J. H.**, E. Schuettpelz, S. Ramírez-Barahona, and W. Iwasaki. "An open and continuously updated Fern Tree of Life (FTOL)". Submitted. -->
+<!-- `r icon_link(text = "Preprint", url = "https://doi.org/10.1101/2022.03.31.486640")` -->
+<!-- `r icon_link(icon = "github", text = "Code", url = "https://github.com/fernphy/ftol")` -->
+
+<!-- **Nitta, J. H.**, B. D. Mishler, W. Iwasaki, and A. Ebihara. "Spatial phylogenetics of Japanese ferns: Patterns, processes, and implications for conservation". In: *American Journal of Botany*. Accepted. -->
+
+<!-- `r icon_link(text = "Preprint", url = "https://doi.org/10.1101/2021.08.26.457744")` -->
+<!-- `r icon_link(icon = "github", text = "Code", url = "https://github.com/joelnitta/japan_ferns_spatial_phy")` -->
+
+<!-- **Nitta, J. H.** and S. M. Chambers. "Identifying cryptic fern gametophytes using DNA barcoding: A review". In: *Applications in Plant Sciences*. Accepted. -->
+
+<!-- `r icon_link(text = "Preprint", url = "https://ecoevorxiv.org/dr25p/")` -->
+<!-- `r icon_link(icon = "github", text = "Code", url = "https://github.com/joelnitta/gameto-barcode-review")` -->
+
+## Articles in Peer-reviewed Journals
+`r print_ref("mimmi_informal_2014")` <br>
+`r print_ref("mimmi_econometric_2010")`
+
+## Technical Reports and Other Publications 
+`r print_ref("mimmi_predicting_2017")`<br>
+`r print_ref("rodriguez_applying_2014")`<br>
+`r print_ref("mimmi_assessing_2012")`<br>
+`r print_ref("mimmi_should_2012")`<br>
+`r print_ref("johannes_snapshot_2010")`<br>
+`r print_ref("mimmi_youth_2009")`
+
+
+## Technical Reports and Other Publications (_editorial role only_)
+`r print_ref("daigger_future_2019")`<br>
+`r print_ref("oecd_building_2021")`<br>
+`r print_ref("world_bank_well_2021")`
+
+## Other Divulgative Pieces
+`r print_ref("mimmi_infrastructure_2021-1")`<br>
+`r print_ref("mimmi_technological_2019")`<br>
+`r print_ref("mimmi_predicting_2017-1")`<br>
+`r print_ref("mimmi_open_2016")`<br>
+`r print_ref("mimmi_sussidiarieta_2009")`
+
+## Theses
+`r print_ref("mimmi_demand-driven_2008")`[_Master of Public Policy_]<br>
+`r print_ref("mimmi_linternazionalizzazione_2001")`[_BSc equivalent of Economics & Business Administration_]
+
+
+## Talks
+`r print_ref("mimmi_remarks_2021")`<br>
+`r print_ref("mimmi_high-level_2020")`<br>
+`r print_ref("mimmi_integrating_2020")`<br>
+`r print_ref("mimmi_integrating_2017")`<br>
+`r print_ref("mimmi_wpp_2015")`<br>
+`r print_ref("mimmi_sampling_2012")`<br>
+`r print_ref("mimmi_oba_2011")`<br>
+`r print_ref("mimmi_obadata_2011")`<br>
+`r print_ref("mimmi_youth_2009-1")`
+<!-- <aside> -->
+<!-- ```{r Nitta2021-cover, echo = FALSE} -->
+<!-- knitr::include_graphics("images/jpr_cover.jpg") -->
+<!-- ``` -->
+<!-- </aside> -->
+
+
