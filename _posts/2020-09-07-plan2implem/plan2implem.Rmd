@@ -7,7 +7,11 @@ date: 2020-09-07
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_depth: 3
+    toc_float: true
 draft: true
+categories: [ideas]
 ---
 
 

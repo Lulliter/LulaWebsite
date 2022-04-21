@@ -27,6 +27,13 @@ navbar:
     - icon: fas fa-wrench
       href: projects.html
     - text: "Projects"
+# === categories for posts
+collections:
+  posts:
+    categories: true
+    categories_metadata: true
+    authors_metadata: false
+    feed_iems_max: 20 # default
 
 # === METADATA values that help 2 index, cite, and share.
 base_url: https://www.lulliter.com

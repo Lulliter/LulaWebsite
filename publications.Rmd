@@ -69,40 +69,74 @@ oldopts <- BibOptions(
 
 # - Load other metadata
 mybib_meta <- tibble::tribble( 
-	  ~"url_pub", ~"url_pdf",~ "url_rg", ~"url_repo", ~"url_arch", ~"url_osf", ~"url_other" ) 
+	  ~"url_pub", ~"url_pdf",~ "url_rg", ~"url_repo", ~"url_arch", ~"url_osf", ~"url_other", ~"url_blog" ) 
 
 mybib_meta[1:nrow(mybib_df), ] <- as.character(NA)
 
 mybib_df2 <- cbind(mybib_df, mybib_meta)
 # names(mybib_df2)
 # rm(mybib, mybib_df, mybib_df_raw, mybib_meta)
+```
 
-#--- Distribute **url** column to right columns (which will have the names of icons later)
+```{r  distri_link}
+# ========== Distribute **url** column to right columns (which will have the names of icons later)
+
 # Column A [for this value of col C] <- (like)    Column B [for THE SAME value of col C]
-mybib_df2$url_pub[mybib_df2$category == "ARTICLE"] <- mybib_df2$url[mybib_df2$category == "ARTICLE"]
 
-# blogs --> url_other
-mybib_df2$url_other[mybib_df2$category == "ONLINE"] <- mybib_df2$url[mybib_df2$category == "ONLINE"]
+# P-Rev Articles [Official] --> url_pub
+mybib_df2$url_pub[mybib_df2$type == "Peer-reviewed"] <- mybib_df2$url[mybib_df2$type == "Peer-reviewed"]
 
-# G20 proceedings -> url_pdf  
-mybib_df2$url_pdf[mybib_df2$category == "PROCEEDINGS"] <- mybib_df2$url[mybib_df2$category =="PROCEEDINGS"]
+# P-Rev Articles [preprint] --> url_preprint some ERA GIA SALVATO GIUSTO DA SOLO!!!!
 
-# THESIS in --> repo 
-mybib_df2$url_arch[mybib_df2$category == "THESIS"] <- mybib_df2$url[mybib_df2$category =="THESIS"]
+		# check 
+		check <-  mybib_df2 [!is.na (mybib_df2$url) & mybib_df2$type != "Peer-reviewed" , c("key", "type", "url")] 
+		#check
 
-# Work Paper in RG --> url_rg
-mybib_df2$url_rg <- ifelse(str_detect(mybib_df2$url, "researchgate.net"),  mybib_df2$url, NA)
+# THESIS in --> url_arch 
+mybib_df2$url_arch[ mybib_df2$type == "Thesis" ] <- mybib_df2$url [ mybib_df2$type == "Thesis" ]
+		# check 
+		check <-  mybib_df2 [!is.na (mybib_df2$url) & is.na(mybib_df2$url_arch ) & is.na(mybib_df2$url_pub),
+									c("key", "type", "url")] 
+		#check
 
-# Se c'e' 1 PFD in --> url_pdf may cause double-counting
-mybib_df2$url_pdf <- ifelse(str_detect(mybib_df2$url, ".pdf"),  mybib_df2$url, NA)
+#  in RG --> url_rg
+mybib_df2$url_rg <- ifelse( str_detect(mybib_df2$url, "researchgate.net") ,  mybib_df2$url, mybib_df2$url_rg)
+		# check 
+		check <-  mybib_df2 [ !is.na (mybib_df2$url) & 
+									 	is.na(mybib_df2$url_arch ) & is.na(mybib_df2$url_pub) & is.na(mybib_df2$url_rg), 
+									 c("key", "type", "url")] 
+		#check
 
-# url_preprint ERA GIA SALVATO GIUSTO DA SOLO!!!!
+		
+#  Blogs --> url_blog
+mybib_df2$url_blog[mybib_df2$type  %in% c("World Bank Blog", "Personal Blog" , "IDB blog") ] <- mybib_df2$url [mybib_df2$type  %in% c("World Bank Blog", "Personal Blog" , "IDB blog") ]
+		
+		
+		# check 
+		check <-  mybib_df2 [ !is.na (mybib_df2$url) & 
+									 	is.na(mybib_df2$url_pub)  & 
+									 	is.na(mybib_df2$url_arch)  & 
+									 	is.na(mybib_df2$url_blog)    & 
+									 	is.na(mybib_df2$url_rg), 
+									 c("key", "type", "url")] 
+		#check
+		
+		
+# ALL the REST -->  url_other (open access)
+rest <- check$key
+		
+mybib_df2$url_other[which(mybib_df2$key %in% rest) ] <- mybib_df2$url[which(mybib_df2$key %in% rest) ] 
+				
+		
+# (GENERAL PDF ) <- NO perche mi incasina !!!!!!!!!!!!!!!!!!!!
+# mybib_df2$url_pdf <- ifelse(str_detect(mybib_df2$url, ".pdf$"),  mybib_df2$url, mybib_df2$url_pdf)
 
+ 
 # - add some empty column for later 
 # mybib_df2$bibtex <- as.character(NA)
 mybib_df2$image <- as.logical(NA)
 
-# Restrict options `category2`
+# ========== Restrict options `category2`
 mybib_df2$category2[mybib_df2$type == "Peer-reviewed" ] <- "peer-reviewed"
 mybib_df2$category2[mybib_df2$type == "Working Paper" ] <- "working"
 mybib_df2$category2[mybib_df2$type == "Policy Brief" ] <- "working"
@@ -116,7 +150,7 @@ mybib_df2$category2[mybib_df2$type == "Presentation" ] <- "conference"
 mybib_df2$category2[mybib_df2$type == "Thesis" ] <- "theses"
 
 
-mybib_df2$category2[mybib_df2$type == "World Bank Blogs" ] <- "media"
+mybib_df2$category2[mybib_df2$type == "World Bank Blog" ] <- "media"
 mybib_df2$category2[mybib_df2$type == "Personal Blog" ] <- "media"
 mybib_df2$category2[mybib_df2$type == "IDB blog" ] <- "media"
 
@@ -130,22 +164,25 @@ mybib_df2 <- mybib_df2 %>%
 				date, yyyy_mm, year, month, date_parsed,  
 				author, title, journaltitle,   doi,
 				type, category, category2, 
-				 url, url_pub, url_preprint, url_pdf, url_repo,   url_arch, url_rg, url_osf, url_other, 
+				 url, url_pub, url_preprint, url_pdf, url_repo,   
+				url_arch, url_rg, url_osf, 
+				url_other, url_blog, 
 				abstract,   image)
 
 
-# names of column like Academicons 
+# names of column like Academicons / FA 
 # added in `header.html`
 mybib_df_acad <- mybib_df2
 
 names(mybib_df_acad)[names(mybib_df2) == "url_pub"] <- "elsevier"
 names(mybib_df_acad)[names(mybib_df2) == "url_preprint"] <- "preprint"
-names(mybib_df_acad)[names(mybib_df2) == "url_pdf"] <- "pdf"
-names(mybib_df_acad)[names(mybib_df2) == "url_repo"] <- "github"
+names(mybib_df_acad)[names(mybib_df2) == "url_pdf"] <- "pdf" # not used 
+names(mybib_df_acad)[names(mybib_df2) == "url_repo"] <- "github" # FA
 names(mybib_df_acad)[names(mybib_df2) == "url_rg"] <- "researchgate"
 names(mybib_df_acad)[names(mybib_df2) == "url_osf"] <- "osf"
 names(mybib_df_acad)[names(mybib_df2) == "url_other"] <- "open-access"
-names(mybib_df_acad)[names(mybib_df2) == "url_arch"] <- "archive"
+names(mybib_df_acad)[names(mybib_df2) == "url_arch"] <- "archive" # FA
+names(mybib_df_acad)[names(mybib_df2) == "url_blog"] <- "rss" # FA
 
 ```
 
@@ -164,7 +201,7 @@ names(mybib_df_acad)[names(mybib_df2) == "url_arch"] <- "archive"
 #' Make a link button
 #'
 #' @param key_select Bibtex key
-#' @param link_type Type of link ("elsevier", "pdf", "github", "archive", "researchgate", "osf", "open-access")
+#' @param link_type Type of link ("elsevier", "preprint", "pdf", "github", "archive", "researchgate", "osf", "open-access", "rss")
 #' 
 #' Should be one of column names in bibliography metadata!!!!!
 #' @param text Text to include next to to icon.
@@ -230,7 +267,7 @@ print_ref_simple <- function(key_select, bib = mybib) {
 #'
 #' @return Text of reference, with HTML buttons to links below it
 
-#  "elsevier"  "preprint"  "pdf" "github" "archive" "researchgate" "osf" "open-access"  
+#  ("elsevier", "preprint", "pdf", "github", "archive", "researchgate", "osf", "open-access", "rss")
 # <!-- https://jpswalsh.github.io/academicons/ --> Academicons 
 # https://www.w3schools.com/icons/fontawesome5_icons_writing.asp  --> fontawsome 
 
@@ -239,17 +276,20 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 	# USES ABOVE FUNCTION `doi_link`
 	doi <- doi_link(key_select, bib_df = bib_df)
 	# USE ABOVE FUNCTION  `link_button` - Academicons:
-	elsevier <- link_button(key_select, "elsevier", "Journal", bib_df) # x
-	preprint <- link_button(key_select, "preprint", "Preprint", bib_df) # ????
-	`open-access` <- link_button(key_select, "open-access", "Other", bib_df) # x 
-	github <- link_button(key_select, "github", "Repo", bib_df) # na 
-	archive <- link_button(key_select, "archive", "Univ Archive", bib_df) # ????
-	researchgate <- link_button(key_select, "researchgate", "Research Gate", bib_df)
-	osf <- link_button(key_select, "osf", "OSF", bib_df)
-	pdf <- link_button(key_select, "pdf", "PDF", bib_df)
+	elsevier <- link_button(key_select, "elsevier", "Journal", bib_df) # 2
+	preprint <- link_button(key_select, "preprint", "Preprint", bib_df) # 1
+	pdf <- link_button(key_select, "pdf", "PDF", bib_df) # 0
+	github <- link_button(key_select, "github", "Repo", bib_df) # 0 
+	archive <- link_button(key_select, "archive", "Univ Archive", bib_df) # 1
+	researchgate <- link_button(key_select, "researchgate", "Research Gate", bib_df) # 3
+	osf <- link_button(key_select, "osf", "OSF", bib_df) # 0
+	`open-access` <- link_button(key_select, "open-access", "Other", bib_df) # 9
+ 	rss <- link_button(key_select, "rss", "Blog", bib_df) # 5
 	
 	main_ref <- paste(ref, doi, sep = " ")
-	buttons <- paste(elsevier, preprint, archive, `open-access`, github, researchgate, osf, pdf)
+	# AGGIUNGI BOTTONI ANCHE QUI!!!!!!!!!!!!!!!!!!!!!!1
+	buttons <- paste(elsevier, preprint,pdf, github, archive,researchgate,  osf,
+						  `open-access`,   rss)
 	paste(main_ref, buttons, sep = "<br>")
 }
 
@@ -260,7 +300,6 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 ```
 
  
-`r icon_link("google-scholar", "Google Scholar", "https://scholar.google.com/citations?hl=en&user=OBYla5gAAAAJ")`  
 
 ## Forthcoming
 
@@ -291,7 +330,8 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 `r print_ref("mimmi_youth_2009")`
 
 
-## Technical Reports and Other Publications (_editorial role only_)
+## Technical Reports and Other Publications*
+(* _editorial role only_)<br><br>
 `r print_ref("daigger_future_2019")`<br>
 `r print_ref("oecd_building_2021")`<br>
 `r print_ref("world_bank_well_2021")`
@@ -308,20 +348,23 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 `r print_ref("mimmi_linternazionalizzazione_2001")`[_BSc equivalent of Economics & Business Administration_]
 
 
-## Talks
-`r print_ref("mimmi_remarks_2021")`<br>
-`r print_ref("mimmi_high-level_2020")`<br>
-`r print_ref("mimmi_integrating_2020")`<br>
-`r print_ref("mimmi_integrating_2017")`<br>
-`r print_ref("mimmi_wpp_2015")`<br>
-`r print_ref("mimmi_sampling_2012")`<br>
-`r print_ref("mimmi_oba_2011")`<br>
-`r print_ref("mimmi_obadata_2011")`<br>
-`r print_ref("mimmi_youth_2009-1")`
+<!-- ## Talks -->
+<!-- `r print_ref("mimmi_remarks_2021")`<br> -->
+<!-- `r print_ref("mimmi_high-level_2020")`<br> -->
+<!-- `r print_ref("mimmi_integrating_2020")`<br> -->
+<!-- `r print_ref("mimmi_integrating_2017")`<br> -->
+<!-- `r print_ref("mimmi_wpp_2015")`<br> -->
+<!-- `r print_ref("mimmi_sampling_2012")`<br> -->
+<!-- `r print_ref("mimmi_oba_2011")`<br> -->
+<!-- `r print_ref("mimmi_obadata_2011")`<br> -->
+<!-- `r print_ref("mimmi_youth_2009-1")` -->
+
+
 <!-- <aside> -->
 <!-- ```{r Nitta2021-cover, echo = FALSE} -->
 <!-- knitr::include_graphics("images/jpr_cover.jpg") -->
 <!-- ``` -->
 <!-- </aside> -->
 
+See also `r icon_link("google-scholar", "Google Scholar", "https://scholar.google.com/citations?hl=en&user=OBYla5gAAAAJ")`  
 

@@ -1805,9 +1805,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
     /* color scheme save on https://coolors.co as "moorea" */
     --color-background:   #F5EFED;
-    --color-primary:      #5F85A7;  /* blu chiaro (icone) */
+    --color-primary:      #5F85A7;/* blu chiaro (icone) */
     --color-primary-dark: #0E0E52; /* nero */
-    --color-secondary:    #6E928B; /* verdognolo */
+    --color-secondary:    #e06c85; /* #BF3F7F #6E928B; verdognolo */
     --color-tertiary:     #D62839; /* rosso */
     --color-text:         #161A1D;
     --color-white:        #FFFFFF;
@@ -2205,60 +2205,76 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Featured posts">Featured posts</h1>
 <a href="posts/2019-09-29-r-stuff/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["tools"]}</script>
 <div class="metadata">
 <div class="publishedDate">Sept. 29, 2019</div>
-<div class="dt-authors">
-<div class="dt-author">Luisa M. Mimmi</div>
-</div>
 </div>
 <div class="thumbnail">
 <img/>
 </div>
 <div class="description">
 <h2>Useful R stuff</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">tools</div>
+</div>
 <p>A short description of the post.</p>
 </div>
 </a>
 <a href="posts/2016-11-15-ramani-huria/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["ideas"]}</script>
 <div class="metadata">
 <div class="publishedDate">Nov. 15, 2016</div>
-<div class="dt-authors">
-<div class="dt-author">Luisa M. Mimmi</div>
-</div>
 </div>
 <div class="thumbnail">
 <img/>
 </div>
 <div class="description">
 <h2>Open spatial data for resilience in Tanzania: Lessons learned from 'Dar Ramani Huria'</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">ideas</div>
+</div>
 <p></p>
 </div>
 </a>
 <a href="posts/2009-02-21-2009-02-21-sussidiar/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["ideas"]}</script>
 <div class="metadata">
 <div class="publishedDate">Feb. 21, 2009</div>
-<div class="dt-authors">
-<div class="dt-author">Luisa M. Mimmi</div>
-</div>
 </div>
 <div class="thumbnail">
 <img/>
 </div>
 <div class="description">
 <h2>Sussidiarietà e sviluppo: l’elettricità nelle favelas dell’America Latina</h2>
-<div class="dt-tags"></div>
+<div class="dt-tags">
+<div class="dt-tag">ideas</div>
+</div>
 <p></p>
 </div>
 </a>
+</div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:articles">articles</a>
+<span class="category-count">(3)</span>
+</li>
+<li>
+<a href="#category:ideas">ideas</a>
+<span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#category:tools">tools</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
+</div>
 </div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
