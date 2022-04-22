@@ -19,16 +19,16 @@ knitr::include_graphics(here::here("images", "Phd_procr.jpg"))
 
 _...but while we are at it:_  
  
-## what is this website?
+### what is this website?
 
-This is mainly intended as a place to collect notes-to-self, `r fontawesome::fa("r-project", fill = "#5F85A7")` code snippets, half-baked ideas, and side-projects. 
+Mainly, a place to collect notes-to-self, `r fontawesome::fa("r-project", fill = "#5F85A7")` code snippets, half-baked ideas, and side-projects. <br>
 I would love to blog more, but, for the moment, ideas are mostly in my head.   
 
-## and who am I?   
+### and who am I?   
 <!-- _`whoami`_ -->
-My name is **Luisa M. Mimmi**. I was born and raised in Italy, although I spent 14 years in the US based in Washington, DC, working for multilateral development banks. Upon returning to Italy, I have been working as policy analyst advising the Italian government. 
+My name is **Luisa M. Mimmi**. I was born and raised in Italy, but I spent 14 years in the US based in Washington DC, working for multilateral development banks. Upon returning to Italy, I have been working as policy analyst for Italian government agencies. 
 
-I am passionate about using data to understand and tackle various dimensions of economic development, with a focus on the provision of essential housing and infrastructure services. 
+I am passionate about using data to understand and tackle various dimensions of economic development, my main professional focus, so far, has been on policies to provide essential housing and infrastructure services. 
 
 For more details about my 'official' job see my [**CV (in English)**](https://raw.githubusercontent.com/Lulliter/cv/master/01_CV_Rmarkdown/Luisa-M-Mimmi_CV.pdf)/[**CV (in Italian)**](https://raw.githubusercontent.com/Lulliter/cv/master/02_CV_Rmarkdown_ITA/Luisa-M-Mimmi_CV_ITA.pdf)  
 

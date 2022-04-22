@@ -301,7 +301,7 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 
  
 
-## Forthcoming
+### Forthcoming
 
 <!-- **Nitta, J. H.**, E. Schuettpelz, S. Ramírez-Barahona, and W. Iwasaki. "An open and continuously updated Fern Tree of Life (FTOL)". Submitted. -->
 <!-- `r icon_link(text = "Preprint", url = "https://doi.org/10.1101/2022.03.31.486640")` -->
@@ -317,11 +317,11 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 <!-- `r icon_link(text = "Preprint", url = "https://ecoevorxiv.org/dr25p/")` -->
 <!-- `r icon_link(icon = "github", text = "Code", url = "https://github.com/joelnitta/gameto-barcode-review")` -->
 
-## Articles in Peer-reviewed Journals
+### Articles in Peer-reviewed Journals
 `r print_ref("mimmi_informal_2014")` <br>
 `r print_ref("mimmi_econometric_2010")`
 
-## Technical Reports and Other Publications 
+### Technical Reports and Other Publications 
 `r print_ref("mimmi_predicting_2017")`<br>
 `r print_ref("rodriguez_applying_2014")`<br>
 `r print_ref("mimmi_assessing_2012")`<br>
@@ -330,25 +330,25 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 `r print_ref("mimmi_youth_2009")`
 
 
-## Technical Reports and Other Publications*
+### Technical Reports and Other Publications*
 (* _editorial role only_)<br><br>
 `r print_ref("daigger_future_2019")`<br>
 `r print_ref("oecd_building_2021")`<br>
 `r print_ref("world_bank_well_2021")`
 
-## Other Divulgative Pieces
+### Other Divulgative Pieces
 `r print_ref("mimmi_infrastructure_2021-1")`<br>
 `r print_ref("mimmi_technological_2019")`<br>
 `r print_ref("mimmi_predicting_2017-1")`<br>
 `r print_ref("mimmi_open_2016")`<br>
 `r print_ref("mimmi_sussidiarieta_2009")`
 
-## Theses
+### Theses
 `r print_ref("mimmi_demand-driven_2008")`[_Master of Public Policy_]<br>
 `r print_ref("mimmi_linternazionalizzazione_2001")`[_BSc equivalent of Economics & Business Administration_]
 
 
-<!-- ## Talks -->
+<!-- ### Talks -->
 <!-- `r print_ref("mimmi_remarks_2021")`<br> -->
 <!-- `r print_ref("mimmi_high-level_2020")`<br> -->
 <!-- `r print_ref("mimmi_integrating_2020")`<br> -->
