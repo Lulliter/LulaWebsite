@@ -15,23 +15,18 @@ navbar:
 #    - icon: fas fa-home
     - text: "Home"
       href: index.html
-
 #    - icon: fas fa-address-card
     - text: "About"
       href: about.html
-
 #    - icon: fas fa-pencil-alt
     - text: "Blog"
       href: blog.html
-
 #    - icon: fas fa-file-alt
     - text: "Research"
       href: publications.html
-
 #    - icon: fas fa-wrench
     - text: "Projects"
       href: projects.html
-
 # === categories for posts
 collections:
   posts:

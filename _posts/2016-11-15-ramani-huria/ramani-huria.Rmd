@@ -3,14 +3,15 @@ title: "Open spatial data for resilience in Tanzania: Lessons learned from 'Dar 
   Huria'"
 # description: |
 #   A short description of the post.
-author: Luisa M. Mimmi
+slug: "2016-11-15-ramani-huria"
+# author: Luisa M. Mimmi
 date: 2016-11-15
 output:
   distill::distill_article:
     self_contained: false
-    toc: true
-    toc_depth: 3
-    toc_float: true
+    toc: TRUE
+    toc_depth: 2
+    toc_float: TRUE
 categories: [ideas]
 ---
 

@@ -1,15 +1,16 @@
 ---
 title: "Useful R stuff"
-description: |
-  A short description of the post.
-author: Luisa M. Mimmi
+# description: |
+#   A short description of the post.
+slug: "2019-09-29-r-stuff"
+# author: Luisa M. Mimmi # {no Author --> no citatin at the bottom}
 date: 2019-09-29
 output:
   distill::distill_article:
     self_contained: false
-    toc: true
-    toc_depth: 3
-    toc_float: true
+    toc: TRUE
+    toc_depth: 2
+    toc_float: TRUE
 categories: [tools]
 ---
 
