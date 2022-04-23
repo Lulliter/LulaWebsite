@@ -137,22 +137,27 @@ mybib_df2$url_other[which(mybib_df2$key %in% rest) ] <- mybib_df2$url[which(mybi
 mybib_df2$image <- as.logical(NA)
 
 # ========== Restrict options `category2`
-mybib_df2$category2[mybib_df2$type == "Peer-reviewed" ] <- "peer-reviewed"
-mybib_df2$category2[mybib_df2$type == "Working Paper" ] <- "working"
-mybib_df2$category2[mybib_df2$type == "Policy Brief" ] <- "working"
+mybib_df2$category2[mybib_df2$type == "Peer-reviewed" ] <- "peer-reviewed" # 1 
 
-mybib_df2$category2[mybib_df2$type == "Discussion Paper" ] <- "other"
+mybib_df2$category2[mybib_df2$type == "Working Paper" ] <- "working"       # 2 
+mybib_df2$category2[mybib_df2$type == "Policy Brief" ] <- "working"
+mybib_df2$category2[mybib_df2$type == "Discussion Paper" ] <- "other"        
 mybib_df2$category2[mybib_df2$type == "G20 Background Report" ] <- "other"
 mybib_df2$category2[mybib_df2$type == "Conference proceedings" ] <- "other"
 
-mybib_df2$category2[mybib_df2$type == "Invited Talk" ] <- "conference"
-mybib_df2$category2[mybib_df2$type == "Presentation" ] <- "conference"
-mybib_df2$category2[mybib_df2$type == "Thesis" ] <- "theses"
-
-
-mybib_df2$category2[mybib_df2$type == "World Bank Blog" ] <- "media"
+mybib_df2$category2[mybib_df2$type == "World Bank Blog" ] <- "media"  # 3 
 mybib_df2$category2[mybib_df2$type == "Personal Blog" ] <- "media"
 mybib_df2$category2[mybib_df2$type == "IDB blog" ] <- "media"
+
+mybib_df2$category2[mybib_df2$type == "Thesis" ] <- "theses"   # 4 
+
+mybib_df2$category2[mybib_df2$type == "Invited Talk" ] <- "conference" # 5 
+mybib_df2$category2[mybib_df2$type == "Presentation" ] <- "conference"
+
+# ========== I am an author? 
+mybib_df2$lmm <- ifelse(str_detect(mybib_df2$author,  "Mimmi|G20-Italy"), 
+								 "yes",
+								"no")
 
 # names(mybib_df2)
 #  [1] "key" "file-pdf"     "date"         "yyyy_mm"      "year"         "month"        "date_parsed"  "author"       "title"       
@@ -162,7 +167,7 @@ mybib_df2$category2[mybib_df2$type == "IDB blog" ] <- "media"
 mybib_df2 <- mybib_df2 %>% 
 	select ( key,  file,
 				date, yyyy_mm, year, month, date_parsed,  
-				author, title, journaltitle,   doi,
+				author, lmm, title, journaltitle,   doi,
 				type, category, category2, 
 				 url, url_pub, url_preprint, url_pdf, url_repo,   
 				url_arch, url_rg, url_osf, 
@@ -183,7 +188,6 @@ names(mybib_df_acad)[names(mybib_df2) == "url_osf"] <- "osf"
 names(mybib_df_acad)[names(mybib_df2) == "url_other"] <- "open-access"
 names(mybib_df_acad)[names(mybib_df2) == "url_arch"] <- "archive" # FA
 names(mybib_df_acad)[names(mybib_df2) == "url_blog"] <- "rss" # FA
-
 ```
 
  
@@ -285,12 +289,13 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 	osf <- link_button(key_select, "osf", "OSF", bib_df) # 0
 	`open-access` <- link_button(key_select, "open-access", "Other", bib_df) # 9
  	rss <- link_button(key_select, "rss", "Blog", bib_df) # 5
-	
 	main_ref <- paste(ref, doi, sep = " ")
 	# AGGIUNGI BOTTONI ANCHE QUI!!!!!!!!!!!!!!!!!!!!!!1
 	buttons <- paste(elsevier, preprint,pdf, github, archive,researchgate,  osf,
 						  `open-access`,   rss)
-	paste(main_ref, buttons, sep = "<br>")
+	# RETURN 
+	 paste(main_ref, buttons, sep = "<br>")
+	 
 }
 
 # EXE 
@@ -321,6 +326,21 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 `r print_ref("mimmi_informal_2014")` <br>
 `r print_ref("mimmi_econometric_2010")`
 
+```{r echo=FALSE, results='asis'}
+# ---vector 
+peer_rev <- mybib_df_acad$key[mybib_df_acad$category2 == "peer-reviewed"]
+
+# ---function 1  
+# print_ref
+
+# --- renders wrong
+# purrr::map(peer_rev, print_ref)
+```
+
+<!-- `r purrr::map(peer_rev, print_ref)` # non va a capo!!!-->
+
+
+
 ### Technical Reports and Other Publications 
 `r print_ref("mimmi_predicting_2017")`<br>
 `r print_ref("rodriguez_applying_2014")`<br>
@@ -336,7 +356,7 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 `r print_ref("oecd_building_2021")`<br>
 `r print_ref("world_bank_well_2021")`
 
-### Other Divulgative Pieces
+### Misc. Divulgative Pieces
 `r print_ref("mimmi_infrastructure_2021-1")`<br>
 `r print_ref("mimmi_technological_2019")`<br>
 `r print_ref("mimmi_predicting_2017-1")`<br>
@@ -365,6 +385,6 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 <!-- knitr::include_graphics("images/jpr_cover.jpg") -->
 <!-- ``` -->
 <!-- </aside> -->
-
+<br><br>
 See also `r icon_link("google-scholar", "Google Scholar", "https://scholar.google.com/citations?hl=en&user=OBYla5gAAAAJ")`  
 

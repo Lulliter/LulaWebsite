@@ -48,11 +48,9 @@ My new personal website created with R pckg [`distill`](https://www.rstudio.com/
 		2. Adding in in Extra `tex.type: conference Proceedings` --> makes the bibtex key become `@proc ..., type = {conferenceProceedings},....`
 	+ In the functions I had to replace `if (is.na (url)) return(NULL)` (error when knit ) with ->  `if (anyNA(url)) return(NULL)`  	
 	+ adding `./header.html` allows to use the [Academicons icons](https://jpswalsh.github.io/academicons/) (only fontawesome ones are inthe distill website by default)
-	
-	
-	
+
 # Acknowledgements
 This is possible thanks to the fantastic R package `distill`.
-I started from this [tutorial](https://www.andreashandel.com/posts/distill-github-website/) -Here's another [nice tutorial](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/#step-7-add-to-git). Then I 'borrowed' the solution of [Quang Nguyen](https://qntkhvn.netlify.app/) to design the Project page and from [Joel Nitta's website](https://github.com/joelnitta/joelnitta-home) for the theme and publication page. Here's another [nice example](https://github.com/jhelvy/jhelvy_distill) and, possibly for later, plus [tutorial blog](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/)).
+I started from this [tutorial](https://www.andreashandel.com/posts/distill-github-website/) -Here's another [nice tutorial](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/#step-7-add-to-git). Then I 'borrowed' the solution of [Quang Nguyen](https://qntkhvn.netlify.app/) to design the Project page and from [Joel Nitta's website](https://github.com/joelnitta/joelnitta-home) for the theme and publication page. Here's another [nice example](https://github.com/jhelvy/jhelvy_distill) possibly for later (plus [tutorial blog](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/)).
 
 <!-- Nice boxes in my posts copied from [Desirée De Leon](https://desiree.rbind.io/post/2019/making-tip-boxes-with-bookdown-and-rmarkdown/) --> 

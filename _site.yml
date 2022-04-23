@@ -12,21 +12,26 @@ navbar:
   source_url: https://github.com/Lulliter/LulaWebsite     # link to the source code for your website
   search: false
   right:
-    - icon: fas fa-home
-      href: index.html
+#    - icon: fas fa-home
     - text: "Home"
-    - icon: fas fa-address-card
-      href: about.html
+      href: index.html
+
+#    - icon: fas fa-address-card
     - text: "About"
-    - icon: fas fa-pencil-alt
-      href: blog.html
+      href: about.html
+
+#    - icon: fas fa-pencil-alt
     - text: "Blog"
-    - icon: fas fa-file-alt
-      href: publications.html
+      href: blog.html
+
+#    - icon: fas fa-file-alt
     - text: "Research"
-    - icon: fas fa-wrench
-      href: projects.html
+      href: publications.html
+
+#    - icon: fas fa-wrench
     - text: "Projects"
+      href: projects.html
+
 # === categories for posts
 collections:
   posts:

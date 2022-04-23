@@ -33,7 +33,7 @@ msg="rebuilt on $NOW"
 
 # ... Commit Those changes.
 git commit -m "$msg"
-		# git commit -m "upd cv"
+		# git commit -m "upd README"
 		# git commit -m "revised CVs"
 
 # ... Push source and build repos.
