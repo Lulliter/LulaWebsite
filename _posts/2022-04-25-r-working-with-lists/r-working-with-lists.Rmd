@@ -1,0 +1,105 @@
+---
+title: R: working with lists
+description: |
+  A short description of the post.
+author:
+  - name: Nora Jones 
+    url: https://example.com/norajones
+    affiliation: Spacely Sprockets
+    affiliation_url: https://example.com/spacelysprokets
+date: '2022-04-25'
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: TRUE
+    toc_depth: 2
+    toc_float: TRUE
+draft: true
+categories: [tools]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Trying to answer to SO questions: 
+https://stackoverflow.com/questions/51020513/r-nested-list-to-wide-dataframe
+
+
+# my goofy attmepts 
+
+```{r}
+x <- list()
+x[[1]] <- list(uuid = "123",
+               relationships = list(websites = list(items =  list(
+                 properties.website_type = c("homepage", "facebook", "twitter", "linkedin"),
+                 properties.url = c("www.example1.com", "www.fbex1.com", "www.twitterex1.com", "www.linkedinex1.com") ) )  ) )
+x[[2]] <- list(uuid = "987",
+               relationships = list(websites = list(items =  list(
+                 properties.website_type = c("homepage", "facebook", "twitter" ),
+                 properties.url = c("www.example2.com", "www.fbex2.com", "www.twitterex2.com") ) )  ) )
+
+
+library(dplyr)
+library(tidyr)
+
+
+lp_wider = x %>%
+  # 1st time unnest to release the 2-dimension list?
+  unnest( ) %>%
+  # 2nd time to nest the single list in each cell?
+  unnest(cols = names(.)) %>%
+  # convert data type
+  readr::type_convert()
+
+
+
+library(jsonlite)
+library(purrr)
+library(data.table)
+
+dt_list <- purrr::map(x, as.data.table)
+dt <- rbindlist(dt_list, use.names =  T, fill = TRUE, idcol = F)
+
+lapply(dt, '[[' , "relationships")
+
+df <- data.frame(matrix(unlist(dt), nrow=length(dt), byrow=F))
+
+df <- dt  %>%
+  separate(col = relationships, into = c("properties.website_type", "properties.url" ), sep = ", ")
+str(dt$relationships)
+
+col <- print(as.data.frame(do.call(cbind, dt$relationships)))
+
+
+df <- dt  %>%
+  unnest(relationships ) %>%
+  group_by(uuid) %>%
+  mutate(col= seq_along(uuid)) %>% #add a column indicator
+  spread(key=col, value=relationships)
+
+dt[, c("c1", "c2") := tstrsplit(x, "/", fixed=TRUE)][]
+
+str(dt$relationships)
+
+
+
+
+
+
+#convert list to dataframe in long format
+df <- do.call(rbind, lapply(x, data.frame, stringsAsFactors = FALSE))
+
+#final result
+df1 <- df %>%
+  spread(relationships.websites.items.properties.website_type, relationships.websites.items.properties.url)
+
+m <- matrix(unlist(x)
+
+unlisted <- data.frame(matrix(unlist(x), nrow=length(x), byrow=TRUE))
+
+
+df <- as.data.frame(x, row.names = NULL, check.rows = FALSE, check.names = TRUE)
+
+```
+

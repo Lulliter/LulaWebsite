@@ -1,4 +1,7 @@
 ---
-title: "Featured posts"  
+title: "Featured posts"
 listing: posts
 ---
+
+<br>Ipse dixit: [Advice to aspiring data scientists: start a blog](http://varianceexplained.org/r/start-blog/) _(by David Robinson)_
+<br>
