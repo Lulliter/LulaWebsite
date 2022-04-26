@@ -16,5 +16,7 @@ distill::create_post(title = "Useful R stuff",
 							collection = "posts",
 							author ="Luisa M. Mimmi",
 							slug = "R-stuff",
-							date = '2019-09-29', # Sys.Date(),
-							draft = FALSE)
+							date =  Sys.Date(),
+							draft = FALSE,
+							categories: [tools]
+							)

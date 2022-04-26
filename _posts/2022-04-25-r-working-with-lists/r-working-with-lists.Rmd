@@ -1,12 +1,12 @@
 ---
-title: R: working with lists
-description: |
-  A short description of the post.
-author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+title: R - working with lists
+# description: |
+#   A short description of the post.
+# author:
+#   - name: Nora Jones 
+#     url: https://example.com/norajones
+#     affiliation: Spacely Sprockets
+#     affiliation_url: https://example.com/spacelysprokets
 date: '2022-04-25'
 output:
   distill::distill_article:
@@ -14,92 +14,339 @@ output:
     toc: TRUE
     toc_depth: 2
     toc_float: TRUE
-draft: true
+draft: false
 categories: [tools]
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(eval = TRUE,
+                      echo = TRUE, # display the source code
+                      results = "hide",
+                      warning = FALSE,
+                      message = FALSE,
+                      # fig.path = "figs/",
+                      # fig.width = 7.252,
+                      # fig.height = 4,
+                      comment = "#>",
+                      fig.retina = 3 #,
+                      #R.options = list(width = 60)
+)
+
+if (!require(pacman)) install.packages("pacman")
+p_load(tidyverse, 
+       data.table)
+
 ```
+
+# Theory Key Sources 
+
++ [Jenny Bryan's STAT545 course](https://stat545.com/r-objects.html)
++ [Vincenzo Coia'sSTAT545 course - new version](https://stat545.stat.ubc.ca/course/)
++ [Tidyr Blog](https://tidyr.tidyverse.org/reference/hoist.html)
+
+# [CASE 1] S.O. problem "nested-list-to-wide-dataframe"
 
 Trying to answer to SO questions: 
 https://stackoverflow.com/questions/51020513/r-nested-list-to-wide-dataframe
 
-
-# my goofy attmepts 
-
-```{r}
+```{r reprex, results='markup'}
+# Very nested example taken from stackoverflow.com  
 x <- list()
 x[[1]] <- list(uuid = "123",
                relationships = list(websites = list(items =  list(
-                 properties.website_type = c("homepage", "facebook", "twitter", "linkedin"),
-                 properties.url = c("www.example1.com", "www.fbex1.com", "www.twitterex1.com", "www.linkedinex1.com") ) )  ) )
+                 properties.website_type = c("homepage", "facebook", "twitter", 
+                                             "linkedin"),
+                 properties.url = c("www.example1.com", "www.fbex1.com", 
+                                    "www.twitterex1.com", "www.linkedinex1.com")))))
 x[[2]] <- list(uuid = "987",
                relationships = list(websites = list(items =  list(
-                 properties.website_type = c("homepage", "facebook", "twitter" ),
-                 properties.url = c("www.example2.com", "www.fbex2.com", "www.twitterex2.com") ) )  ) )
+                 properties.website_type = c("homepage","facebook","twitter"),
+                 properties.url = c("www.example2.com", "www.fbex2.com", 
+                                    "www.twitterex2.com")))))
+ str(x)
+```
 
+# Indexing Lists 
 
-library(dplyr)
-library(tidyr)
+Lists can be subset according to their `index`, `name` or `logical statement`
 
+```{r indexing}
+# Structure
+# list x = [id1 id2   ]
+#     list id1 = [uuid, rel_l,] 
+#         list rel = [web_l]   
+#                 list web = [items_l]          
+#                    list items = [char, char ]              
 
-lp_wider = x %>%
-  # 1st time unnest to release the 2-dimension list?
-  unnest( ) %>%
-  # 2nd time to nest the single list in each cell?
-  unnest(cols = names(.)) %>%
-  # convert data type
-  readr::type_convert()
+str(x)    
+length(x) # 2
+mode(x)
+class(x)
 
+# Indexing
+# name the lists
+names(x)
+names(x) <- c("id1", "id2")
+names(x)
 
+# [ desired return value is 1st element AS a list  (keeps the box)
+x1_l <- x[1]
+str(x1_l)
+# [[ | $ desired return value is 1st element AS element !!! (out of the box)
+x1_e <- x$id1 # qui sono scesa di 1 livello!!!!
+str(x1_e)
+x1_e <- x[[1]] # qui sono scesa di 1 livello!!!!
+str(x1_e)
 
-library(jsonlite)
-library(purrr)
-library(data.table)
+# If you wanted to get the CONTENT of the 1st element
+x1_e_1 <- x[[1]][[1]]
+str(x1_e_1) # char "123"
 
-dt_list <- purrr::map(x, as.data.table)
-dt <- rbindlist(dt_list, use.names =  T, fill = TRUE, idcol = F)
+x["id2"]
+str(x["id2"]) # list of 1 
 
-lapply(dt, '[[' , "relationships")
+# indexing > 1 element (AS LISTS)
+x[c("id1","id2")]       # List of 2
+str(x[c("id1","id2")]) # list 
+```
 
-df <- data.frame(matrix(unlist(dt), nrow=length(dt), byrow=F))
+# Nesting/Unnesting Lists 
 
-df <- dt  %>%
-  separate(col = relationships, into = c("properties.website_type", "properties.url" ), sep = ", ")
-str(dt$relationships)
+## Starting from 1 element/observation only ...
+```{r}
+# -- OPPURE --- step by step 
 
-col <- print(as.data.frame(do.call(cbind, dt$relationships)))
+# get the CONTENT inside the 2nd Variable of the 1st element
+x1_e_2 <-x[[1]][[2]]
+str(x1_e_2) 
+# list 
+# $websites
+# $websites$items
+# $websites$items$properties.website_type
+# [1] "homepage" "facebook" "twitter"  "linkedin"
+# 
+# $websites$items$properties.url
+# [1]"www.example1.com""www.fbex1.com""www.twitterex1.com""www.linkedinex1.com"
 
+# Make this a tibble with a list in one column  "websites"
+x1_e_2_t <- as_tibble(x1_e_2)
+str(x1_e_2_t) # tibble [1 × 1l-l]
+# Unnest wider the column --> 2 cols:'properties.website_type' 'properties.url'
+x1_e_2_t <- x1_e_2_t %>% 
+  tidyr::unnest_wider( col = "websites")
+x1_e_2_t #  tibble: 1 × 2(l)
+# Unnestlonger the column 
+# --> 4 rows/each col:"homepage""facebook""twitter""linkedin"
+x1_e_2_t <- x1_e_2_t %>% 
+  tidyr::unnest_longer(data =. , col = c("properties.website_type",
+                                         "properties.url"  ))
+x1_e_2_t # -->  tibble: 4 × 2 
 
-df <- dt  %>%
-  unnest(relationships ) %>%
-  group_by(uuid) %>%
-  mutate(col= seq_along(uuid)) %>% #add a column indicator
-  spread(key=col, value=relationships)
+# -- OPPURE --- all in one 
+# turn first level list into a tibble of 1 col (which is a list of lists)
+x1_e_2_t <- as_tibble(x1_e_2) %>%                   # -->  tibble [1 × 1l-l]
+  # split in two cols 
+  tidyr::unnest_wider(data =., col = "websites") %>% # -->  tibble: 1 × 2(l)
+  # split in 4 rows 
+  tidyr::unnest_longer(data =., col = c("properties.website_type",
+                                        "properties.url")) # -->  tibble: 4 × 2 
+str(x1_e_2_t)
+```
 
-dt[, c("c1", "c2") := tstrsplit(x, "/", fixed=TRUE)][]
-
-str(dt$relationships)
-
-
-
-
-
-
+### ... then ALL elements (faster) - {do.call}{rbind}
+```{r all_r,   results='markup'}
 #convert list to dataframe in long format
-df <- do.call(rbind, lapply(x, data.frame, stringsAsFactors = FALSE))
+x_df <- do.call(rbind, lapply(x, data.frame, stringsAsFactors = FALSE))
+x_df # 7 x 3
 
 #final result
-df1 <- df %>%
+x_df_spread <- x_df %>%
   spread(relationships.websites.items.properties.website_type, relationships.websites.items.properties.url)
-
-m <- matrix(unlist(x)
-
-unlisted <- data.frame(matrix(unlist(x), nrow=length(x), byrow=TRUE))
-
-
-df <- as.data.frame(x, row.names = NULL, check.rows = FALSE, check.names = TRUE)
-
+x_df_spread # 2 x 5 
 ```
+
+
+### ... then ALL elements (clunkier, but clearer) - {tidyr} 
+```{r all_L, results='markup'}
+names(x) <- c("id1", "id2")
+view(x)
+
+# in steps 
+# x_df <- x %>% as_tibble_col( .)  
+# str(x_df)
+# x_df <- x_df %>% unnest_wider(col = "value") # 1
+# str(x_df)
+# x_df <- x_df %>% unnest_longer(col = "relationships")  # 2
+# str(x_df)
+# x_df <- x_df %>% unnest_wider(col = "relationships") # 2
+# str(x_df)
+# x_df <- x_df %>% unnest_wider(col =  "items") # 2
+# str(x_df)
+# x_df <- x_df %>% 
+# unnest_longer(col = c("properties.website_type", "properties.url"))
+# str(x_df)
+
+# --- Iterations of unnest:
+x_df2 <- x %>% tibble::as_tibble_col( .) %>%  
+  tidyr::unnest_wider(col ="value")  %>% 
+  tidyr::unnest_longer(col ="relationships")   %>%  
+  tidyr::unnest_wider(col = "relationships")  %>%  # not sure why? twice ?!?!
+  tidyr::unnest_wider(col = "items")  %>%  
+  tidyr::unnest_longer(col = c("properties.website_type", 
+                               "properties.url")) %>% 
+  # --- Lastly, group by id: 
+  group_by(uuid) %>% 
+  tidyr::pivot_wider(data = ., 
+                     names_from = properties.website_type, 
+                     values_from = c("properties.url"))
+
+x_df2
+```
+
+
+### ... then ALL elements (not convinced) - {data.table}{purrr} 
+```{r}
+# starting point 
+str(x$id1)        # 2nd level list is a  `list`  
+
+dt_list <- purrr::map(x, as.data.table)
+str(dt_list$id1) # 2nd level list is a  `data.table`  !!! 
+
+dt <- rbindlist(dt_list, use.names =  T, fill = TRUE, idcol = F) # 2nd COLUMN is of lists  
+#   uuid relationships
+# 1:  123     <list[1]>
+# 2:  987     <list[1]>
+
+dt_df <- data.frame(matrix(unlist(dt), nrow=length(dt), byrow=F)) # but lost names of vars 
+```
+
+
+# [CASE 2] RStudio prob. _list of lists_ to df  
+
+[RStudio response](https://community.rstudio.com/t/transform-list-of-lists-to-redundant-table/114645/7)
+
+```{r reprex2, results='markup'}
+# 1 list of 2 lists (3 & 2 obs each)
+nested_l <- list(
+  list( id = "a", values = c(1, 2, 3) )
+  , list( id = "b", values = c(78, 99) )
+)
+
+str(nested_l)
+```
+
+## - Different ways to transform _list of lists_ into df  
+```{r rstudio, results='markup'}
+# 1) TRANSFORM TO DF WITH COLUMN-list
+#  2x2  (1 column is a list )
+df_l <- as.data.frame(do.call( rbind, nested_l))
+df_l
+# 2.a) TRANSFORM TO DF WITH COLUMN-vector
+#  5 obs x2  (1 column is a list )
+df <- tidyr::unnest(data = as.data.frame(do.call(rbind, nested_l)), 
+                    cols = values)
+df
+# 2.b) TRANSFORM TO DF WITH COLUMN-vector
+#  5 obs x2  (1 column is a list )
+# `map_dfr` return a data frame created by row-binding (`map_dfc` column-binding)
+df_purr <- purrr::map_dfr(.x = nested_l,
+                          ~ tidyr::unnest(data.frame(.),
+                                          cols = c("id", "values")))
+df_purr
+# 2.c) TRANSFORM TO DF WITH COLUMN-vector
+# actually no need to unnest
+df_purr2 <- purrr::map_dfr(.x = nested_l,
+                           ~. )
+df_purr2
+```
+
+# [CASE 3] RStudio prob. _list of lists (of lists)_ to df
+
+```{r reprex 3 , results='markup'}
+# HARDER ------------------------------------------------------------------
+# A distinct analysis.
+level3.list1 <- list(
+  key1 = "name 1"
+  , key2 = 14
+  , key3 = 15
+  , key4 = c(15, 29, 43, 57)
+  , key5 = 332
+  , key6 = c("A", "B", "C")
+)
+
+level3.list2 <- list(
+  key1 = "name 2"
+  , key2 = 28
+  , key3 = 15
+  , key4 = c(15, 43, 71, 99)
+  , key5 = 332
+  , key6 = c("Y", "Z")
+)
+
+level3.list3 <- list(
+  key1 = "name 3"
+  , key2 = 56
+  , key3 = 22
+  , key4 = c(78, 134, 190, 246)
+  , key5 = 112
+  , key6 = c("V")
+)
+
+# Grouped analyses.
+level2.list1 <- list( level3.list1, level3.list2 )
+level2.list2 <- list( level3.list3 )
+
+# Planned samplings.
+level1.list1 <- list(
+  code = "ABC123"
+  , type = "spot"
+  , matrix = "water"
+  , analyses = level2.list1
+)
+
+level1.list2 <- list(
+  code = "GHS332"
+  , type = "mix"
+  , matrix = "water"
+  , analyses = level2.list2
+)
+
+# All the samplings.
+level0.list <- list(level1.list1, level1.list2)
+
+str(level0.list)
+```
+
+
+## - Different ways to transform list of lists (of lists) into df  
+
+Using `purrr::map_dfr` returns a data frame created by row-binding (last column is of lists)
+
+```{r}
+# "Flattening" 
+# 3x4 [l]
+df_l.lev2 <- purrr::map_dfr(level0.list, ~.)
+```
+
+Using `tibble` + `unnest_...` returns a data frame only of atomic vectors
+
+```{r}
+# 1) Step by step 
+u1 <- level0.list %>% tibble() %>%
+  unnest_wider(col = ".")
+u2 <- u1 %>% unnest_longer(col = "analyses")
+u3 <- u2 %>% unnest_wider(col = "analyses")
+u4 <- u3 %>% unnest_longer(col = "key4")
+u5 <- u4 %>% unnest_longer(col = "key6")
+
+# 2) All in one with piping
+u <- tibble(level0.list) %>%
+  # integers are just a quick way to select the columns to operate on
+  unnest_wider(1)   %>%  # u1
+  unnest_longer(4)  %>% # u2
+  unnest_wider(4)   %>%  # u3
+  unnest_longer(7)  %>% # u4
+  unnest_longer(9)     # u  24 obs X 9 var
+```
+
 
