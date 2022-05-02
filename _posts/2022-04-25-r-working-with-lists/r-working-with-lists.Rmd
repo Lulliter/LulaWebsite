@@ -43,6 +43,7 @@ p_load(tidyverse,
 + [Jenny Bryan's STAT545 course](https://stat545.com/r-objects.html)
 + [Vincenzo Coia'sSTAT545 course - new version](https://stat545.stat.ubc.ca/course/)
 + [Tidyr Blog](https://tidyr.tidyverse.org/reference/hoist.html)
++ [Capter 9 Introduction to Programming with R](https://discdown.org/rprogramming/lists.html#lists-list-attributes)
 
 # [CASE 1] S.O. problem "nested-list-to-wide-dataframe"
 

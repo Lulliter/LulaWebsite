@@ -36,13 +36,11 @@ git commit -m "$msg"
 		# git commit -m "upd README"
 		# git commit -m "revised CVs"
 		# git commit -m "small fix"
+		# git commit -m "add post r-lists"
 
 
 # ... Push source and build repos.
 git push origin master
-
-
-
 
 
 #=========================================== (tracked by mistake ) ================================================#

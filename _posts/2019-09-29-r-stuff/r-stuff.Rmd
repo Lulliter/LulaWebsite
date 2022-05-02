@@ -14,11 +14,27 @@ output:
 categories: [tools]
 ---
 
+> #### <i class="fa fa-refresh fa-spin fa-2x" style="color: #5F85A7"></i>  Work in progress
+> This collection needs **updating**...
+
 ![](dilbertprogramming.png) 
 
 <!-- <img src="Rcupcake.jpg" width="40%"> -->
 
 Here are some useful links and resources for R programming. 
+
+### R from TERMINAL & AUTOMATION
+
++ Various resources from the course [STAT545](https://stat545.stat.ubc.ca/notes/notes-b03/)
++ [Shaun Jackman and Jenny Bryan’s automation notes](https://github.com/STAT545-UBC/STAT545-UBC-original-website/blob/master/automation01_slides/slides.md) for getting familiar with the command line.
+
++ Great post [Using rstudio-terminal/](https://jozefhajnala.gitlab.io/r/r905-rstudio-terminal/)
++ More on [Using the RStudio Terminal](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal)
+
+
+### Working with strings, regex
+
++ Great post [How to work with strings in base R...](https://jozefhajnala.gitlab.io/r/r007-string-manipulation/)
 
 
 ### General
@@ -41,13 +57,7 @@ Here are some useful links and resources for R programming.
 + Joris Muller's Blog on [A basic reproducible data analysis workflow - principles](http://blog.jom.link/reproducible_analysis_my_principles.html)
 
 
-
-### R studio TERMINAL 
-
-+ Great post [Using rstudio-terminal/](https://jozefhajnala.gitlab.io/r/r905-rstudio-terminal/)
-+ More on [Using the RStudio Terminal](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal)
-
-### DATABASES
+### DATABASES in R
 
 + Databases using R [RStudio list](https://db.rstudio.com/)
 
@@ -71,12 +81,6 @@ Here are some useful links and resources for R programming.
 + **table1** Tables,  See [more info](https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html)
 + **ggstatsplot** Graphs, See [more info](https://github.com/IndrajeetPatil/ggstatsplot) 
 Extension of ggplot2 package for creating graphics with details from statistical tests included in the plots themselves and targeted primarily at behavioral sciences community.
-
-
-
-### Working with strings, regex
-
-+ Great post [How to work with strings in base R...](https://jozefhajnala.gitlab.io/r/r007-string-manipulation/)
 
 
 
