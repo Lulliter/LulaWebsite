@@ -1,11 +1,11 @@
 # LulaWebsite
 
 
-## What this is 
+## What this is
 My new personal website created with R pckg [`distill`](https://www.rstudio.com/blog/distill/) 
 
-## Where it lives 
-+ **Local Repo** - in /Users/luisamimmi/My Drive/Github/LulaWebsite
+## Where it lives
++ **Local Repo** - in /Users/luisamimmi/Github/LulaWebsite
 + **Github Repo** - at [github](https://github.com/Lulliter/LulaWebsite)
 + Deployed via **Github Pages website** - at [https://github.com/Lulliter/LulaWebsite](https://lulliter.github.io/LulaWebsite/)
 + ...re-directed to **custom domain** registered with AWS Route 53 - at [lulliter.com](https:www.lulliter.com)
@@ -13,7 +13,7 @@ My new personal website created with R pckg [`distill`](https://www.rstudio.com/
 		+ Set up AWS **Cloudfront Distributions** to link github.io/xxx to custom vanity domain (see instructions [here](https://medium.com/@bschandu67/host-your-website-using-github-pages-aws-route53-and-aws-cloudfront-7345493d2ea6))
 		+ (*) QUIRK: I had  to add `CNAME` otherwise in every push, the domain gets cancelled .... 
 
-## Structure 
+## Structure
 + The file `./index.Rmd` == the main landing page of your website | fill it with the content you want on your main page.
 + The file `./_site.yml` == (called a YAML file) contains the main settings for your site that control the overall look.
 	+ this include what files are included and excluded from the site

@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
-    <loc>https://www.lulliter.com/README.html</loc>
-    <lastmod>2022-04-22T13:29:34+02:00</lastmod>
-  </url>
-  <url>
     <loc>https://www.lulliter.com/about.html</loc>
-    <lastmod>2022-04-27T12:17:13+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
   </url>
   <url>
     <loc>https://www.lulliter.com/blog.html</loc>
-    <lastmod>2022-04-24T16:58:38+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
   </url>
   <url>
     <loc>https://www.lulliter.com/</loc>
-    <lastmod>2022-04-14T15:16:40+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
   </url>
   <url>
     <loc>https://www.lulliter.com/projects.html</loc>
-    <lastmod>2022-04-23T18:24:37+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
   </url>
   <url>
     <loc>https://www.lulliter.com/publications.html</loc>
-    <lastmod>2022-04-23T17:50:01+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.lulliter.com/README.html</loc>
+    <lastmod>2022-05-07T21:05:46+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.lulliter.com/posts/2022-05-10-githubpages-aws/</loc>
+    <lastmod>2022-05-10T15:47:34+02:00</lastmod>
   </url>
   <url>
     <loc>https://www.lulliter.com/posts/2022-04-25-r-working-with-lists/</loc>
-    <lastmod>2022-04-26T18:39:54+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
   </url>
   <url>
     <loc>https://www.lulliter.com/posts/2019-09-29-r-stuff/</loc>
-    <lastmod>2022-04-27T10:02:19+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
   </url>
   <url>
     <loc>https://www.lulliter.com/posts/2016-11-15-ramani-huria/</loc>
-    <lastmod>2022-04-23T18:12:59+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
   </url>
   <url>
     <loc>https://www.lulliter.com/posts/2009-02-21-sussidiar/</loc>
-    <lastmod>2022-04-23T18:13:04+02:00</lastmod>
+    <lastmod>2022-05-02T16:38:14+02:00</lastmod>
   </url>
 </urlset>

@@ -12,11 +12,11 @@ rmarkdown::render("_posts/2009-02-21-sussidiariet-e-sviluppo-lelettricit-nelle-f
 distill::rename_post_dir(post_dir = "_posts/2009-02-21-sussidiariet-e-sviluppo-lelettricit-nelle-favelas-dellamerica-latina/", slug = "2009-02-21-sussidiar")
 
 
-distill::create_post(title = "Useful R stuff",
+distill::create_post(title = "Github Pages & AWS",
 							collection = "posts",
 							author ="Luisa M. Mimmi",
-							slug = "R-stuff",
+							slug = "GithubPages-AWS",
 							date =  Sys.Date(),
 							draft = FALSE,
-							categories: [tools]
-							)
+							#categories = "tools"
+)
