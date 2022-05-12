@@ -25,8 +25,8 @@ navbar:
     - text: "Research"
       href: publications.html
 #    - icon: fas fa-wrench
-    - text: "Projects"
-      href: projects.html
+    - text: "Portfolio"
+      href: portfolio.html
 # === categories for posts
 collections:
   posts:

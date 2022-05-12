@@ -1815,12 +1815,12 @@ document.addEventListener('DOMContentLoaded', function() {
   --font-mono:   SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
 
   /* color scheme save on https://coolors.co as "moorea" */
-  --color-background:   #F5EFED;
-  --color-primary:      #5F85A7; /* blu chiaro (icone) */
+  --color-background:   #F5EFED; /* beige rosato */
+  --color-primary:      #2383a8; /* blu chiaro (icone) #5F85A7 */
   --color-primary-dark: #0E0E52; /* nero */
-  --color-secondary:    #e06c85; /* rosa #BF3F7F #6E928B; verdognolo */
-  --color-tertiary:     #D62839; /* rosso */
-  --color-text:         #161A1D;
+  --color-secondary:    #e06c85; /* rosa #BF3F7F */ /* #6E928B; verdognolo */
+  --color-tertiary:     #a88a23; /* supergold */
+  --color-text:         #161A1D; /* nero */
   --color-white:        #FFFFFF;
 }
 
@@ -1891,7 +1891,7 @@ d-appendix {
 }
 
 .distill-site-footer {
-  --text-color:       #ededeb;
+  --text-color:     #a88a23; /* bianco | #00d3d4; verdolino   */
   --text-size:        15px;
   --hover-color:      var(--color-white);
   --bkgd-color:       var(--color-primary);
@@ -2056,7 +2056,7 @@ d-article div.sourceCode {
 <a href="../../about.html">About</a>
 <a href="../../blog.html">Blog</a>
 <a href="../../publications.html">Research</a>
-<a href="../../projects.html">Projects</a>
+<a href="../../portfolio.html">Portfolio</a>
 <a href="https://github.com/Lulliter/LulaWebsite" aria-label="Link to source">
 <i class="fab fa-github" aria-hidden="true"></i>
 </a>
@@ -2103,11 +2103,16 @@ redirect the domain to my website on Github pages</a></li>
 </div>
 <h1 id="instructions-for-website-github-pages-aws">Instructions for
 website {Github Pages + AWS}</h1>
-<p>The following steps help when setting up a new website that is hosted
-on <strong>GitHub Pages</strong>. Then, since GitHub Pages supports
-using custom domains, there are the instructions to re-direct tje site’s
-URL from the default <code>&lt;user&gt;.github.io/domain</code> to a
-custom domain name registered on <strong>AWS</strong>.</p>
+<p>The following steps guide through setting up a new website that is
+hosted on <strong>GitHub Pages</strong>and - since GitHub Pages supports
+using custom domains to subsequently re-direct the site’s URL from the
+default <code>&lt;user&gt;.github.io/domain</code> to a custom domain
+name registered on <strong>AWS</strong>.</p>
+<p>I tested these when setting up/re-directing a toy website for my band
+🎸 🥁 🎹 🎤 <strong>“The Padrinoz”</strong> (feel free to check outt the
+repo with <a
+href="https://github.com/Lulliter/padrinoz_website">code</a> and
+<em>unofficial</em> <a href="https://thepadrinoz.com/">site</a>)</p>
 <h2 id="on-github-initiate-a-repo-in-the-usual-way">on GitHub: initiate
 a repo in the usual way</h2>
 <ol type="1">
@@ -2124,12 +2129,13 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">create_website</span>(<span class="at">dir =</span> <span class="st">&quot;padrinoz_website&quot;</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="at">title =</span> <span class="st">&quot;The Padrinoz&quot;</span>,</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="at">gh_pages =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>then you can customize and enrich, but I am not discussing this
+here…</p>
 <h2 id="on-aws-buy-a-domain">on AWS: Buy a domain</h2>
 <ul>
 <li>on AWS: Go to <strong>Route53</strong>, under <em>‘register
-domain’</em> then follow instructions to buy a domain (10<span
-class="math inline">\(/12\)</span> per year)
-<code>thepadrinoz.com</code></li>
+domain’</em> then follow instructions to buy a domain (10$ /12$ per
+year), in my case: <em><code>thepadrinoz.com</code></em>.</li>
 <li>on <strong>AWS_Route53</strong>: domain registration should be done
 automatically
 <ul>
@@ -2141,25 +2147,23 @@ verification email will be sent by AWS]</li>
 <h2 id="on-github-deploy-website-via-github-pages">on GitHub: deploy
 website via Github Pages</h2>
 <ul>
-<li><p>on Github: Scroll down to the Repo / Setting/ Github Pages
-section
-<code>click the drop down menu under “Source” and click “master branch”</code></p></li>
-<li><p>on Local: make some adaptation / add content</p></li>
-<li><p>(on Terminal/RStudio: Build the site locally (or see
-<code>./build_site.R</code>))</p>
-<ul>
-<li>actually, now the shell script <code>./_render-deploy.sh</code>
-invokes and run <code>./build_site.R</code></li>
-</ul></li>
-<li><p>on Terminal/RStudio: git add/commit/push (or see
-<code>./_render-deploy.sh</code>)</p></li>
+<li>on Github: Scroll down to the Repo / Setting/ Github Pages section
+<code>click the drop down menu under “Source” and click “master branch”</code></li>
+<li>on Local: make some adaptation / add content</li>
+<li>(on Terminal/RStudio: Build the site locally
+<!-- (or see `./build_site.R`)) -->
+<!-- -   actually, now the shell script `./_render-deploy.sh` invokes and -->
+<!--     run `./build_site.R` --></li>
+<li>on Terminal/RStudio: git add/commit/push (or see
+<code>./_render-deploy.sh</code>)</li>
 </ul>
 <h2 id="on-local-cname">on local: CNAME</h2>
 <p>Looking forward, we will need to have a file named <code>CNAME</code>
 that contains a single row: your custom domain (in this case:
-<code>thepadrinoz.com</code>) + create + committ + push</p>
-<p>❗ Before adding/committing to repo <code>CNAME</code>, at every
-push, the custom domain gets decoupled from GH Pages settings ….</p>
+<code>thepadrinoz.com</code>) + create + commit + push</p>
+<p>NOTE: ❗ Before adding/committing to repo <code>CNAME</code>, at
+every push, the custom domain gets decoupled from GH Pages
+settings❗</p>
 <h2 id="on-aws-redirect-the-domain-to-my-website-on-github-pages">on
 AWS: redirect the domain to my website on Github pages</h2>
 <p>Following <a
@@ -2167,9 +2171,9 @@ href="https://medium.com/@benwiz/how-to-deploy-github-pages-with-aws-route-53-re
 and <a
 href="https://help.github.com/en/articles/setting-up-an-apex-domain">GITHUB</a></p>
 <ol type="1">
-<li><p>Log into AWS Console –&gt; <strong>Route53</strong></p></li>
-<li><p>In your <strong>Route53</strong> dashboard, click <em>hosted
-zones</em></p></li>
+<li>Log into AWS Console –&gt; <strong>Route53</strong></li>
+<li>In your <strong>Route53</strong> dashboard, click <em>hosted
+zones</em></li>
 </ol>
 <p><img src="img/2_host_zone.png" /></p>
 <ol start="3" type="1">
@@ -2177,8 +2181,7 @@ zones</em></p></li>
 </ol>
 <p><img src="img/3_record.png" /></p>
 <ol start="4" type="1">
-<li><p>Click <em>Create Record</em> (This will be your yourdomain.com
-rule)</p>
+<li>Click <em>Create Record</em> (This will be your yourdomain.com rule)
 <ul>
 <li>Do not enter anything into the Name field</li>
 <li>Under the Type dropdown, select A — IPv4 addresses</li>
@@ -2186,9 +2189,10 @@ rule)</p>
 <li>Enter the following four IP addresses into the value text area.</li>
 </ul></li>
 </ol>
-<pre class="185.199.108.153"><code>   185.199.109.153
-   185.199.110.153
-   185.199.111.153</code></pre>
+<pre><code>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153</code></pre>
 <ul>
 <li>Then click <del>Save Record Set</del> “Create Record” .</li>
 </ul>
@@ -2251,15 +2255,6 @@ class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"><
 <div class="d-appendix">
 </div>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

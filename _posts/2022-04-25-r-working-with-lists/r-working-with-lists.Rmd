@@ -12,8 +12,9 @@ output:
   distill::distill_article:
     self_contained: false
     toc: TRUE
-    toc_depth: 2
-    toc_float: TRUE
+    toc_depth: 3
+    toc_float: TRUE # it doesn't work in distill but I have a fix
+    css: ../../css/toc-styles.css # doesn't work either
 draft: false
 categories: [tools]
 ---

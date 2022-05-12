@@ -15,12 +15,12 @@
   --font-mono:   SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
 
   /* color scheme save on https://coolors.co as "moorea" */
-  --color-background:   #F5EFED;
-  --color-primary:      #5F85A7; /* blu chiaro (icone) */
+  --color-background:   #F5EFED; /* beige rosato */
+  --color-primary:      #2383a8; /* blu chiaro (icone) #5F85A7 */
   --color-primary-dark: #0E0E52; /* nero */
-  --color-secondary:    #e06c85; /* rosa #BF3F7F #6E928B; verdognolo */
-  --color-tertiary:     #D62839; /* rosso */
-  --color-text:         #161A1D;
+  --color-secondary:    #e06c85; /* rosa #BF3F7F */ /* #6E928B; verdognolo */
+  --color-tertiary:     #a88a23; /* supergold */
+  --color-text:         #161A1D; /* nero */
   --color-white:        #FFFFFF;
 }
 
@@ -91,7 +91,7 @@ d-appendix {
 }
 
 .distill-site-footer {
-  --text-color:       #ededeb;
+  --text-color:     #a88a23; /* bianco | #00d3d4; verdolino   */
   --text-size:        15px;
   --hover-color:      var(--color-white);
   --bkgd-color:       var(--color-primary);
