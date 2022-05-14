@@ -6,6 +6,7 @@ output_dir: "docs"
 # include: ["import.R"]                 # Manually include/exclude from output_dir {* BUT they ware STILL rendered}
 exclude: ["R", "Publications_Helvy.Rmd"] #, "*.csv"]
 # theme: css/styles.css   # To see my changes I need to "apply also at the top level"
+# theme: css/navbar_theme.css
 navbar:
   # logo:
   #   image: images/logo.png

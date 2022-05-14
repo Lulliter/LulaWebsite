@@ -4,54 +4,39 @@ title: "Portfolio"
 
 Below is a list of research, learning and fun projects using `r fontawesome::fa("r-project", fill = "#5F85A7")` programming.
 
-<!-- ## Research -->
+## Current / In progress
 
-### Current
+<!-- distilltools::icon_link(icon = NULL,
+										text = NULL,
+										url = NULL,
+										style = "default",
+										class = "icon-link",
+										target = "_blank")  -->
+										
+										
+										
++  **How slogans end up moving billions (2022)**  
+`r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/slogan") `
+`r distilltools::icon_link("link", text = "html", "https://lulliter.github.io/slogan/") `
 
-| project                            | year | repo                                                                | pdf | html                                                                   | slides |
-|------------------------------------|------|---------------------------------------------------------------------|-----|------------------------------------------------------------------------|--------|
-| How slogans end up moving billions | 2022 | [`r fontawesome::fa("github")`](https://github.com/Lulliter/slogan) |     | [`r fontawesome::fa("file-code")`](https://lulliter.github.io/slogan/) |        |
+## Past
 
-### Past
++  **EDA of survey of water suppliers in Brazil - 2019**  
+`r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/BrazilWaterSurvey")`
+`r distilltools::icon_link("link", text = "html", "https://lulliter.github.io/BrazilWaterSurvey/")`
 
-| project                                                                                                        | year | repo                                                                           | pdf                                                                                                                   | html                                                                              | slides                                                                                                                           |
-|----------------------------------------------------------------------------------------------------------------|------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| EDA of survey of water suppliers in Brazil                                                                     | 2019 | [`r fontawesome::fa("github")`](https://github.com/Lulliter/BrazilWaterSurvey) |                                                                                                                       | [`r fontawesome::fa("file-code")`](https://lulliter.github.io/BrazilWaterSurvey/) |                                                                                                                                  |
-| Analysis of Green Card processing time                                                                         | 2019 | [`r fontawesome::fa("github")`](https://github.com/Lulliter/GreenCard)         | [`r fontawesome::fa("file-pdf")`](https://raw.githubusercontent.com/Lulliter/GreenCard/master/05_Analysis.pdf)        |                                                                                   |                                                                                                                                  |
-| NYE fundraising data analysis (*sensitive data*)                                                               | 2019 | <!-- https://github.com/Lulliter/NYE_ETL-->                                    |                                                                                                                       |                                                                                   | [`r fontawesome::fa("laptop")`](data/NYE_Presentation_14April2019.pdf)                                                           |
-| Brief analysis of "life expectancy at birth" using World Development Indicator (WDI) from the World Bank's API | 2018 | [`r fontawesome::fa("github")`](https://github.com/Lulliter/DECdatascience)    | [`r fontawesome::fa("file-pdf")`](https://raw.githubusercontent.com/Lulliter/DECdatascience/master/Part_1_Output.pdf) |                                                                                   |                                                                                                                                  |
-| Study on the competitivity of cities based on LinkedIn Data                                                    | 2017 | [`r fontawesome::fa("github")`](https://github.com/Lulliter/Linkedin)          | [`r fontawesome::fa("file-pdf")`](https://raw.githubusercontent.com/Lulliter/Linkedin/master/Linkedin-Analysis3.pdf)  |                                                                                   | [`r fontawesome::fa("laptop")`](https://raw.githubusercontent.com/Lulliter/Linkedin/master/LinkedInPresentation-R_01Dec2017.pdf) |
++  **Analysis of Green Card processing time - 2019**  
+`r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/GreenCard")`
+`r distilltools::icon_link("file-pdf", text = "PDF", "https://raw.githubusercontent.com/Lulliter/GreenCard/master/05_Analysis.pdf")`
 
-<!-- |Poisson Modeling and Predicting English Premier League Goal Scoring (poster presented at UCSAS 2020)|year|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/eplgoals)|[`r fontawesome::fa("file-pdf")`](https://arxiv.org/pdf/2105.09881.pdf)|[`r fontawesome::fa("file-code")`](https://bookdown.org/theqdata/honors_thesis)|[`r fontawesome::fa("laptop")`](https://statds.org/events/ucsas2020/posters/ucsas-1-Poster_UCSAS.pdf)|[`r fontawesome::fa("play-circle")`](https://www.dropbox.com/s/6xe2pntw25kzwpq/posterVideo.mp4?dl=0)| -->
++  **NYE fundraising data analysis - 2019**  
+`r distilltools::icon_link("file-powerpoint", text = "slides", "data/NYE_Presentation_14April2019.pdf")`
 
-<!-- |Analysis of Russell Westbrook's Triple-Doubles|year|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/tripledouble)||[`r fontawesome::fa("file-code")`](https://bookdown.org/theqdata/data_science_capstone_project_report)|||| -->
++  **Brief analysis of "life expectancy at birth" using World Development Indicator (WDI) from the World Bank's API - 2018**  
+`r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/DECdatascience")`
+`r distilltools::icon_link("file-pdf", text = "PDF", "https://raw.githubusercontent.com/Lulliter/DECdatascience/master/Part_1_Output.pdf")`
 
-<!-- |Analysis of CSV File Reading in `R`|year|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/read_speed)|[`r fontawesome::fa("file-pdf")`](projects/csv_paper.pdf)||[`r fontawesome::fa("laptop")`](projects/csv_slides.pdf)|| -->
-
-<!-- |Predicting Vaccine Hesitancy (2021 Humana-Mays Healthcare Analytics Case Competition)|year|[`r fontawesome::fa("github")`](https://github.com/qntkhvn/tamu_healthcare)|[`r fontawesome::fa("file-pdf")`](projects/humana.pdf)|||| -->
-
-<!-- |Titanic - Machine Learning from Disaster (Kaggle Competition)|year|||[`r fontawesome::fa("file-code")`](projects/titanic.html)||| -->
-
-<!-- |Predicting NFL Field Goal Outcomes||[`r fontawesome::fa("file-pdf")`](projects/nflfg.pdf)||[`r fontawesome::fa("laptop")`](projects/nflfg_pres.pdf)|[`r fontawesome::fa("play-circle")`](projects/nflfg.mp4)| -->
-
-<!-- ## Miscellaneous -->
-
-<!-- *   [SHAP and Shapley values](projects/shap.pdf) -->
-
-<!-- *   [Sentiment analysis](projects/sentiment.html) -->
-
-<!-- *   [Making a bingo board with `ggplot2`](projects/bingo.html) -->
-
-<!-- *   [Wimbledon seeding heatmap](https://qntkhvn.github.io/wimbledon) (as of 2021) -->
-
-<!-- *   [Data wrangling with `dplyr`/`tidyverse`](projects/tidy.html) -->
-
-<!-- *   [Essays on The Lady Tasting Tea](projects/ltt.pdf) -->
-
-<!-- *   [Gauss and the parallel postulate](projects/gauss.pdf) -->
-
-<!-- *   [Intro to Proofs portfolio and reflections](projects/proof.pdf) -->
-
-<!-- *   [Me, myself, and Man United](projects/mu/mu.html) (written in 2018 - my first exposure to `bookdown`) -->
-
-<!-- *   [Intro to Data Science portfolio](projects/dsportfolio/index.html) -->
++ **Study on the competitivity of cities based on LinkedIn Data - 2017**  
+`r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/Linkedin")`
+`r distilltools::icon_link("file-pdf", text = "PDF", "https://raw.githubusercontent.com/Lulliter/Linkedin/master/Linkedin-Analysis3.pdf")`
+ `r distilltools::icon_link("file-powerpoint", text = "slides", "https://raw.githubusercontent.com/Lulliter/Linkedin/master/LinkedInPresentation-R_01Dec2017.pdf")`                                        

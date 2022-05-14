@@ -17,8 +17,8 @@
   --color-background:   #F5EFED; /* beige rosato */
   --color-primary:      #2383a8; /* blu chiaro (icone) #5F85A7 */
   --color-primary-dark: #0E0E52; /* nero */
-  --color-secondary:    #e06c85; /* rosa #BF3F7F */ /* #6E928B; verdognolo */
-  --color-tertiary:     #a88a23; /* supergold */
+  --color-secondary:    #a88a23; /* supergold */ /* #6E928B; verdognolo */
+  --color-tertiary:     #e06c85; /* rosa */
   --color-text:         #161A1D; /* nero */
   --color-white:        #FFFFFF;
 }
@@ -81,9 +81,9 @@ d-appendix {
 /* These properties only apply to Distill sites and blogs  */
 
 .distill-site-header {
-  --title-size:       21px;
+  --title-size:       24px;
   --text-color:       var(--color-primary);
-  --text-size:        18px;
+  --text-size:        24px;
   --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
   --bkgd-color:       var(--color-background);
   font-weight:        500;

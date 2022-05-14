@@ -8,25 +8,25 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
- 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
 if (!require(pacman)) {install.packages(pacman)} 
 p_load(# distilltools,
-		 RefManageR,
-		 #  bib2df,
-		 bibtex,
-		 janitor,
-		 lubridate,
-		 glue,
-		 tidyverse, 
-		 htmltools)
+	RefManageR,
+	#  bib2df,
+	bibtex,
+	janitor,
+	lubridate,
+	glue,
+	tidyverse, 
+	htmltools)
 p_load_gh("EllaKaye/distilltools")
 p_load_gh("ropensci/bib2df") # otherwise warns `as_data_frame() was deprecated in tibble 2.0.0.`
 ```
 
- 
+
 ```{r  refs_zot_link}
 # - Load bibliography (exported from Zotero)
 bib_path <- here::here ("data", "Lula-MyPublications-Broad.bib")
@@ -36,7 +36,7 @@ mybib <- RefManageR::ReadBib(bib_path, check = FALSE )  #bibtex::do_read_bib(fil
 
 # - as dataframe
 mybib_df_raw <- bib2df::bib2df(bib_path)  
- 
+
 # - Format dataframe version of bibliography
 mybib_df <-
 	mybib_df_raw %>%
@@ -65,11 +65,11 @@ oldopts <- BibOptions(
 	max.names = 50, # maximum number of names to display before using “et al.”
 	dashed = FALSE, 
 	sorting = "ydnt"
-	)
+)
 
 # - Load other metadata
 mybib_meta <- tibble::tribble( 
-	  ~"url_pub", ~"url_pdf",~ "url_rg", ~"url_repo", ~"url_arch", ~"url_osf", ~"url_other", ~"url_blog" ) 
+	~"url_pub", ~"url_pdf",~ "url_rg", ~"url_repo", ~"url_arch", ~"url_osf", ~"url_other", ~"url_blog" ) 
 
 mybib_meta[1:nrow(mybib_df), ] <- as.character(NA)
 
@@ -88,50 +88,50 @@ mybib_df2$url_pub[mybib_df2$type == "Peer-reviewed"] <- mybib_df2$url[mybib_df2$
 
 # P-Rev Articles [preprint] --> url_preprint some ERA GIA SALVATO GIUSTO DA SOLO!!!!
 
-		# check 
-		check <-  mybib_df2 [!is.na (mybib_df2$url) & mybib_df2$type != "Peer-reviewed" , c("key", "type", "url")] 
-		#check
+# check 
+check <-  mybib_df2 [!is.na (mybib_df2$url) & mybib_df2$type != "Peer-reviewed" , c("key", "type", "url")] 
+#check
 
 # THESIS in --> url_arch 
 mybib_df2$url_arch[ mybib_df2$type == "Thesis" ] <- mybib_df2$url [ mybib_df2$type == "Thesis" ]
-		# check 
-		check <-  mybib_df2 [!is.na (mybib_df2$url) & is.na(mybib_df2$url_arch ) & is.na(mybib_df2$url_pub),
-									c("key", "type", "url")] 
-		#check
+# check 
+check <-  mybib_df2 [!is.na (mybib_df2$url) & is.na(mybib_df2$url_arch ) & is.na(mybib_df2$url_pub),
+							c("key", "type", "url")] 
+#check
 
 #  in RG --> url_rg
 mybib_df2$url_rg <- ifelse( str_detect(mybib_df2$url, "researchgate.net") ,  mybib_df2$url, mybib_df2$url_rg)
-		# check 
-		check <-  mybib_df2 [ !is.na (mybib_df2$url) & 
-									 	is.na(mybib_df2$url_arch ) & is.na(mybib_df2$url_pub) & is.na(mybib_df2$url_rg), 
-									 c("key", "type", "url")] 
-		#check
+# check 
+check <-  mybib_df2 [ !is.na (mybib_df2$url) & 
+							 	is.na(mybib_df2$url_arch ) & is.na(mybib_df2$url_pub) & is.na(mybib_df2$url_rg), 
+							 c("key", "type", "url")] 
+#check
 
-		
+
 #  Blogs --> url_blog
 mybib_df2$url_blog[mybib_df2$type  %in% c("World Bank Blog", "Personal Blog" , "IDB blog") ] <- mybib_df2$url [mybib_df2$type  %in% c("World Bank Blog", "Personal Blog" , "IDB blog") ]
-		
-		
-		# check 
-		check <-  mybib_df2 [ !is.na (mybib_df2$url) & 
-									 	is.na(mybib_df2$url_pub)  & 
-									 	is.na(mybib_df2$url_arch)  & 
-									 	is.na(mybib_df2$url_blog)    & 
-									 	is.na(mybib_df2$url_rg), 
-									 c("key", "type", "url")] 
-		#check
-		
-		
+
+
+# check 
+check <-  mybib_df2 [ !is.na (mybib_df2$url) & 
+							 	is.na(mybib_df2$url_pub)  & 
+							 	is.na(mybib_df2$url_arch)  & 
+							 	is.na(mybib_df2$url_blog)    & 
+							 	is.na(mybib_df2$url_rg), 
+							 c("key", "type", "url")] 
+#check
+
+
 # ALL the REST -->  url_other (open access)
 rest <- check$key
-		
+
 mybib_df2$url_other[which(mybib_df2$key %in% rest) ] <- mybib_df2$url[which(mybib_df2$key %in% rest) ] 
-				
-		
+
+
 # (GENERAL PDF ) <- NO perche mi incasina !!!!!!!!!!!!!!!!!!!!
 # mybib_df2$url_pdf <- ifelse(str_detect(mybib_df2$url, ".pdf$"),  mybib_df2$url, mybib_df2$url_pdf)
 
- 
+
 # - add some empty column for later 
 # mybib_df2$bibtex <- as.character(NA)
 mybib_df2$image <- as.logical(NA)
@@ -156,7 +156,7 @@ mybib_df2$category2[mybib_df2$type == "Presentation" ] <- "conference"
 
 # ========== I am an author? 
 mybib_df2$lmm <- ifelse(str_detect(mybib_df2$author,  "Mimmi|G20-Italy"), 
-								 "yes",
+								"yes",
 								"no")
 
 # names(mybib_df2)
@@ -169,7 +169,7 @@ mybib_df2 <- mybib_df2 %>%
 				date, yyyy_mm, year, month, date_parsed,  
 				author, lmm, title, journaltitle,   doi,
 				type, category, category2, 
-				 url, url_pub, url_preprint, url_pdf, url_repo,   
+				url, url_pub, url_preprint, url_pdf, url_repo,   
 				url_arch, url_rg, url_osf, 
 				url_other, url_blog, 
 				abstract,   image)
@@ -190,8 +190,8 @@ names(mybib_df_acad)[names(mybib_df2) == "url_arch"] <- "archive" # FA
 names(mybib_df_acad)[names(mybib_df2) == "url_blog"] <- "rss" # FA
 ```
 
- 
- 
+
+
 <!-- # Joel Nitta -->
 <!-- #' @param link_type Type of link ("github", "biorxiv", "figshare", "dryad", "pdf") -->
 
@@ -260,7 +260,7 @@ print_ref_simple <- function(key_select, bib = mybib) {
 # EXE 
 #print_ref_simple("mimmi_informal_2014")
 #print_ref_simple("mimmi_demand-driven_2008")
- 
+
 
 #' Print a reference with link buttons
 #'
@@ -288,23 +288,23 @@ print_ref <- function(key_select, bib = mybib, bib_df = mybib_df_acad) {
 	researchgate <- link_button(key_select, "researchgate", "Research Gate", bib_df) # 3
 	osf <- link_button(key_select, "osf", "OSF", bib_df) # 0
 	`open-access` <- link_button(key_select, "open-access", "Other", bib_df) # 9
- 	rss <- link_button(key_select, "rss", "Blog", bib_df) # 5
+	rss <- link_button(key_select, "rss", "Blog", bib_df) # 5
 	main_ref <- paste(ref, doi, sep = " ")
 	# AGGIUNGI BOTTONI ANCHE QUI!!!!!!!!!!!!!!!!!!!!!!1
 	buttons <- paste(elsevier, preprint,pdf, github, archive,researchgate,  osf,
 						  `open-access`,   rss)
 	# RETURN 
-	 paste(main_ref, buttons, sep = "<br>")
-	 
+	paste(main_ref, buttons, sep = "<br>")
+	
 }
 
 # EXE 
 # print_ref("mimmi_informal_2014")
 # print_ref("mimmi_demand-driven_2008")
- 
+
 ```
 
- 
+
 
 ### Forthcoming
 
