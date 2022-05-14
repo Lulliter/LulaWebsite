@@ -1798,8 +1798,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
 <style type="text/css">
-/* Lula adding boxes in posts*/
-
+/*  The @import requests must be at the very top of your theme.css, before any rules. */
 
 /* Lula trying to use Academicons (Googl Scholar)*/
 /* @import url('https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css'); */
@@ -1882,18 +1881,18 @@ d-appendix {
 /* These properties only apply to Distill sites and blogs  */
 
 .distill-site-header {
-  --title-size:       18px;
+  --title-size:       21px;
   --text-color:       var(--color-primary);
   --text-size:        18px;
-  --hover-color:      var(--color-secondary);
+  --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
   --bkgd-color:       var(--color-background);
   font-weight:        500;
 }
 
 .distill-site-footer {
-  --text-color:     #a88a23; /* bianco | #00d3d4; verdolino   */
+  --text-color:       var(--color-white); /* bianco | #00d3d4; verdolino   */
   --text-size:        15px;
-  --hover-color:      var(--color-white);
+  --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
   --bkgd-color:       var(--color-primary);
 }
 
@@ -2140,10 +2139,16 @@ d-article div.sourceCode {
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <!--radix_placeholder_navigation_after_body--><html><body>
 <div class="distill-site-nav distill-site-footer">
-<p>Â© Luisa M. Mimmi 2018 - 2022
-<!--<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> --></p>
+<!--Luisa M. Mimmi Â© 2022  -->
+<!--<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> -->
 <!-- </a><br />Unless otherwise specified, the content of this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
  -->
+<p class="copyright">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" title="Creative Commons Attribution-ShareAlike 4.0 International license"><i class="fab fa-creative-commons"></i>
+        <i class="fab fa-creative-commons-by" title="Attribution"></i>
+        <i class="fab fa-creative-commons-share" title="Share alike"></i></a>
+        <span class="cc-year">• 2018–2022</span>
+    </p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
 </body></html>

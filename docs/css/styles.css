@@ -1,7 +1,7 @@
 /*  CSS style of https://qntkhvn.netlify.app/projects.html */
 .distill-site-nav {
   color: white;
-  background-color: #004f8f; /* rosso scuro #990033 */
+  background-color: #003266; /*  prussian blue | rosso scuro #990033 */
 }
 
 .posts-with-sidebar .posts-sidebar {
@@ -21,6 +21,27 @@
   font-size: 75%;
   margin-right: 10%;
 }
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       21px;
+  --text-color:       #2383a8;
+  --text-size:        18px;
+  --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
+  --bkgd-color:       #F5EFED;
+  font-weight:        500;
+}
+
+.distill-site-footer {
+  --text-color:       #FFFFFF; /* bianco | #00d3d4; verdolino   */
+  --text-size:        15px;
+  --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
+  --bkgd-color:       #2383a8;
+}
+
+
 
 p a, aside a, li a, d-appendix a, a.footnote-backlink, table a {
     color:  #990033; /* blu link #3366BB */

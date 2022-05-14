@@ -1,5 +1,4 @@
-/* Lula adding boxes in posts*/
-
+/*  The @import requests must be at the very top of your theme.css, before any rules. */
 
 /* Lula trying to use Academicons (Googl Scholar)*/
 /* @import url('https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css'); */
@@ -82,18 +81,18 @@ d-appendix {
 /* These properties only apply to Distill sites and blogs  */
 
 .distill-site-header {
-  --title-size:       18px;
+  --title-size:       21px;
   --text-color:       var(--color-primary);
   --text-size:        18px;
-  --hover-color:      var(--color-secondary);
+  --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
   --bkgd-color:       var(--color-background);
   font-weight:        500;
 }
 
 .distill-site-footer {
-  --text-color:     #a88a23; /* bianco | #00d3d4; verdolino   */
+  --text-color:       var(--color-white); /* bianco | #00d3d4; verdolino   */
   --text-size:        15px;
-  --hover-color:      var(--color-white);
+  --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
   --bkgd-color:       var(--color-primary);
 }
 

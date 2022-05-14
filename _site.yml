@@ -5,11 +5,12 @@ title: "www.lulliter.com"
 output_dir: "docs"
 # include: ["import.R"]                 # Manually include/exclude from output_dir {* BUT they ware STILL rendered}
 exclude: ["R", "Publications_Helvy.Rmd"] #, "*.csv"]
+# theme: css/styles.css   # To see my changes I need to "apply also at the top level"
 navbar:
   # logo:
   #   image: images/logo.png
   #   href: https://www.rstudio.com
-  source_url: https://github.com/Lulliter/LulaWebsite     # link to the source code for your website
+  source_url: https://github.com/Lulliter/LulaWebsite  # link to the source code for your website
   search: false
   right:
 #    - icon: fas fa-home
@@ -44,3 +45,7 @@ output:
     css: css/jnitta.css   # css/styles.css
     # includes:
     #   in_header: utterances.html
+
+# # === Site params copiati da AH x avere footer, etc... {?!?!?!}
+# params:
+# 	since: 2018

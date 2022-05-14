@@ -38,12 +38,4 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-<br>
-Policy Analyst, `r fontawesome::fa("mug-hot",  fill = "#161A1D")` coffee addict and `r fontawesome::fa("r-project", fill = "#5F85A7")` enthusiast
-<!-- <a href = "https://www.r-project.org/">R</a> Enthusiast  -->
-<!-- <br><br> -->
-<!-- [About](about.html) 🙋 -->
-<!-- <br> -->
-<!-- [Blog](blog.html) 📝 -->
-<!-- <br> -->
-<!-- [Projects](projects.html) 🛠 -->
+<br> Policy Analyst, `r fontawesome::fa("mug-hot",  fill = "#161A1D")` coffee addict and `r fontawesome::fa("r-project", fill = "#5F85A7")` enthusiast <!-- <a href = "https://www.r-project.org/">R</a> Enthusiast  --> <!-- <br><br> --> <!-- [About](about.html) 🙋 --> <!-- <br> --> <!-- [Blog](blog.html) 📝 --> <!-- <br> --> <!-- [Projects](projects.html) 🛠 -->

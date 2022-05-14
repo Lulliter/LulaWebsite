@@ -1,0 +1,30 @@
+---
+title: "Recap sul consumo emergetico"
+description: |
+  A short description of the post.
+date: 2022-05-13
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+bibliography: references.bib
+categories: [ideas]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+see [@ricotti2022]
+
+|            | oil | coal | gas | hydro | nuclear | eolic | solar | other (geothermic & bio-masses) |
+|--------|--------|--------|--------|--------|--------|--------|--------|---------------|
+| **World**  | 31% | 27%  | 25% | 7%    | 4%      | 2.5%  | 1.3%  |                                 |
+| **Europe** | 37% | 11%  | 25% | 6%    | 11%     | 6%    | 2%    |                                 |
+|            |     |      |     |       |         |       |       |                                 |
+
+: Fonti energetiche
+
+Ma quali fonti energetiche fanno girare il mondo? Oggi consumiamo soprattutto petrolio (31%), carbone (27%) e gas (25%), ossia combustibili fossili per oltre 4/5 dei nostri fabbisogni, soprattutto per muoverci, per scaldarci, per produrre. Poi anche idrico (7%), nucleare (4%), eolico (2,5%), solare (1,3%). Il resto sono biomasse e geotermia.
+
+E l'Europa? Siamo molto differenti? No, ma siamo leggermente meglio. I fossili sono ancora largamente predominanti: petrolio (37%), gas (25%), carbone (11%), poi tra le fonti che praticamente non emettono gas climalteranti, nucleare (11%), idrico (6%), eolico (6%), solare (2%) e il resto ancora biomasse e geotermia.
