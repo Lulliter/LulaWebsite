@@ -101,3 +101,6 @@ purrr::walk(.x = file_names3,
 ```
 
  
+# Reference
+
+Check out this [blog post by Bob Rudis](https://rud.is/b/2016/07/26/use-quick-formula-functions-in-purrrmap-base-vs-tidtyverse-idiom-comparisonsexamples/) particularly interesting for comparison b/w `purrr::map` and `base` 

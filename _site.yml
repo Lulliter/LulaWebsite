@@ -7,6 +7,7 @@ output_dir: "docs"
 exclude: ["R", "Publications_Helvy.Rmd"] #, "*.csv"]
 # theme: css/styles.css   # To see my changes I need to "apply also at the top level"
 # theme: css/navbar_theme.css
+google_analytics: "G-M3G4YGXT58"
 navbar:
   # logo:
   #   image: images/logo.png

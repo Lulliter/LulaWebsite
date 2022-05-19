@@ -15,16 +15,96 @@ categories: [ideas]
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-see [@ricotti2022]
+# Fonti energetiche
+
+From [@ricotti2022]
 
 |            | oil | coal | gas | hydro | nuclear | eolic | solar | other (geothermic & bio-masses) |
-|--------|--------|--------|--------|--------|--------|--------|--------|---------------|
+|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | **World**  | 31% | 27%  | 25% | 7%    | 4%      | 2.5%  | 1.3%  |                                 |
 | **Europe** | 37% | 11%  | 25% | 6%    | 11%     | 6%    | 2%    |                                 |
-|            |     |      |     |       |         |       |       |                                 |
-
-: Fonti energetiche
+| **Italy**  | ?%  | ?%   | ?%  | ?%    | ?%      | ?%    | ?%    |                                 |
 
 Ma quali fonti energetiche fanno girare il mondo? Oggi consumiamo soprattutto petrolio (31%), carbone (27%) e gas (25%), ossia combustibili fossili per oltre 4/5 dei nostri fabbisogni, soprattutto per muoverci, per scaldarci, per produrre. Poi anche idrico (7%), nucleare (4%), eolico (2,5%), solare (1,3%). Il resto sono biomasse e geotermia.
 
 E l'Europa? Siamo molto differenti? No, ma siamo leggermente meglio. I fossili sono ancora largamente predominanti: petrolio (37%), gas (25%), carbone (11%), poi tra le fonti che praticamente non emettono gas climalteranti, nucleare (11%), idrico (6%), eolico (6%), solare (2%) e il resto ancora biomasse e geotermia.
+
+# PNRR
+
+Dotazione complessiva
+
+| Source (euro bn)      | A debito  | Fondo perduto | **TOT**   |
+|-----------------------|-----------|---------------|-----------|
+| [*EU*]{.underline}    |           |               |           |
+| NGEU                  | 191.5     | 69.9          | **261.4** |
+| ReactEU               |           | 13            | **13**    |
+| [*ITA*]{.underline}   |           |               |           |
+| Fondo complementare   |           | 30.64         | **30.64** |
+| Piano Transizione 4.0 |           | 13.97         | **13.97** |
+| **TOT**               | **191.5** | **127.51**    | **319.0** |
+
+Di cui **"Rivoluzione Verde e transizione ecologica"** = **M2** becca **€ 59.33 Mld** (\~40%) divisa in 4 componenti:
+
+------------------------------------------------------------------------
+
+## MITE ➜ Missione 2 (60 mld) ➜ 4 componenti
+
+**COMPONENTI**
+
+1.  **Economia circolare e agricoltura sostenibile** ➜ (€ 2.3 Mld)
+2.  **Energia rinnovabile, idrogeno, rete e mobilita sostenibile** ➜ (€ 13.9 Mld)
+3.  **Efficienza energetica e riqualificazione degli edifici** ➜ (€ 14.1 Mld)
+4.  **Tutela del territorio e della risorsa idrica** ➜ (€ 4.1 Mld) [TOT = € 34.7 Mld]
+
+**M&T** (Milestones e Targets) 89/527 (totali)
+
+------------------------------------------------------------------------
+
+1.  **Economia circolare e agricoltura sostenibile**
+    -   Realizzazione nuovi impianti di gestione rifiuti e ammodernamento esistenti ➜ € 1.5 Mld
+    -   Progetti "faro" di economia circolare ➜ € 600 mln
+    -   ***Riforme***:
+        -   Strategia nazionale per l'economia circolare;
+        -   Programma nazionale per la gestione dei rifiuti
+        -   Supporto tecnico alle autorità locali
+    -   isole verdi ➜ € 200 mln
+    -   cultura e consap ➜ € 30 mln
+2.  **Energia rinnovabile, idrogeno, rete e mobilita sostenibile**
+    -   Sviluppo agro-voltaico ➜ € 1 Mld
+    -   Promozione rinnovabili per le comunità energetiche e l'auto-consumo ➜ € 2.2 Mld
+    -   Promozione impianti innovativi (incluso off-shore) ➜ € 675 mln
+    -   Sviluppo bio-metano ➜ € 1.9 Mld
+    -   ***Riforme***:
+        -   Semplificazione delle procedure di autorizzazione per gli impianti rinnovabili on-shore e off-shore, nuovo quadro giuridico per sostenere la produzione da fonti rinnovabili e proroga dei tempi e dell'ammissibilità degli attuali regimi di sostegno
+        -   Nuova normativa per la promozione della produzione e del consumo di gas rinnovabile
+    -   Rafforzamento di smart grid ➜ € 3,6 Mld
+    -   Interventi su resilienza climatica delle reti ➜ € 500 mln
+    -   Produzione di idrogeno in siti dismessi (*Hydrogen Valleys*) ➜ € 500 mln
+    -   Utilizzo dell'idrogeno in settori *hard-to-abate* ➜ € 2 Mld
+    -   Ricerca e sviluppo sull'idrogeno ➜ € 16 mln
+    -   ***Riforme***:
+        -   Semplificazione amministrativa/riduzione ostacoli normativi a diffusione dell'idrogenoo
+        -   Misure volte a promuovere la competitività dell'idrogeno
+    -   Sviluppo infrastrutture di ricarica elettrica ➜ € 741 mln
+    -   Idrogeno ➜ € 0.450 Mld
+3.  **Efficienza energetica e riqualificazione degli edifici**
+    -   Ecobonus e del Sismabonus fino al 110% per efficienza /sicurezza ➜ € 13.9 Mld
+    -   Sviluppo di sistemi di teleriscaldamento ➜ € 200 mln
+4.  **Tutela del territorio e della risorsa idrica**
+    -   Realizzazione di un sistema avanzato ed integrato di monitoraggio e previsione ➜ € 500 mln
+    -   Misure per la gestione del rischio di alluvione e per la riduzione del rischio idrogeologico ➜ € 1.3 Mld
+    -   ***Riforme***:
+        -   Semplificazione e accelerazione procedure attuazione interventi dissesto idrogeologico
+    -   Tutela e valorizzazione del verde urbano ed extraurbano € 330 mln
+    -   Digitalizzazione dei parchi nazionali € 100 mln
+    -   Rinaturazione dell'area del Po € 360 mln
+    -   Bonifica dei siti orfani € 500 mln
+    -   Ripristino e tutela dei fondali e degli habitat marini € 400 mln
+
+-   ***Riforme***: + Adozione di programmi nazionali di controllo dell'inquinamento atmosferico
+    -   Investimenti in fognatura e depurazione € 600 mln
+-   ***Riforme***: + Misure per garantire la piena capacità gestionale per i servizi idrici integrati
+
+MITE PNRR [roadmap](https://www.mite.gov.it/pagina/pnrr-roadmap) e [slide](https://www.mite.gov.it/sites/default/files/archivio/allegati/PNRR/slide_PNRR_agg2nov2021.pdf)
+
+# 

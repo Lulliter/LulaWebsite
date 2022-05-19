@@ -30,7 +30,7 @@ Below is a list of research, learning and fun projects using `r fontawesome::fa(
 `r distilltools::icon_link("file-pdf", text = "PDF", "https://raw.githubusercontent.com/Lulliter/GreenCard/master/05_Analysis.pdf")`
 
 +  **NYE fundraising data analysis - 2019**  
-`r distilltools::icon_link("file-powerpoint", text = "slides", "data/NYE_Presentation_14April2019.pdf")`
+`r distilltools::icon_link("file-powerpoint", text = "slides", "data/NYEPresentation_14April2019.pdf")`
 
 +  **Brief analysis of "life expectancy at birth" using World Development Indicator (WDI) from the World Bank's API - 2018**  
 `r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/DECdatascience")`
