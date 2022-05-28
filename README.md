@@ -1,5 +1,8 @@
 # LulaWebsite
-
+<!-- Can't decide which statement annoys me more in tweeps' profiles:
+1) "views are my own" -> bc duh!
+2) "my preferred pronoun is ..." -> bc "veritas est adaequatio rei et intellectus"
+ --> 
 
 ## What this is
 My new personal website created with R pckg [`distill`](https://www.rstudio.com/blog/distill/) 

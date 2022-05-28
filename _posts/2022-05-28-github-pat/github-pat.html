@@ -87,377 +87,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>www.lulliter.com: Featured posts</title>
+  <title>Github authentication with PAT</title>
 
 
-  <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/>
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-05-28"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-05-28"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="www.lulliter.com: Featured posts"/>
+  <meta property="og:title" content="Github authentication with PAT"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="www.lulliter.com"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="www.lulliter.com: Featured posts"/>
+  <meta property="twitter:title" content="Github authentication with PAT"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","listing"]}},"value":[{"type":"character","attributes":{},"value":["Featured posts"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output","draft","categories","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Github authentication with PAT"]},{"type":"character","attributes":{},"value":["2022-05-28"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["tools"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[100]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["github-pat_files/anchor-4.2.2/anchor.min.js","github-pat_files/bowser-1.9.3/bowser.min.js","github-pat_files/distill-2.2.21/template.v2.js","github-pat_files/header-attrs-2.14/header-attrs.js","github-pat_files/jquery-3.6.0/jquery-3.6.0.js","github-pat_files/jquery-3.6.0/jquery-3.6.0.min.js","github-pat_files/jquery-3.6.0/jquery-3.6.0.min.map","github-pat_files/popper-2.6.0/popper.min.js","github-pat_files/tippy-6.2.7/tippy-bundle.umd.min.js","github-pat_files/tippy-6.2.7/tippy-light-border.css","github-pat_files/tippy-6.2.7/tippy.css","github-pat_files/tippy-6.2.7/tippy.umd.min.js","github-pat_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -1776,596 +1434,347 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="github-pat_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="github-pat_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="github-pat_files/popper-2.6.0/popper.min.js"></script>
+  <link href="github-pat_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="github-pat_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="github-pat_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="github-pat_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="github-pat_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="github-pat_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="github-pat_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <script type="text/javascript" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-M3G4YGXT58"></script>
-  <script type="text/javascript" cookie-consent="tracking">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-M3G4YGXT58');
-  </script>
-  <style type="text/css">
-  /*  The @import requests must be at the very top of your theme.css, before any rules. */
-
-  /* Lula trying to use Academicons (Googl Scholar)*/
-  /* @import url('https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css'); */
-  @import url('https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css');
-  /* ============================================= */
-
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-  :root {
-    --font-body:   inter,-apple-system,BlinkMacSystemFont,roboto,segoe ui,Helvetica,Arial,sans-serif;
-    --font-header: Rubik,Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    --font-mono:   SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
-
-    /* color scheme save on https://coolors.co as "moorea" */
-    --color-background:   #F5EFED; /* beige rosato */
-    --color-primary:      #2383a8; /* blu chiaro (icone) #5F85A7 */
-    --color-primary-dark: #0E0E52; /* nero */
-    --color-secondary:    #a88a23; /* supergold */ /* #6E928B; verdognolo */
-    --color-tertiary:     #e06c85; /* rosa */
-    --color-text:         #161A1D; /* nero */
-    --color-white:        #FFFFFF;
-  }
-
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     var(--color-text);
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    var(--font-header);
-    --mono-font:       var(--font-mono);
-    --body-font:       var(--font-body);
-    --navbar-font:     var(--font-header);
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       24px;
-    --text-color:       var(--color-primary);
-    --text-size:        24px;
-    --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
-    --bkgd-color:       var(--color-background);
-    font-weight:        500;
-  }
-
-  .distill-site-footer {
-    --text-color:       var(--color-white); /* bianco | #00d3d4; verdolino   */
-    --text-size:        15px;
-    --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
-    --bkgd-color:       var(--color-primary);
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below */
-
-  html body {
-      background-color: var(--color-background);
-  }
-
-  /* Links */
-
-  a {
-      color: var(--color-primary);
-      border-bottom: 0px;
-      text-decoration: none;
-  }
-
-  d-article a {
-      color: var(--color-primary);
-      border-bottom: 0px;
-      text-decoration: none;
-  }
-
-  a:hover, a:focus {
-      color: var(--color-secondary);
-      font-weight: 500;
-      border-color: var(--color-secondary);
-  }
-
-  d-article a:hover, a:focus {
-      color: var(--color-secondary);
-      font-weight: 500;
-      border-color: var(--color-secondary);
-  }
-
-  /* Buttons on home page */
-
-  .btn-outline-dark {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      border: 0px;
-  }
-
-  .btn-outline-dark:hover {
-      background-color: var(--color-secondary);
-  }
-
-  /* Menu */
-
-  .nav-dropdown-content a {
-      color: var(--color-primary);
-  }
-
-  .nav-dropdown-content a:hover {
-      background-color: var(--color-background);
-  }
-
-  /* Link buttons */
-
-  .icon-link {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      padding: 3px 5px 3px 5px;
-      margin: 0 2px 0 2px;
-      border-radius: 5px; /* Rounded edges */
-  }
-
-  .icon-link:hover {
-      background-color: var(--color-secondary);
-      color: var(--color-white);
-  }
-
-  /* For floating images - see lab page, for example */
-
-  .float-left img {
-      float:left;
-      padding: 5px 10px 5px 0px;
-  }
-
-  .float-right img {
-      float:right;
-      padding: 5px 0px 5px 10px;
-  }
-
-  /* Footer */
-
-  .distill-site-footer p {
-      margin-bottom: 0em;
-  }
-
-  /* Pubs page */
-
-  .pub {
-      margin: 0 0 15px 0;
-  }
-
-  /* For dropping a shadow behind images */
-  .shadow {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-  }
-
-  d-article img {
-    margin-bottom: 10px;
-  }
-
-  /* Smaller spacing in bullet lists */
-
-  d-article li {
-    margin-bottom: 0;
-  }
-
-  /* Code chunks */
-
-  d-article pre { /* Chunk output */
-    border-radius: 5px; /* Rounded edges */
-    font-size: 12px;
-    color: #fff;
-    background-color: #696969;
-    padding: 5px 5px 5px 18px;
-    overflow: auto !important;
-  }
-
-  d-article div.sourceCode pre { /* Chunk code */
-    border-radius: 5px; /* Rounded edges */
-    background-color: #fff;
-    color: black;
-    padding: 5px 5px 5px 18px;
-    overflow: auto !important;
-  }
-
-  d-article div.sourceCode {
-    background-color: transparent;
-  }
-
-  </style>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="css/jnitta.css" type="text/css"/>
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Featured posts","authors":[]}
+{"title":"Github authentication with PAT","authors":[],"publishedDate":"2022-05-28T00:00:00.000+02:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">www.lulliter.com</a>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="blog.html">Blog</a>
-<a href="publications.html">Research</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="https://github.com/Lulliter/LulaWebsite" aria-label="Link to source">
-<i class="fab fa-github" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Featured posts">Featured posts</h1>
-<a href="posts/2022-05-28-github-pat/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["tools"]}</script>
-<div class="metadata">
-<div class="publishedDate">May 28, 2022</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Github authentication with PAT</h2>
-<div class="dt-tags">
-<div class="dt-tag">tools</div>
-</div>
-<p></p>
-</div>
-</a>
-<a href="posts/2022-05-10-githubpages-aws/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["tools"]}</script>
-<div class="metadata">
-<div class="publishedDate">May 10, 2022</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Github Pages &amp; AWS</h2>
-<div class="dt-tags">
-<div class="dt-tag">tools</div>
-</div>
-<p></p>
-</div>
-</a>
-<a href="posts/2022-04-25-r-working-with-lists/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["tools"]}</script>
-<div class="metadata">
-<div class="publishedDate">April 25, 2022</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>R - working with lists</h2>
-<div class="dt-tags">
-<div class="dt-tag">tools</div>
-</div>
-<p></p>
-</div>
-</a>
-<a href="posts/2019-09-29-r-stuff/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["tools"]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 29, 2019</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Useful R stuff</h2>
-<div class="dt-tags">
-<div class="dt-tag">tools</div>
-</div>
-<p></p>
-</div>
-</a>
-<a href="posts/2018-09-28-dirs-files/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["tools"]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 28, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Working with directories and lists of files</h2>
-<div class="dt-tags">
-<div class="dt-tag">tools</div>
-</div>
-<p>A short description of the post.</p>
-</div>
-</a>
-<a href="posts/2018-09-28-dirs-files2/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["tools"]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 28, 2018</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Working with directories and lists of files 2 (.csv)</h2>
-<div class="dt-tags">
-<div class="dt-tag">tools</div>
-</div>
-<p></p>
-</div>
-</a>
-<a href="posts/2016-11-15-ramani-huria/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["ideas"]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 15, 2016</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Open spatial data for resilience in Tanzania: Lessons learned from 'Dar Ramani Huria'</h2>
-<div class="dt-tags">
-<div class="dt-tag">ideas</div>
-</div>
-<p></p>
-</div>
-</a>
-<a href="posts/2009-02-21-sussidiar/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["ideas"]}</script>
-<div class="metadata">
-<div class="publishedDate">Feb. 21, 2009</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Sussidiarietà e sviluppo: l’elettricità nelle favelas dell’America Latina</h2>
-<div class="dt-tags">
-<div class="dt-tag">ideas</div>
-</div>
-<p></p>
-</div>
-</a>
-</div>
-<div class="posts-sidebar">
-<div class="sidebar-section categories">
-<h3>Categories</h3>
-<ul>
-<li>
-<a href="#category:articles">articles</a>
-<span class="category-count">(8)</span>
-</li>
-<li>
-<a href="#category:ideas">ideas</a>
-<span class="category-count">(2)</span>
-</li>
-<li>
-<a href="#category:tools">tools</a>
-<span class="category-count">(6)</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Featured posts</h1>
+<h1>Github authentication with PAT</h1>
 <!--radix_placeholder_categories-->
+<div class="dt-tags">
+<div class="dt=tag">tools</div>
+</div>
 <!--/radix_placeholder_categories-->
 
 </div>
 
 
 <div class="d-article">
-<p><br>Ipse dixit: <a
-href="http://varianceexplained.org/r/start-blog/">Advice to aspiring
-data scientists: start a blog</a> <em>(by David Robinson)</em> <br></p>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#setting-up-github-authentication">Setting up GitHub &amp;
+authentication</a>
+<ul>
+<li><a href="#reference-tutorials">Reference / tutorials</a></li>
+<li><a
+href="#verify-your-git-installation-configuration-from-terminal">Verify
+your git installation &amp; configuration (from terminal)</a></li>
+<li><a href="#if-needed-introduce-yourself-to-git-from-r">If needed,
+introduce yourself to git (from R)</a></li>
+</ul></li>
+<li><a href="#ways-to-authenticate-in-github">3 ways to authenticate in
+Github</a>
+<ul>
+<li><a href="#a-how-i-configured-github-pat">3.1.a How I configured
+Github PAT</a></li>
+<li><a href="#what-are-ssh-keys">3.3 What are SSH keys?</a></li>
+<li><a href="#check-which-ssh-i-already-have">Check which ssh I already
+have</a></li>
+<li><a
+href="#which-one-am-i-currently-using-for-my-github-account">Which one
+am I currently using for my <span>Github account</span>?</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h1 id="setting-up-github-authentication">Setting up GitHub &amp;
+authentication</h1>
+<h2 id="reference-tutorials">Reference / tutorials</h2>
+<ul>
+<li><a href="https://rworkshop.uni.lu/install_tutorial.html">Tutorial on
+R &amp; Github setup!!!</a></li>
+<li><a
+href="https://carpentries.github.io/sandpaper-docs/github-pat.html">Setting
+Up a Personal Access Token via R</a>
+<!-- + [Multiple SSH](https://www.section.io/engineering-education/using-multiple-ssh-keys-for-multiple-github-accounts/)
++ [Github from psw -> SSH](https://community.rstudio.com/t/github-rstudio-how-to-switch-from-password-to-ssh/97096/2) --></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="verify-your-git-installation-configuration-from-terminal">Verify
+your git installation &amp; configuration (from terminal)</h2>
+<p><a
+href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config">see
+info on Atlassian</a> The <code>git config</code> command is a
+convenience function that is used to set Git configuration values on a
+global or local project level. These configuration levels correspond to
+<code>.gitconfig</code> text files.</p>
+<blockquote>
+<p><strong>LEVELS of git config</strong></p>
+</blockquote>
+<ol type="1">
+<li>By default, git config will write to a <strong>local level</strong>
+if no configuration option is passed. Local level configuration is
+<em>applied to the context repository</em> git config gets invoked in.
+Local configuration values are stored in a file that can be found in the
+repo’s .git directory: <code>.git/config</code>.</li>
+</ol>
+<p><code>git config --local</code></p>
+<ol start="2" type="1">
+<li><strong>Global level</strong> configuration is user-specific,
+meaning it is <em>applied to an operating system user</em>. Global
+configuration values are stored in a file that is located in a user’s
+home directory. <code>~ /.gitconfig</code> on unix systems and
+<code>C:\Users\\.gitconfig</code> on windows.</li>
+</ol>
+<p><code>git config --global</code></p>
+<ol start="3" type="1">
+<li><strong>System level</strong> System-level configuration is applied
+across an entire machine. This <em>covers all users on an operating
+system and all repos</em>. The system level configuration file lives in
+a gitconfig file off the system root path.
+<code>$(prefix)/etc/gitconfig</code> on unix systems.</li>
+</ol>
+<p><code>git config --system</code></p>
+<div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check version</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> version</span></code></pre></div>
+</div>
+<blockquote>
+<p>Since these are hidden files I need <code>ls -al</code> to see
+them</p>
+</blockquote>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see hidden config files</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-al</span> .git<span class="pp">*</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># or using git command...   </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span> <span class="at">--show-origin</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># check configuration </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--list</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># among other stuff</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># credential.helper=osxkeychain</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># user.name=Lulliter</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># user.email=lmm76@georgetown.edu</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># aliases!!!!! </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ask child property like  </span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.email</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># lmm76@georgetown.edu</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># write a child property like  </span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;lmm76@georgetown.edu&quot;</span></span></code></pre></div>
+</div>
+<h2 id="if-needed-introduce-yourself-to-git-from-r">If needed, introduce
+yourself to git (from R)</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># {NOT RUN}</span>
+<span class='co'>## set your user name and email:</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://usethis.r-lib.org'>usethis</a></span><span class='op'>)</span>
+
+<span class='co'># ---STOP!---- not sure this still exists </span>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='co'># set the user's global user.name and user.email</span>
+<span class='fu'><a href='https://usethis.r-lib.org/reference/use_git_config.html'>use_git_config</a></span><span class='op'>(</span>user.name <span class='op'>=</span> <span class='st'>"Lulliter"</span>, user.email <span class='op'>=</span> <span class='st'>"lmm76@georgetown.edu"</span><span class='op'>)</span>
+
+<span class='co'># (OR set the user.name and user.email locally, i.e. for current repo/project</span>
+<span class='fu'><a href='https://usethis.r-lib.org/reference/use_git_config.html'>use_git_config</a></span><span class='op'>(</span>
+  scope <span class='op'>=</span> <span class='st'>"project"</span>,
+  user.name <span class='op'>=</span> <span class='st'>"Lulliter"</span>, 
+  user.email <span class='op'>=</span> <span class='st'>"lmm76@georgetown.edu"</span>
+<span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<h1 id="ways-to-authenticate-in-github">3 ways to authenticate in
+Github</h1>
+<ol start="0" type="1">
+<li><del>password authentication</del> [deprecated since August
+2021]</li>
+<li>PATs (Personal Access Tokens) Authentication [*me, | recommended
+beginners]</li>
+<li>SSH Key Authentication</li>
+<li>Applications API tokens</li>
+</ol>
+<blockquote>
+<p><em>“if you have no burning reason to pick SSH”</em> (1) is <a
+href="https://happygitwithr.com/https-pat.html">recommended by Jenny
+Bryan</a></p>
+</blockquote>
+<h2 id="a-how-i-configured-github-pat">3.1.a How I configured Github
+PAT</h2>
+<p>Clear instructions <a
+href="https://betterprogramming.pub/dealing-with-github-password-authentication-deprecation-1b59ced90065">here</a>,
+and <a href="https://happygitwithr.com/https-pat.html">here (JB)</a>,
+and <a href="https://ropensci.org/blog/2020/07/07/github-pat/">here
+(ROpensci)</a>.</p>
+<p>A proper PAT is characterized by the following four features:</p>
+<ul>
+<li><strong>Unique</strong>: It is distinctive to GitHub and can be
+generated per device or usage.</li>
+<li><strong>Revocable</strong>: It can be individually revoked at any
+time without needing to update any credentials.</li>
+<li><strong>Limited</strong>: It is narrowly scoped by definition and
+provides access only to a limited set of operations.</li>
+<li><strong>Random</strong>: Unlike passwords, it is not subject to
+dictionary or brute force attacks.</li>
+</ul>
+<blockquote>
+<p>With the PAT, I will be performing Git operations over HTTPS protocol
+(as opposed to SSH).</p>
+</blockquote>
+<h4 id="create-github-pat">1) Create Github PAT</h4>
+<p>Either:</p>
+<ol type="a">
+<li>Go to <a href="https://github.com/settings/tokens"
+class="uri">https://github.com/settings/tokens</a> and click “Generate
+token”.</li>
+<li>Create a personal access token for authentication (from R)
+with:</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>usethis</span><span class='fu'>::</span><span class='fu'><a href='https://usethis.r-lib.org/reference/github-token.html'>create_github_token</a></span><span class='op'>(</span><span class='op'>)</span> 
+<span class='co'>## in case usethis version &lt; 2.0.0: usethis::browse_github_token() </span>
+<span class='co'># (or even better: update usethis!)</span>
+</code></pre>
+</div>
+</div>
+<h4
+id="provide-this-pat-next-time-a-git-operation-asks-for-your-password">2)
+Provide this PAT next time a Git operation asks for your password</h4>
+<p>Either:</p>
+<ol type="a">
+<li>Put the PAT into the Git credential store</li>
+<li>Use <code>gitcreds::gitcreds_set()</code> (from R) –&gt; this will
+prompt to paste the PAT</li>
+</ol>
+<h4 id="managingverifying-git-credential-stored">3) Managing/Verifying
+git credential stored</h4>
+<blockquote>
+<p>Where do I see it on Github?
+<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+–&gt; <strong>settings</strong> –&gt; <strong>Developer
+settings</strong> –&gt; Personal Access Tokens</p>
+</blockquote>
+<blockquote>
+<p>WARNING:
+<code>credentials::git_credential_ask("https://github.com")</code>
+actually exposes the PAT password</p>
+</blockquote>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>credentials</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/credentials/reference/credential_helper.html'>credential_helper_get</a></span><span class='op'>(</span><span class='op'>)</span>
+      <span class='co'># [1] "osxkeychain"</span>
+
+<span class='co'># to see all of them </span>
+<span class='fu'>credentials</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/credentials/reference/http_credentials.html'>git_credential_ask</a></span><span class='op'>(</span><span class='st'>"https://github.com"</span><span class='op'>)</span>
+      <span class='co'># $protocol</span>
+      <span class='co'># [1] "https"</span>
+      <span class='co'># $host</span>
+      <span class='co'># [1] "github.com"</span>
+      <span class='co'># $username</span>
+      <span class='co'># [1] "PersonalAccessToken"</span>
+      <span class='co'># $password</span>
+      <span class='co'># [1] "ghp_...8tNB" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+      <span class='co'># attr(,"class")</span>
+      <span class='co'># [1] "git_credential"</span>
+
+<span class='co'># --- other useful things to check </span>
+<span class='co'>#usethis::gh_token_help()</span>
+<span class='fu'>usethis</span><span class='fu'>::</span><span class='fu'><a href='https://usethis.r-lib.org/reference/git_sitrep.html'>git_sitrep</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'>gh</span><span class='fu'>::</span><span class='fu'><a href='https://gh.r-lib.org/reference/gh_whoami.html'>gh_whoami</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='co'># {</span>
+<span class='co'>#   "name": "Luisa Mimmi",</span>
+<span class='co'>#   "login": "Lulliter",</span>
+<span class='co'>#   "html_url": "https://github.com/Lulliter",</span>
+<span class='co'>#   "scopes": "gist, repo, user, workflow",</span>
+<span class='co'>#   "token": "ghp_...52eR"</span>
+<span class='co'># } </span>
+</code></pre>
+</div>
+</div>
+<hr />
+<h2 id="what-are-ssh-keys">3.3 What are SSH keys?</h2>
+<p>Secure Shell Protocol (SSH) is a cryptographic network protocol that
+allows a single computer to connect with a server over the internet
+securely. SSH is best used for accessing remote servers.</p>
+<h2 id="check-which-ssh-i-already-have">Check which ssh I already
+have</h2>
+<blockquote>
+<p>I have a github SSH but I am not using it yet!</p>
+</blockquote>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ls</span> <span class="at">-al</span> ~/.ssh/   </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  total 40</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># drwx------   7 luisamimmi  staff   224 Sep  8  2017 .</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># drwxr-xr-x@ 99 luisamimmi  staff  3168 May 26 19:50 ..</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-------@  1 luisamimmi  staff  1766 Jun  6  2015 github_rsa</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--   1 luisamimmi  staff   401 Jun  6  2015 github_rsa.pub</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-------   1 luisamimmi  staff  3243 Feb 21  2018 id_rsa</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 luisamimmi  staff   746 Feb 21  2018 id_rsa.pub</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -rw-r--r--@  1 luisamimmi  staff  2783 Sep  8  2017 known_hosts</span></span></code></pre></div>
+<pre><code>total 40
+drwx------   7 luisamimmi  staff   224 Sep  8  2017 .
+drwxr-xr-x@ 99 luisamimmi  staff  3168 May 28 21:41 ..
+-rw-------@  1 luisamimmi  staff  1766 Jun  6  2015 github_rsa
+-rw-r--r--   1 luisamimmi  staff   401 Jun  6  2015 github_rsa.pub
+-rw-------   1 luisamimmi  staff  3243 Feb 21  2018 id_rsa
+-rw-r--r--@  1 luisamimmi  staff   746 Feb 21  2018 id_rsa.pub
+-rw-r--r--@  1 luisamimmi  staff  2783 Sep  8  2017 known_hosts</code></pre>
+</div>
+<h2 id="which-one-am-i-currently-using-for-my-github-account">Which one
+am I currently using for my <a href="https://github.com/Lulliter">Github
+account</a>?</h2>
+<p>errrr <strong>NONE!</strong></p>
+<p><svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+–&gt; <strong>settings</strong> –&gt; <strong>SSH keys</strong> : You
+don’t have any public SSH keys in your GitHub account!!!!</p>
+<p>Although it does appear to be there as told by
+<code>library(credentials)</code></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://docs.ropensci.org/credentials/'>credentials</a></span><span class='op'>)</span>
+<span class='co'>#  Found git version 2.15.1</span>
+<span class='co'># Supported HTTPS credential helpers: cache, cache--daemon, store, osxkeychain</span>
+
+<span class='co'># 'git</span>
+<span class='co'># Found OpenSSH_8.1p1, LibreSSL 2.7.3</span>
+<span class='co'># Default SSH key: /Users/luisamimmi/.ssh/id_rsa</span>
+</code></pre>
+</div>
+</div>
+<p>…tbc</p>
+<div class="sourceCode" id="cb5"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2381,21 +1790,7 @@ class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"><
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
-<div class="distill-site-nav distill-site-footer">
-<!--Luisa M. Mimmi © 2022  -->
-<!--<br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> -->
-<!-- </a><br />Unless otherwise specified, the content of this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
- -->
-<p class="copyright">
-        <a href="http://creativecommons.org/licenses/by-sa/4.0/"
-            title="Creative Commons Attribution-ShareAlike 4.0 International license"><i class="fab fa-creative-commons"></i>
-        <i class="fab fa-creative-commons-by" title="Attribution"></i>
-        <i class="fab fa-creative-commons-share" title="Share alike"></i></a>
-        <span class="cc-year">&bull; 2018&ndash;2022</span>
-    </p>
-</div>
 <!--/radix_placeholder_navigation_after_body-->
-
 
 </body>
 
