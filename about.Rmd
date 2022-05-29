@@ -18,19 +18,17 @@ knitr::include_graphics(here::here("images", "Phd_procr.jpg"))
 ```
 
 _...but while we are at it:_  
- 
-### what is this website?
 
-Mainly, a place to collect notes-to-self, `r fontawesome::fa("r-project", fill = "#5F85A7")` code snippets, half-baked ideas, and side-projects. <br>
-I would love to blog more, but, for the moment, ideas are mostly in my head.   
-
-### and who am I?   
+### Who am I?   
 <!-- _`whoami`_ -->
 My name is **Luisa M. Mimmi**. I was born and raised in Italy 🇮🇹 , but I spent 14 years in the US 🇺🇸 based in Washington DC, working for multilateral development banks. Upon returning to Italy, I have been working as policy analyst for Italian government agencies. 
 
-I am passionate about using data to understand and tackle various public policy issues, especially regarding economic development. So far, my main professional focus has been on solutions to provide essential housing and infrastructure services. 
+I am passionate about using data to understand and tackle various public policy issues, especially regarding economic development. So far, my main professional focus has been on solutions to provide essential housing and infrastructure services-- see my CV for details on my 'official' job. These days I do consulting work somewhere at the intersection of Public Policy and Data Science (preferably using R).
+ 
+### and what is this website?
 
-For more details about my 'official' job see my [**CV (in English)**](https://raw.githubusercontent.com/Lulliter/cv/master/01_CV_Rmarkdown/Luisa-M-Mimmi_CV.pdf)/[**CV (in Italian)**](https://raw.githubusercontent.com/Lulliter/cv/master/02_CV_Rmarkdown_ITA/Luisa-M-Mimmi_CV_ITA.pdf)  
+Mainly, a place to collect notes-to-self, `r fontawesome::fa("r-project", fill = "#5F85A7")` code snippets, half-baked ideas, and side-projects. <br>
+I would love to blog more, but, for the moment, ideas are mostly in my head.   
 
 <!-- ---
 

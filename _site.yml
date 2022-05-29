@@ -30,6 +30,14 @@ navbar:
 #    - icon: fas fa-wrench
     - text: "Portfolio"
       href: portfolio.html
+    - text: "CV"
+      menu:
+        - text: "CV (eng)"
+          href: https://raw.githubusercontent.com/Lulliter/cv/master/01_CV_Rmarkdown/Luisa-M-Mimmi_CV.pdf
+        - text: "CV (ita)"
+          href: https://raw.githubusercontent.com/Lulliter/cv/master/02_CV_Rmarkdown_ITA/Luisa-M-Mimmi_CV_ITA.pdf
+        - text: "Résumé (eng)"
+          href: https://raw.githubusercontent.com/Lulliter/cv/master/03_CV_vitae/twentysecondsRES.pdf
 # === categories for posts
 collections:
   posts:
