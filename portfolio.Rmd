@@ -2,9 +2,9 @@
 title: "Portfolio"
 ---
 
-Below is a list of research, learning and fun projects using `r fontawesome::fa("r-project", fill = "#5F85A7")` programming.
+Below is a list of different projects using `r fontawesome::fa("r-project", fill = "#5F85A7")` programming.
 
-## Current / In progress
+## Currently working on...
 
 <!-- distilltools::icon_link(icon = NULL,
 										text = NULL,
@@ -12,7 +12,6 @@ Below is a list of research, learning and fun projects using `r fontawesome::fa(
 										style = "default",
 										class = "icon-link",
 										target = "_blank")  -->
-										
 										
 										
 +  **How slogans end up moving billions (2022)**  

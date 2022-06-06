@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -87,30 +88,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>www.lulliter.com: Publications</title>
+  <title>www.lulliter.com: Publications &amp; Presentations</title>
 
 
   <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/>
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-05-31"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-05-31"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-06-06"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-06-06"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="www.lulliter.com: Publications"/>
+  <meta property="og:title" content="www.lulliter.com: Publications &amp; Presentations"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="www.lulliter.com"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="www.lulliter.com: Publications"/>
+  <meta property="twitter:title" content="www.lulliter.com: Publications &amp; Presentations"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Publications"]},{"type":"character","attributes":{},"value":["2022-05-31"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Publications & Presentations"]},{"type":"character","attributes":{},"value":["2022-06-06"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -770,10 +771,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1605,6 +1602,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1619,6 +1622,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1718,6 +1746,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1740,7 +1770,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2040,7 +2070,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Publications","authors":[],"publishedDate":"2022-05-31T00:00:00.000+02:00"}
+{"title":"Publications & Presentations","authors":[],"publishedDate":"2022-06-06T00:00:00.000+02:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2080,7 +2110,7 @@ CV
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Publications</h1>
+<h1>Publications &amp; Presentations</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2092,7 +2122,8 @@ CV
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#forthcoming">Forthcoming</a></li>
+<li><a href="#selected-presentations">Selected Presentations</a></li>
+<li><a href="#forthcoming-articles">Forthcoming Articles</a></li>
 <li><a href="#articles-in-peer-reviewed-journals">Articles in
 Peer-reviewed Journals</a></li>
 <li><a href="#technical-reports-and-other-publications">Technical
@@ -2105,28 +2136,55 @@ Pieces</a></li>
 </ul>
 </nav>
 </div>
+<!-- # [setup] -->
+<!-- # [load] -->
+<!-- 1.A LOAD & CLEAN ZOTERO'S Lula-MyPublications-Broad.bib -->
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<!-- 1.B LOAD & CLEAN ZOTERO'S Lula-MyTalks.bib -->
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<!-- # [url] -->
+<!-- 2.A (pubs) Distribute **url** column to right columns (which will have the names of icons later) -->
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<!-- 2.B (Talks) Distribute **url** column to right columns (which will have the names of icons later) -->
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<!-- # Joel Nitta -->
-<!-- #' @param link_type Type of link ("github", "biorxiv", "figshare", "dryad", "pdf") -->
-<!-- https://jpswalsh.github.io/academicons/ -->
+<!-- # [function] -->
+<!-- 3  Functions for formatting a citation {now in R/functions_publications}-->
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h3 id="forthcoming">Forthcoming</h3>
-<!-- **Nitta, J. H.**, E. Schuettpelz, S. Ramírez-Barahona, and W. Iwasaki. "An open and continuously updated Fern Tree of Life (FTOL)". Submitted. -->
-<!-- `<a href="https://doi.org/10.1101/2022.03.31.486640" class="icon-link" target="_blank" rel="noopener">Preprint</a>`{=html} -->
-<!-- `<a href="https://github.com/fernphy/ftol" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>`{=html} -->
-<!-- **Nitta, J. H.**, B. D. Mishler, W. Iwasaki, and A. Ebihara. "Spatial phylogenetics of Japanese ferns: Patterns, processes, and implications for conservation". In: *American Journal of Botany*. Accepted. -->
-<!-- `<a href="https://doi.org/10.1101/2021.08.26.457744" class="icon-link" target="_blank" rel="noopener">Preprint</a>`{=html} -->
-<!-- `<a href="https://github.com/joelnitta/japan_ferns_spatial_phy" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>`{=html} -->
-<!-- **Nitta, J. H.** and S. M. Chambers. "Identifying cryptic fern gametophytes using DNA barcoding: A review". In: *Applications in Plant Sciences*. Accepted. -->
-<!-- `<a href="https://ecoevorxiv.org/dr25p/" class="icon-link" target="_blank" rel="noopener">Preprint</a>`{=html} -->
-<!-- `<a href="https://github.com/joelnitta/gameto-barcode-review" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>`{=html} -->
+<h3 id="selected-presentations">Selected Presentations</h3>
+<!-- # --- OKKIO: HERE I AM PULLING FROM A DIFFERENT ZOTERO COLLECTION SO I USE a ≠ FUNCTION /no do it manually  --- # -->
+<p><strong>Mimmi, L. M.</strong> (2021, November). <em>Infrastructure
+maintenance among G20 top priorities.</em> Lesson presented at the WBG
+MOOC on “QII and green, resilient and inclusive development,” online.
+Retrieved from <a
+href="https://learning.edx.org/course/course-v1:WBGx+IQI01x+1T2022/home"
+class="uri">https://learning.edx.org/course/course-v1:WBGx+IQI01x+1T2022/home</a>
+<a href="./data/MOOC_LuisaMimmi_pres_links_nov2021.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint"></i> slides</a><br>
+<strong>Mimmi, L. M.</strong> (2020, June). <em>Integrating
+multi-dimensional data for inclusive and sustainable development of
+urban slums.</em> Invited Talk presented at the XVIII MEEW workshop
+25-26 June 2020, Milano (online).
+<a href="./data/Mimmi_MinEconomy&amp;Finance.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint"></i> slides</a><br><br />
+<strong>Mimmi, L. M.</strong> (2012, April). <em>Sampling, WTP and
+demand assessment: Findings from a household survey in 3 urban slums of
+Mumbai.</em> Presentation presented at the WB, Washington, D.C.
+<a href="./data/Present_Sampl-Mumbai_2012.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint"></i> slides</a></p>
+<h3 id="forthcoming-articles">Forthcoming Articles</h3>
+<p><strong>L.M. Mimmi</strong>, <em>‘Caution: road work ahead’: Italy in
+front of the challenge of infrastructure maintenance: existing issues
+and promising responses</em>. 2022 (Under Review).</p>
 <h3 id="articles-in-peer-reviewed-journals">Articles in Peer-reviewed
 Journals</h3>
 <p><strong>Mimmi, L. M.</strong> (2014). “From Informal to Authorized
@@ -2142,10 +2200,6 @@ Favelas of Belo Horizonte, Brazil”. In: <em>Energy Policy</em> 38.9,
 pp. 5081-5097. ISSN: 03014215. DOI: <a
 href="https://doi.org/10.1016/j.enpol.2010.04.037">10.1016/j.enpol.2010.04.037</a><br><a href="http://linkinghub.elsevier.com/retrieve/pii/S0301421510003113" class="icon-link" target="_blank" rel="noopener"><i class="ai ai-elsevier"></i>
 Journal</a></p>
-<div class="layout-chunk" data-layout="l-body">
-
-</div>
-<!-- __Mimmi, L. M.__ (2014). "From Informal to Authorized Electricity Service in Urban Slums: Findings from a Household Level Survey in Mumbai". In: _Energy for Sustainable Development_ 21, pp. 66-80. ISSN: 09730826. DOI: [10.1016/j.esd.2014.05.008](https://doi.org/10.1016/j.esd.2014.05.008)<br><a href="http://linkinghub.elsevier.com/retrieve/pii/S0973082614000507" class="icon-link" target="_blank" rel="noopener"><i class="ai ai-elsevier"></i> Journal</a> <a href="https://openknowledge.worldbank.org/handle/10986/20719" class="icon-link" target="_blank" rel="noopener"><i class="preprint"></i> Preprint</a>       , __Mimmi, L. M.__ and S. Ecer (2010). "An Econometric Study of Illegal Electricity Connections in the Urban Favelas of Belo Horizonte, Brazil". In: _Energy Policy_ 38.9, pp. 5081-5097. ISSN: 03014215. DOI: [10.1016/j.enpol.2010.04.037](https://doi.org/10.1016/j.enpol.2010.04.037)<br><a href="http://linkinghub.elsevier.com/retrieve/pii/S0301421510003113" class="icon-link" target="_blank" rel="noopener"><i class="ai ai-elsevier"></i> Journal</a>         # non va a capo!!!-->
 <h3 id="technical-reports-and-other-publications">Technical Reports and
 Other Publications</h3>
 <p><strong>Mimmi, L. M.</strong>, C. Borja-Vega, A. Patel, T. Bhan, M.
@@ -2228,16 +2282,6 @@ L. M.</strong> (2001). “L’internazionalizzazione delle piccole e medie
 imprese italiane nell’Area Euro-Mediterranea”. Thesis. Università degli
 Studi di Pavia. <br>[<em>BSc equivalent of Economics &amp; Business
 Administration</em>]</p>
-<!-- ### Talks -->
-<!-- __Mimmi, L. M.__ (2021). "Remarks on the IWG's Work under the Italian Presidency". <br><br> -->
-<!-- __Mimmi, L. M.__ (2020). "High-Level Seminar on Quality Infrastructure Investment". <br><br> -->
-<!-- __Mimmi, L. M.__ (2020-2020). "Integrating Multi-Dimensional Data for Inclusive and Sustainable Development of Urban Slums". <br><br> -->
-<!-- __Mimmi, L. M.__ and C. Borja-Vega (2017). "Integrating Multi-Dimensional Data for Inclusive and Sustainable Development of Urban Slums - Preliminary Findings from Dhaka Pilot (Phase I)". <br><br> -->
-<!-- __Mimmi, L. M.__ (2015). "WPP Database Design". <br><br> -->
-<!-- __Mimmi, L. M.__ (2012). "Sampling, WTP and Demand Assessment: Findings from a Household Survey in 3 Urban Slums of Mumbai". <br><br> -->
-<!-- __Mimmi, L. M.__ (2011-2011). "OBA Approach: Core Principles and a Case of Rural Electrification". <br><br> -->
-<!-- __Mimmi, L. M.__ and J. Mugabi (2011). "OBAdata Website Launch". <br><br> -->
-<!-- __Mimmi, L. M.__ (2009). "Youth Employment and Entrepreneurship Programs: A Review of 8 Best Practices". <br> -->
 <!-- <aside> -->
 <!-- ```{r Nitta2021-cover, echo = FALSE} -->
 <!-- knitr::include_graphics("images/jpr_cover.jpg") -->
