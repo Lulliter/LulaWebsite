@@ -11,11 +11,15 @@ output:
     toc: TRUE
     toc_depth: 2
     toc_float: TRUE
+draft: TRUE
 categories: [tools]
+editor_options:
+  markdown:
+    wrap: 100
 ---
 
-> #### <i class="fa fa-refresh fa-spin fa-2x" style="color: #5F85A7"></i>  Work in progress
-> This collection needs **updating**...
+<!-- > #### <i class="fa fa-refresh fa-spin fa-2x" style="color: #5F85A7"></i>  Work in progress -->
+<!-- > This collection needs **updating**... -->
 
 ![](dilbertprogramming.png) 
 

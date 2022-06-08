@@ -1,0 +1,37 @@
+---
+title: "Nerdy stuff"
+description: |
+  A short description of the post.
+# author: []
+date: 2022-06-08
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(distilltools)
+```
+
+<i class="fa fa-refresh fa-spin fa-2x" style="color: #5F85A7"></i> Work in progress <!-- This collection needs **updating**... --> <!-- ![Worlkflow by Allison Horst](workflow.jpg "Artwork by @allison_horst") -->
+
+<figure>
+
+<img src="workflow.jpg" alt="Worlkflow by Allison Horst"/>
+
+<figcaption>
+
+Artwork by @allison_horst.
+
+</figcaption>
+
+</figure>
+
+# Learning to love the linux & friends (shell, git, make)
+
+`r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/slogan")` 
+`r distilltools::icon_link("link", text = "html", "https://lulliter.github.io/slogan/")` 
+`r distilltools::icon_link("file-pdf", text = "PDF", "https://raw.githubusercontent.com/Lulliter/GreenCard/master/05_Analysis.pdf")` 
+`r distilltools::icon_link("file-powerpoint", text = "slides", "data/NYEPresentation_14April2019.pdf")`

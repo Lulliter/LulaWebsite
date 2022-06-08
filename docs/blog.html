@@ -1930,23 +1930,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   /* Links */
-
   a {
       color: var(--color-primary);
       border-bottom: 0px;
       text-decoration: none;
   }
 
+  a:hover, a:focus {
+    color: var(--color-secondary);
+    font-weight: 500;
+    border-color: var(--color-secondary);
+  }
+
   d-article a {
       color: var(--color-primary);
       border-bottom: 0px;
       text-decoration: none;
-  }
-
-  a:hover, a:focus {
-      color: var(--color-secondary);
-      font-weight: 500;
-      border-color: var(--color-secondary);
   }
 
   d-article a:hover, a:focus {
@@ -2241,6 +2240,20 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Featured Posts">Featured Posts</h1>
+<a href="posts/2022-06-08-nerdy-stuff/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<div class="metadata">
+<div class="publishedDate">June 8, 2022</div>
+</div>
+<div class="thumbnail">
+<img/>
+</div>
+<div class="description">
+<h2>Nerdy stuff</h2>
+<div class="dt-tags"></div>
+<p>A short description of the post.</p>
+</div>
+</a>
 <a href="posts/2022-05-28-github-pat/" class="post-preview">
 <script class="post-metadata" type="text/json">{"categories":["tools"]}</script>
 <div class="metadata">
@@ -2376,7 +2389,7 @@ function init_posts_list() {
 <ul>
 <li>
 <a href="#category:articles">articles</a>
-<span class="category-count">(8)</span>
+<span class="category-count">(9)</span>
 </li>
 <li>
 <a href="#category:ideas">ideas</a>

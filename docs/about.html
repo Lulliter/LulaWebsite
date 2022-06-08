@@ -1930,23 +1930,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   /* Links */
-
   a {
       color: var(--color-primary);
       border-bottom: 0px;
       text-decoration: none;
   }
 
+  a:hover, a:focus {
+    color: var(--color-secondary);
+    font-weight: 500;
+    border-color: var(--color-secondary);
+  }
+
   d-article a {
       color: var(--color-primary);
       border-bottom: 0px;
       text-decoration: none;
-  }
-
-  a:hover, a:focus {
-      color: var(--color-secondary);
-      font-weight: 500;
-      border-color: var(--color-secondary);
   }
 
   d-article a:hover, a:focus {
