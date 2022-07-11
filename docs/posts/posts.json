@@ -1,14 +1,21 @@
 [
   {
-    "path": "posts/2022-06-08-nerdy-stuff/",
-    "title": "Nerdy stuff",
+    "path": "posts/2022-06-08-nerderland/",
+    "title": "Nerderland",
     "description": "A short description of the post.",
-    "author": [],
+    "author": [
+      {
+        "name": "Luisa M. Mimmi",
+        "url": {}
+      }
+    ],
     "date": "2022-06-08",
-    "categories": [],
-    "contents": "\n\nWork in progress \n\n\nArtwork by @allison_horst.\nLearning to\nlove the linux & friends (shell, git, make)\n repo\n html\n PDF\n slides\n\n\n\n",
+    "categories": [
+      "tools"
+    ],
+    "contents": "\n\nContents\nStart at the kernel\nboh\n\n\n\nArtwork by @allison_horstStart at the kernel\nJeroen Janssens - Set your R code free; turn it into a\ncommand-line tool\n video\nboh\n\n repo html\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-06-08T12:20:06+02:00",
+    "last_modified": "2022-06-09T15:37:43+02:00",
     "input_file": {}
   },
   {

@@ -1,5 +1,5 @@
 ---
-title: "Recap sul consumo emergetico"
+title: "Recap sul consumo energetico"
 description: |
   A short description of the post.
 date: 2022-05-13
@@ -7,7 +7,7 @@ output:
   distill::distill_article:
     self_contained: false
 draft: true
-bibliography: references.bib
+bibliography: Green_Ener_Resil.bib
 categories: [ideas]
 ---
 
@@ -15,14 +15,14 @@ categories: [ideas]
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-❤️
+# Ideas to validate
 
-# Fonti energetiche
+## \* Fonti energetiche
 
 From [@ricotti2022]
 
 |            | oil | coal | gas | hydro | nuclear | eolic | solar | other (geothermic & bio-masses) |
-|------------|-----|------|-----|-------|---------|-------|-------|---------------------------------|
+|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | **World**  | 31% | 27%  | 25% | 7%    | 4%      | 2.5%  | 1.3%  |                                 |
 | **Europe** | 37% | 11%  | 25% | 6%    | 11%     | 6%    | 2%    |                                 |
 | **Italy**  | ?%  | ?%   | ?%  | ?%    | ?%      | ?%    | ?%    |                                 |
@@ -31,7 +31,11 @@ Ma quali fonti energetiche fanno girare il mondo? Oggi consumiamo soprattutto pe
 
 E l'Europa? Siamo molto differenti? No, ma siamo leggermente meglio. I fossili sono ancora largamente predominanti: petrolio (37%), gas (25%), carbone (11%), poi tra le fonti che praticamente non emettono gas climalteranti, nucleare (11%), idrico (6%), eolico (6%), solare (2%) e il resto ancora biomasse e geotermia.
 
-# PNRR
+Maurizio Masi argues that - looking at history - any time a new energy source was introduced (wood, coal, oil, gas), it didn;t replace the previous dominant one, but rather contributed to gowning the total per-capita consumption with a different distribution. So why would the EU bureaucrats think to completely rule out completely coal or gas?  [@dragoni_il_2022] Moreover in doing so , development paths are altered. He suggests that instead the LCA (life cycle assessment of the total consumption of CO2, water, land) should be adopted. This would show that an electric car costs less in terms of CO2, but much more in terms of water and land, because to have the metals and rare earths needed to produce a car (1.5 kg) I need to excavate (7.5 tons of land), plus water needed for industrial production. **rather than impose the technologies, legislators should impose the LCA criteria and a reasonable decreasing rate for consumption** leaving the actual distribution to the market.  
+
+
+
+## \* PNRR
 
 Dotazione complessiva
 
@@ -109,4 +113,6 @@ Di cui **"Rivoluzione Verde e transizione ecologica"** = **M2** becca **€ 59.3
 
 MITE PNRR [roadmap](https://www.mite.gov.it/pagina/pnrr-roadmap) e [slide](https://www.mite.gov.it/sites/default/files/archivio/allegati/PNRR/slide_PNRR_agg2nov2021.pdf)
 
-# 
+## \* Climate change
+
+-   [Mckinsey Report](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-response-physical-hazards-and-socioeconomic-impacts?cid=other-eml-alt-mgi-mck&hlkid=14c6e658a93041d5aa2124274d4cd08c&hctky=2352551&hdpid=5c80f35f-d47f-41c6-acdd-8e249d1f0b52)

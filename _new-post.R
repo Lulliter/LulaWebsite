@@ -1,10 +1,10 @@
 # CREATE NEW POST STRUCTURE
 
-distill::create_post(title = "Sussidiarietà e sviluppo: l’elettricità nelle favelas dell’America Latina",
+distill::create_post(title = "nerderland",
 							collection = "posts",
-							author = "auto",
+							author = "Luisa M. Mimmi",
 							slug = "auto",
-							date = '2009-02-21', # Sys.Date(),
+							date = Sys.Date(),
 							draft = FALSE)
 # knit or
 rmarkdown::render("_posts/2009-02-21-sussidiariet-e-sviluppo-lelettricit-nelle-favelas-dellamerica-latina/sussidiariet-e-sviluppo-lelettricit-nelle-favelas-dellamerica-latina.Rmd")

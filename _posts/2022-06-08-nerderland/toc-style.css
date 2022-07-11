@@ -17,9 +17,9 @@ d-article {
   max-width: 260px;
   max-height: 85%;
   overflow-y: auto;
-  background: white;            /* Optional, remove to enable the blur filter (just for fun). */
-  backdrop-filter: blur(10px);  /* Optional, wouldn't not work with Firefox browser. */
-  padding: 10px;                /* Optional */
+  /*👉background: white;  ➡ Optional, remove to enable the blur filter (just for fun). ⬅
+  backdrop-filter: blur(10px);  ➡ Optional, wouldn't not work with Firefox browser. ⬅
+  padding: 10px;                ➡ Optional ⬅👈*/
   /* border-right: 1px solid rgba(0, 0, 0, 0.1); */
   border: 1px solid rgba(0, 0, 0, 0.1);
   /* border-radius: 1px; */
