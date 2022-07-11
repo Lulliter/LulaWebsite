@@ -2,7 +2,7 @@
   {
     "path": "posts/2022-06-08-nerderland/",
     "title": "Nerderland",
-    "description": "A short description of the post.",
+    "description": "Useful R resources.",
     "author": [
       {
         "name": "Luisa M. Mimmi",
@@ -13,9 +13,9 @@
     "categories": [
       "tools"
     ],
-    "contents": "\n\nContents\nStart at the kernel\nboh\n\n\n\nArtwork by @allison_horstStart at the kernel\nJeroen Janssens - Set your R code free; turn it into a\ncommand-line tool\n video\nboh\n\n repo html\n\n\n\n\n",
+    "contents": "\n\nContents\nStart at the\nkernel…\nGeospatial Analysis… in R\nboh\n\n\n\nArtwork by @allison_horstStart at the kernel…\nR was definitely my “gateway drug” to programming, but overtime I\nhave been discovering the magic of the command line and I am\nprogressively becoming more at ease with command-line interfaces\n(CLI) or shell scripting in all its flavors\n(bash, zsh, git,\nmake) and enjoying their universal, dry and no-nonsense\nPOWER!\nJeroen Janssens - Set your R code free; turn it into a\ncommand-line tool - 2022 -\n video\nGeospatial Analysis… in R\nJosiah Parry - Exploratory Spatial Data Analysis in\nR - 2022 -\n video\nZev Ross - [Workshop on] Modern Geospatial Data Analysis\nwith R - 2022 -\n slides\nboh\n\n repo html\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-06-09T15:37:43+02:00",
+    "last_modified": "2022-07-11T17:06:54+02:00",
     "input_file": {}
   },
   {

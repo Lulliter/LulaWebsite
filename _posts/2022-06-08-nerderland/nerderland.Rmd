@@ -1,7 +1,7 @@
 ---
 title: "Nerderland"
 description: |
-  A short description of the post.
+  Useful R resources.
 author: Luisa M. Mimmi
 date: 2022-06-08
 output:
