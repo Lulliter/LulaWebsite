@@ -137,7 +137,7 @@ mytalk_df2 <- cbind(mytalk_df, mybib_meta)
 <!-- # [url] -->
 
 <!-- 2.A (pubs) Distribute **url** column to right columns (which will have the names of icons later) -->
-
+<!-- OKKIO: NEED TO FIX "EXTRA" IN ZOTERO TO MAKE IT WORK ...  -->
 ```{r  distri_link_pubs}
 # ========== Distribute **url** column to right columns (which will have the names of icons later)
 # Column A [for this value of col C] <- (like)    Column B [for THE SAME value of col C]
@@ -320,7 +320,7 @@ source(here::here("R", "functions_publications.R"))
 ```
 
 
-### Selected Presentations
+## SELECTED PRESENTATIONS
 <!-- # --- OKKIO: HERE I AM PULLING FROM A DIFFERENT ZOTERO COLLECTION SO I USE a ≠ FUNCTION /no do it manually  --- # -->
 
 **Mimmi, L. M.** (2021, November). _Infrastructure maintenance among G20 top priorities._ Lesson presented at the WBG MOOC on “QII and green, resilient and inclusive development,” online. Retrieved from https://learning.edx.org/course/course-v1:WBGx+IQI01x+1T2022/home
@@ -330,12 +330,15 @@ source(here::here("R", "functions_publications.R"))
 `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Present_Sampl-Mumbai_2012.pdf")`                            
 
 
+## PUBLICATIONS
+
 ### Forthcoming Articles
 
 **L.M. Mimmi**, *'Caution: road work ahead': Italy in front of the challenge of infrastructure maintenance: existing issues and promising responses*. 2022 (Under Review).
 
 ### Articles in Peer-reviewed Journals
 
+`r print_ref_buttons("patel_predicting_2022")` <br>
 `r print_ref_buttons("mimmi_informal_2014")` <br>
 `r print_ref_buttons("mimmi_econometric_2010")`
 

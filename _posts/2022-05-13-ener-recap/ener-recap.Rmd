@@ -21,17 +21,43 @@ knitr::opts_chunk$set(echo = FALSE)
 
 From [@ricotti2022]
 
-|            | oil | coal | gas | hydro | nuclear | eolic | solar | other (geothermic & bio-masses) |
-|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| **World**  | 31% | 27%  | 25% | 7%    | 4%      | 2.5%  | 1.3%  |                                 |
-| **Europe** | 37% | 11%  | 25% | 6%    | 11%     | 6%    | 2%    |                                 |
-| **Italy**  | ?%  | ?%   | ?%  | ?%    | ?%      | ?%    | ?%    |                                 |
+|              | oil | coal | gas | [Thermoelectric (not ren)]{.underline} | hydro | nuclear | eolic | solar | other (geothermic & bio-masses) | [ALL RN]{.underline} |
+|--------|------|------|------|--------|--------|--------|--------|--------|--------|--------|
+| **World**    | 31% | 27%  | 25% | [83%]                                  | 7%    | 4%      | 2.5%  | 1.3%  |                                 |                      |
+| **Europe**   | 37% | 11%  | 25% | [83%]                                  | 6%    | 11%     | 6%    | 2%    |                                 |                      |
+| **Italy^§^** | ?%  | ?%   | ?%  | 59%                                    | 16.5% | 0%   |  7.4%    | 8.9% | 8.6% | 24.6%                |
+
+^**§\ Terna\ on\ 2021**^
 
 Ma quali fonti energetiche fanno girare il mondo? Oggi consumiamo soprattutto petrolio (31%), carbone (27%) e gas (25%), ossia combustibili fossili per oltre 4/5 dei nostri fabbisogni, soprattutto per muoverci, per scaldarci, per produrre. Poi anche idrico (7%), nucleare (4%), eolico (2,5%), solare (1,3%). Il resto sono biomasse e geotermia.
 
 E l'Europa? Siamo molto differenti? No, ma siamo leggermente meglio. I fossili sono ancora largamente predominanti: petrolio (37%), gas (25%), carbone (11%), poi tra le fonti che praticamente non emettono gas climalteranti, nucleare (11%), idrico (6%), eolico (6%), solare (2%) e il resto ancora biomasse e geotermia.
 
-Maurizio Masi argues that - looking at history - any time a new energy source was introduced (wood, coal, oil, gas), it didn;t replace the previous dominant one, but rather contributed to gowning the total per-capita consumption with a different distribution. So why would the EU bureaucrats think to completely rule out completely coal or gas?  [@dragoni_il_2022] Moreover in doing so , development paths are altered. He suggests that instead the LCA (life cycle assessment of the total consumption of CO2, water, land) should be adopted. This would show that an electric car costs less in terms of CO2, but much more in terms of water and land, because to have the metals and rare earths needed to produce a car (1.5 kg) I need to excavate (7.5 tons of land), plus water needed for industrial production. **rather than impose the technologies, legislators should impose the LCA criteria and a reasonable decreasing rate for consumption** leaving the actual distribution to the market.  
+Maurizio Masi argues that - looking at history - any time a new energy source was introduced (wood, coal, oil, gas), it didn't replace the previous dominant one, but rather contributed to gowning the total per-capita consumption with a different distribution. So why would the EU bureaucrats think to completely rule out completely coal or gas? [@dragoni_il_2022] Moreover in doing so , development paths are altered. He suggests that instead the LCA (life cycle assessment of the total consumption of CO2, water, land) should be adopted. This would show that an electric car costs less in terms of CO2, but much more in terms of water and land, because to have the metals and rare earths needed to produce a car (1.5 kg) I need to excavate (7.5 tons of land), plus water needed for industrial production. **rather than impose the technologies, legislators should impose the LCA criteria and a reasonable decreasing rate for consumption** leaving the actual distribution to the market.
+
+### Produzione elettrica Italia
+
+Potenza lorda installata al 31 dicembre 2021: ***289.1 TWh***
+Produzione Totale Netta  2021: ***278.1 TWh***
+Domanda di energia elettrica 2021: ***318.07 TWh*** (import ~14% of own production)
+
+### Gas Italia
+
+Italy consumes 73-76 bn m3/year (MISE, 2018-2021) with peak of 10 bn m3 in the month of Jan and 4 bn m3 in Aug. <https://www.qualenergia.it/articoli/quanto-gas-consumiamo-ogni-mese-italia-perche-inverno-forte-rischio/>
+
+Italy (like Europe) is now an importer: ***domestic production went from 20bn of m3/year in the 1990s, to the current 3bn of m3/year in 2021***, which is ***3-5%*** of demand
+
+***pricing*** Dagli anni '70 contratti di lungo periodo vincolavano fornitori e acquirenti indipendentemente dalla quantita comprata ("take or pay clause") ad un prezzo stabilito con una formula indicizzata e aggiornato periodicamente. Questi contratti sono tutt'ora in essere ma sono stati accorciati nella loro durata. E nella formula che determina il prezzo di cessione del gas è entrato con un peso via via maggiore, per esempio nei contratti con la Russia, quello dei **mercati spot**.
+
+Further, ***liberalization*** (late 1990s) has mobilized prices (depending on them gas goes to EU or Asia).
+
+--\> ATTUARE ART 16 DL ENERGIA per rilanciare produzione nazionale --\> raggiungere target stoccaggio (90% art 21 DL energia) --\> rilanciare idrogeno e biometano
+
+### Idroelettrico Italia
+
+L'idroelettrico oggi - con 4300 impianti e una potenza di 18,9GWh - offre il **6.5% dell'energia totale** Ma secondo prodotta e il **1% di quella rinnovabile**. Ma secondo l'ultimo Rapporto Mensile sul Sistema Elettrico elaborato da Terna (maggio 2022), la produzione di elettricità da fonte idrica, nel periodo gennaio-maggio 2022, e' scesa del 39,7% rispetto allo stesso periodo del 2021. [@tavazzi_siccita_2022]  
+
+>  Cio significa che scende la quota di FER (Fonti Energetiche Rinnovabili) a cui e' vincolato il PNRR !!!
 
 
 
@@ -116,3 +142,48 @@ MITE PNRR [roadmap](https://www.mite.gov.it/pagina/pnrr-roadmap) e [slide](https
 ## \* Climate change
 
 -   [Mckinsey Report](https://www.mckinsey.com/business-functions/sustainability/our-insights/climate-risk-and-response-physical-hazards-and-socioeconomic-impacts?cid=other-eml-alt-mgi-mck&hlkid=14c6e658a93041d5aa2124274d4cd08c&hctky=2352551&hdpid=5c80f35f-d47f-41c6-acdd-8e249d1f0b52)
+
+### Carbon dioxide (CO₂) emissions
+
+-   Cop25 in Paris (2015) - reduce **CO₂ emissions to 40% of 1990** levels by 2030...
+    -   1990 = 22.75 bn t
+    -   2022 = 34.81 bn t
+
+> Further is seems that what was cut by EU28 has been picked up by China (and worse, because of their dirtier sources of energy to produce for us)
+
+|       | \### [Annual CO₂ emissions](https://ourworldindata.org/grapher/annual-co2-emissions-per-country?facet=none&country=~OWID_WRL) 1990 (bn ton) | \### [Annual CO₂ emissions](https://ourworldindata.org/grapher/annual-co2-emissions-per-country?facet=none&country=~OWID_WRL) 2022 (bn ton) |
+|-------------|-----------------------------|-----------------------------|
+| World | 22.75                                                                                                                                       | 34.8                                                                                                                                        |
+| US    | 5.11                                                                                                                                        | 4.7                                                                                                                                         |
+| EU28  | 4.46                                                                                                                                        | 2.9                                                                                                                                         |
+| India | 0.57                                                                                                                                        | 2.4                                                                                                                                         |
+| China | 2.48                                                                                                                                        | 10.6                                                                                                                                        |
+
+Source: [Our World in Data](https://ourworldindata.org/co2-emissions#global-co2-emissions-from-fossil-fuels-global-co2-emissions-from-fossil-fuels),[@battaglia_macche_2022]
+
+> but in the atmosphere there are 3200 bn t... so anthropogenic is 32/3200=1%!!!!! Quello che abbiamo fatto e' finanziarizzare sempre piu la nostra economia EU e i nostri sistemi produttivi
+
+------------------------------------------------------------------------
+
+## \* ESG
+
+As per The Economist [@the_economist_esg_2022], "measurement of the size of the ESG market is confusing, the ratings are too subjective, and the industry over-promises and under-delivers." Issues are:
+
+-   ***measurement***: can be *sale of actively and passively managed funds specifically built around sustainability ratings* or *ESG integration, i.e. getting portfolio managers in non-ESG funds to use ratings as a risk-management tool*
+
+-   claims on the ***size*** of the ESG market: according to the Global Sustainable Investment Alliance, the size of the sustainable investment in 2020 reached \$35.3trn (more than a third of all assets under management in the big economies that it covers)... some \$25.2trn comes from ESG integration which is likely inflated
+
+-   ***inconsistency***: The ESG rating agencies are the veritable acme of inconsistency (a study of six of them found that they used 709 different metrics across 64 categories. Only ten categories were common to all---and they do not include such basics as greenhouse-gas emissions.)
+
+-   ***GREEN defined short term***: Is solar/eolic/electric vehicle really "green" under a life-cycle assessment perspective?
+
+-   ***big investors***: what started as ethical investments has been transformed by the world's biggest asset managers, such as BlackRock, State Street Global Advisors and Vanguard, which collectively own more than a fifth of the average firm in the s&p 500. Why:
+
+    -   by marketing itself as an environmental and social champion, the investment industry competes to attract the growing wealth of younger savers
+    -   the sale of ESG products helps asset managers to mitigate the two-decade-old curse of declining fees ( investors in sustainable funds paid a "greenium" compared with those in mainstream funds)
+
+-   ***outperformers?***: ESG funds broadly defined have outperformed the non-ESG sort in America and Europe since 2010. However, part of the outperformance was because ESG funds invested heavily in growth stocks, such as big tech (also hit this year though) \| this year returns from fossil fuels and other old-economy stocks have outperformed those in clean energy ➜ in reality returns depend on how ESG is measured
+
+    -   ?do successful firms embrace ESG or does ESG make firms successful?
+
+-   ***from land use 2 land grabs***: Bill gates is buying land all over and they will determinte who should own-produce(what)-eat

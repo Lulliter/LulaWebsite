@@ -42,9 +42,9 @@ R was definitely my "gateway drug" to programming, but overtime I have been disc
 `r distilltools::icon_link("file-powerpoint", text = "slides", "http://files.zevross.com/workshops/spatial/slides/html/0-deck-list.html")`                                        
  
 
-## boh 
+<!-- ## boh  -->
 
-```{r}
-distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/slogan")
-distilltools::icon_link("link", text = "html", "https://lulliter.github.io/slogan/")
-```
+<!-- ```{r} -->
+<!-- distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/slogan") -->
+<!-- distilltools::icon_link("link", text = "html", "https://lulliter.github.io/slogan/") -->
+<!-- ``` -->
