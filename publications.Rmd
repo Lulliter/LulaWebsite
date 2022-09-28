@@ -324,8 +324,9 @@ source(here::here("R", "functions_publications.R"))
 <!-- # --- OKKIO: HERE I AM PULLING FROM A DIFFERENT ZOTERO COLLECTION SO I USE a ≠ FUNCTION /no do it manually  --- # -->
 
 **Mimmi, L. M.** (2021, November). _Infrastructure maintenance among G20 top priorities._ Lesson presented at the WBG MOOC on “QII and green, resilient and inclusive development,” online. Retrieved from https://learning.edx.org/course/course-v1:WBGx+IQI01x+1T2022/home
-`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/MOOC_LuisaMimmi_pres_links_nov2021.pdf")`<br>                        **Mimmi, L. M.** (2020, June). _Integrating multi-dimensional data for inclusive and sustainable development of urban slums._ Invited Talk presented at the XVIII MEEW workshop 25-26 June 2020, Milano (online).
-`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Mimmi_MinEconomy&Finance.pdf")`<br>                             
+`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/MOOC_LuisaMimmi_pres_links_nov2021.pdf")`<br>
+**Mimmi, L. M.** (2020, June). _Integrating multi-dimensional data for inclusive and sustainable development of urban slums._ Invited Talk presented at the XVIII MEEW workshop 25-26 June 2020, Milano (online).
+`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Mimmi_MinEconomy&Finance.pdf")`<br>
 **Mimmi, L. M.** (2012, April). _Sampling, WTP and demand assessment: Findings from a household survey in 3 urban slums of Mumbai._ Presentation presented at the WB, Washington, D.C.
 `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Present_Sampl-Mumbai_2012.pdf")`                            
 
@@ -333,8 +334,9 @@ source(here::here("R", "functions_publications.R"))
 ## PUBLICATIONS
 
 ### Forthcoming Articles
+<!-- **L.M. Mimmi**, *'Caution: road work ahead': Italy in front of the challenge of infrastructure maintenance: existing issues and promising responses*. 2022 (Under Review). -->
 
-**L.M. Mimmi**, *'Caution: road work ahead': Italy in front of the challenge of infrastructure maintenance: existing issues and promising responses*. 2022 (Under Review).
+`r print_ref_buttons("mimmi_italy_2022")`
 
 ### Articles in Peer-reviewed Journals
 
