@@ -37,7 +37,7 @@ navbar:
         - text: "CV (ita)"
           href: https://raw.githubusercontent.com/Lulliter/cv/master/02_CV_Rmarkdown_ITA/Luisa-M-Mimmi_CV_ITA.pdf
         - text: "Résumé (eng)"
-          href: https://raw.githubusercontent.com/Lulliter/cv/master/03_CV_vitae/twentysecondsRES.pdf
+          href: https://raw.githubusercontent.com/Lulliter/cv/master/03_CV_vitae/twentyseconds_resume_pic.pdf
 # === categories for posts
 collections:
   posts:

@@ -33,7 +33,7 @@ msg="rebuilt on $NOW"
 
 # ... Commit Those changes.
 git commit -m "$msg"
-		# git commit -m "upd README"
+		# git commit -m "upd  _posts/2022-05-13-ener-recap/ener-recap.Rmd & publications.Rmd"
 		# git commit -m "revised CVs"
 		# git commit -m "small fix"
 		# git commit -m "add post _posts/2022-06-08-nerderland/nerderland.Rmd"
