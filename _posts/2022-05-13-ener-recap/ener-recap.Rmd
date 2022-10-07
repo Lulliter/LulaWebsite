@@ -43,11 +43,9 @@ Domanda di energia elettrica 2021: ***318.07 TWh*** (import ~14% of own producti
 
 ### Gas Italia
 
-Italy consumes 73-76 bn m3/year (MISE, 2018-2021) with peak of 10 bn m3 in the month of Jan and 4 bn m3 in Aug. <https://www.qualenergia.it/articoli/quanto-gas-consumiamo-ogni-mese-italia-perche-inverno-forte-rischio/>
+Italy **consumes** 73-76 bn m3/year (MISE, 2018-2021) ---with peak of 10 bn m3 in the month of Jan and 4 bn m3 in Aug <https://www.qualenergia.it/articoli/quanto-gas-consumiamo-ogni-mese-italia-perche-inverno-forte-rischio/>--- while it now **produces** ~ 3 bn m3/year (2021 data). ***Domestic production went from 20 bn of m3/year in the 1990s, 15 bn of m3/year in 2001, to the current 3***. Hence, Italy (like Europe) is now an importer. 
 
-Italy (like Europe) is now an importer: ***domestic production went from 20bn of m3/year in the 1990s, to the current 3bn of m3/year in 2021***, which is ***3-5%*** of demand
-
-***pricing*** Dagli anni '70 contratti di lungo periodo vincolavano fornitori e acquirenti indipendentemente dalla quantita comprata ("take or pay clause") ad un prezzo stabilito con una formula indicizzata e aggiornato periodicamente. Questi contratti sono tutt'ora in essere ma sono stati accorciati nella loro durata. E nella formula che determina il prezzo di cessione del gas è entrato con un peso via via maggiore, per esempio nei contratti con la Russia, quello dei **mercati spot**.
+> ***pricing*** Dagli anni '70 contratti di lungo periodo vincolavano fornitori e acquirenti indipendentemente dalla quantita comprata ("take or pay clause") ad un prezzo stabilito con una formula indicizzata e aggiornato periodicamente. Questi contratti sono tutt'ora in essere ma sono stati accorciati nella loro durata. E nella formula che determina il prezzo di cessione del gas è entrato con un peso via via maggiore, per esempio nei contratti con la Russia, quello dei **mercati spot**. Il mercato del gas fu portato in Olanda nel 2003 quando Romano Prodi presiedeva la Commissione Europea!
 
 Further, ***liberalization*** (late 1990s) has mobilized prices (depending on them gas goes to EU or Asia).
 

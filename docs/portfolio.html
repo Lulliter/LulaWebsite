@@ -527,6 +527,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
   
   .html-widget {
@@ -1599,15 +1600,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+  
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2123,20 +2130,26 @@ CV
                                         target = "_blank")  -->
 <ul>
 <li><strong>How slogans end up moving billions (2022)</strong><br />
-<a href="https://github.com/Lulliter/slogan" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a> <a href="https://lulliter.github.io/slogan/" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-link"></i> html</a></li>
+<a href="https://github.com/Lulliter/slogan" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a>
+<a href="https://lulliter.github.io/slogan/" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-link"></i> html</a></li>
 </ul>
 <h2 id="past">Past</h2>
 <ul>
 <li><p><strong>EDA of survey of water suppliers in Brazil - 2019</strong><br />
-<a href="https://github.com/Lulliter/BrazilWaterSurvey" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a> <a href="https://lulliter.github.io/BrazilWaterSurvey/" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-link"></i> html</a></p></li>
+<a href="https://github.com/Lulliter/BrazilWaterSurvey" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a>
+<a href="https://lulliter.github.io/BrazilWaterSurvey/" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-link"></i> html</a></p></li>
 <li><p><strong>Analysis of Green Card processing time - 2019</strong><br />
-<a href="https://github.com/Lulliter/GreenCard" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a> <a href="https://raw.githubusercontent.com/Lulliter/GreenCard/master/05_Analysis.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a></p></li>
+<a href="https://github.com/Lulliter/GreenCard" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a>
+<a href="https://raw.githubusercontent.com/Lulliter/GreenCard/master/05_Analysis.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a></p></li>
 <li><p><strong>NYE fundraising data analysis - 2019</strong><br />
 <a href="data/NYEPresentation_14April2019.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint"></i> slides</a></p></li>
 <li><p><strong>Brief analysis of “life expectancy at birth” using World Development Indicator (WDI) from the World Bank’s API - 2018</strong><br />
-<a href="https://github.com/Lulliter/DECdatascience" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a> <a href="https://raw.githubusercontent.com/Lulliter/DECdatascience/master/Part_1_Output.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a></p></li>
+<a href="https://github.com/Lulliter/DECdatascience" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a>
+<a href="https://raw.githubusercontent.com/Lulliter/DECdatascience/master/Part_1_Output.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a></p></li>
 <li><strong>Study on the competitivity of cities based on LinkedIn Data - 2017</strong><br />
-<a href="https://github.com/Lulliter/Linkedin" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a> <a href="https://raw.githubusercontent.com/Lulliter/Linkedin/master/Linkedin-Analysis3.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a> <a href="https://raw.githubusercontent.com/Lulliter/Linkedin/master/LinkedInPresentation-R_01Dec2017.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint"></i> slides</a><br />
+<a href="https://github.com/Lulliter/Linkedin" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a>
+<a href="https://raw.githubusercontent.com/Lulliter/Linkedin/master/Linkedin-Analysis3.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+<a href="https://raw.githubusercontent.com/Lulliter/Linkedin/master/LinkedInPresentation-R_01Dec2017.pdf" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint"></i> slides</a><br />
 </li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
