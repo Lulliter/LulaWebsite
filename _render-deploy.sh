@@ -25,7 +25,7 @@ git status
 			git add -u
 # ..... Add site `/docs` items changes to git Index.
 			# cd docs
-			# git add docs/posts/2022-06-08-nerderland/
+			# git add docs/data/*
 # ....Create Std commit "message"....
 NOW=$(date +"%d-%b-%Y %R")
 # echo "$NOW"
@@ -34,7 +34,7 @@ msg="rebuilt on $NOW"
 # ... Commit Those changes.
 git commit -m "$msg"
 		# git commit -m "upd  _posts/2022-05-13-ener-recap/ener-recap.Rmd & publications.Rmd"
-		# git commit -m "revised publications / Zotero"
+		# git commit -m "revised presentations | dropped RESUME"
 		# git commit -m "small fix"
 		# git commit -m "add post _posts/2022-06-08-nerderland/nerderland.Rmd"
 

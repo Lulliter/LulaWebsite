@@ -332,17 +332,13 @@ __Mimmi, L. M.__ (2021, November). “Building a More Resilient Future: Quality 
 __Mimmi, L. M.__ (2020, December). “High-Level Seminar on Quality Infrastructure Investment”. Panelist at OECD event.<br>
 <!-- crap pres  -->
 __Mimmi, L. M.__, E. E. Beuchod, B. Samoncini, and A. Taddei (2020). _Potenziali priorità per la Presidenza Italiana G20 nell'area tematica Infrastrutture._ `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/PresentazioneInfrastrutture__25Maggio2020.pdf")`<br>
-**Mimmi, L. M.** (2020, June). _Integrating multi-dimensional data for inclusive and sustainable development of urban slums._ Invited Talk presented at the XVIII MEEW workshop 25-26 June 2020, Milano (online).
-`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Mimmi_MinEconomy&Finance.pdf")`<br>
-__Mimmi, L. M.__ (2015, May). “WPP Database Design”. WB team meeting.
-`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Presentaion_WPP-M&Edb_9Feb2016.pdf")`<br>
-**Mimmi, L. M.** (2012, April). _Sampling, WTP and demand assessment: Findings from a household survey in 3 urban slums of Mumbai._ Presentation at the WB, Washington, D.C.
-`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Present_Sampl-Mumbai_2012.pdf")`<br>                __Mimmi, L. M.__ and J. Mugabi (2011). “OBAdata Website Launch”. GPOBA conference.
-`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Present_OBAdatabase_2011.pdf")`<br>
+**Mimmi, L. M.** (2020, June). _Integrating multi-dimensional data for inclusive and sustainable development of urban slums._ Invited Talk presented at the XVIII MEEW workshop 25-26 June 2020, Milano (online). `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Mimmi_MinEconomy&Finance.pdf")`<br>
+__Mimmi, L. M.__ (2015, May). “WPP Database Design”. WB team meeting. `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Presentaion_WPP-M&Edb_9Feb2016.pdf")`<br>
+**Mimmi, L. M.** (2012, April). _Sampling, WTP and demand assessment: Findings from a household survey in 3 urban slums of Mumbai._ Presentation at the WB, Washington, D.C. `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Present_Sampl-Mumbai_2012.pdf")`<br>
+__Mimmi, L. M.__ and J. Mugabi (2011). “OBAdata Website Launch”. GPOBA conference. `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Present_OBAdatabase_2011.pdf")`<br>
 __Mimmi, L. M.__ (2011-2011). “OBA Approach: Core Principles and a Case of Rural Electrification”. EnergyLab conference in Milan, Italy. 
 `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/OBAApproachCoreprinciples.pdf")`<br>
-__Mimmi, L. M.__ (2009). “Youth Employment and Entrepreneurship Programs: A Review of 8 Best Practices”. Presentation at the IADB, Washington, D.C.
-`r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Presentation_BrazilEduc_Iadb_2009.pdf")`<br>
+__Mimmi, L. M.__ (2009). “Youth Employment and Entrepreneurship Programs: A Review of 8 Best Practices”. Presentation at the IADB, Washington, D.C. `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/Presentation_BrazilEduc_Iadb_2009.pdf")`<br>
 
 ## PUBLICATIONS
 
