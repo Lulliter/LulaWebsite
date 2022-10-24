@@ -1,0 +1,25 @@
+---
+title: "R notes: cluster analysis"
+# description: |
+#   A short description of the post.
+author: Luisa M. Mimmi
+date: 2022-10-24
+output:
+  distill::distill_article:
+    self_contained: false
+categories: [tools]
+editor_options: 
+  markdown: 
+    wrap: 80
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Here was a note written while I was learning how to implement **cluster analysis** in R. 
+
+[Rpubs note](https://rpubs.com/Lulliter/cluster-analysis)
+
+

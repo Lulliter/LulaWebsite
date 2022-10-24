@@ -1,6 +1,6 @@
 # CREATE NEW POST STRUCTURE
 
-distill::create_post(title = "nerderland",
+distill::create_post(title = "R notes: cluster analysis",
 							collection = "posts",
 							author = "Luisa M. Mimmi",
 							slug = "auto",

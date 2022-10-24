@@ -1,6 +1,6 @@
 ---
 title: "Luisa M. Mimmi"
-image: "images/Lula_unipv_crop.jpeg"
+image: "images/portrait.jpg" #"images/Lula_unipv_crop.jpeg"
 # description: |
 #   Welcome to the website. I hope you enjoy it!
 links:
