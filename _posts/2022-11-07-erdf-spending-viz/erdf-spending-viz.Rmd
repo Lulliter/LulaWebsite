@@ -1,0 +1,41 @@
+---
+title: "Exploring ERDF 2014-2020 funds in Italy"
+# description: |
+#   A short description of the post.
+author:
+  - name: Luisa M. Mimmi
+    url: {}
+date: 2022-11-07
+output:
+  distill::distill_article:
+    self_contained: false
+categories: [tools]
+citation: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+ 
+# Button 
+library(distilltools)
+# Icons 
+# https://jpswalsh.github.io/academicons/
+# 
+# icon_link(
+#   icon = NULL,
+#   text = NULL,
+#   url = NULL,
+#   style = "default",
+#   class = "icon-link",
+#   target = "_blank"
+# )
+
+
+
+```
+
+Here I did some exploratory analysis on the EU funds and what percentage of them has been disbursed in Italy for the 2014-2020 funding cycle. Incidentally, I learned to use a fun R package **`reactable`** (based on the `React Table` JavaScript library).
+
+Below links to:
+
+-   Analysis: `r distilltools::icon_link("open-data", "Rpubs file", "https://rpubs.com/Lulliter/ERDF")` & Code: `r distilltools::icon_link("github", "Github repo", "https://github.com/Lulliter/plan2implem")`

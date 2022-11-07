@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2022-11-07-erdf-spending-viz/",
+    "title": "Exploring ERDF 2014-2020 funds in Italy",
+    "description": {},
+    "author": [
+      {
+        "name": "Luisa M. Mimmi",
+        "url": {}
+      }
+    ],
+    "date": "2022-11-07",
+    "categories": [
+      "tools"
+    ],
+    "contents": "\nHere I did some exploratory analysis on the EU funds and what percentage of them has been disbursed in Italy for the 2014-2020 funding cycle. Incidentally, I learned to use a fun R package reactable (based on the React Table JavaScript library).\nBelow links to:\nAnalysis:  Rpubs file & Code:  Github repo\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-11-07T22:05:11+01:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-10-24-r-notes-cluster-analysis/",
     "title": "R notes: cluster analysis",
     "description": {},

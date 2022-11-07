@@ -29,3 +29,20 @@ distill::create_post(
 	draft = FALSE,
 	edit = interactive()
 )
+
+distill::create_post(
+	title = "Exploring ERDF 2014-2020 funds in Italy", # mandatory
+	author = "auto",
+	date = as.Date("2022-11-07"),
+	slug = "ERDF-spending-viz", # generates a website slug (URL)
+	date_prefix = TRUE, # adds date for sorting
+	draft = FALSE,
+	edit = interactive()
+)
+
+# # importing a post from another repo (RPUBS)
+# distill::import_post("https://github.com/Lulliter/plan2implem",
+# 							#	collection = "posts",
+# 							date = as.Date("2022-11-07"),
+# 							slug = "ERDF-spending-viz")
+#
