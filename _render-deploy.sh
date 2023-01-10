@@ -26,8 +26,8 @@ git status
 # ..... Add site `/docs` items changes to git Index.
 			# cd docs
 			# git add docs/data/*
-		git add 	_posts/2022-10-24-r-notes-cluster-analysis/
-		git add docs/posts/2022-10-24-r-notes-cluster-analysis/
+		git add 	 _posts/2022-11-07-erdf-spending-viz/
+		git add docs/posts/2022-11-07-erdf-spending-viz/
 		git add images/portrait.jpg
 		git add docs/images/portrait.jpg
 
@@ -42,7 +42,7 @@ git commit -m "$msg"
 		# git commit -m "upd  _posts/2022-05-13-ener-recap/ener-recap.Rmd & publications.Rmd"
 		# git commit -m "revised presentations | dropped RESUME"
 		# git commit -m "small fix"
-		# git commit -m "add post _posts/2022-10-24-r-notes-cluster-analysis/"
+		# git commit -m "add post docs/posts/2022-11-07-erdf-spending-viz/"
 
 
 # ... Push source and build repos.

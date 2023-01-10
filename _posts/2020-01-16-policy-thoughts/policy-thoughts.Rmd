@@ -13,6 +13,11 @@ output:
 draft: true
 categories: [ideas]
 ---
+
+# Privatizzazione 
+
+
+
 # Totalitarismo
 
 [Rod Dreher "Live Not By Lies" 2020]
