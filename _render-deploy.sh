@@ -26,8 +26,8 @@ git status
 # ..... Add site `/docs` items changes to git Index.
 			# cd docs
 			# git add docs/data/*
-		git add 	 _posts/2022-11-07-erdf-spending-viz/
-		git add docs/posts/2022-11-07-erdf-spending-viz/
+		git add 	  _posts/2023-01-10-pnrr/
+		git add docs/posts/2023-01-10-pnrr/
 		git add images/portrait.jpg
 		git add docs/images/portrait.jpg
 
@@ -40,7 +40,7 @@ msg="rebuilt on $NOW"
 # ... Commit Those changes.
 git commit -m "$msg"
 		# git commit -m "upd  _posts/2022-05-13-ener-recap/ener-recap.Rmd & publications.Rmd"
-		# git commit -m "revised presentations | dropped RESUME"
+		# git commit -m "new post on PNRR"
 		# git commit -m "small fix"
 		# git commit -m "add post docs/posts/2022-11-07-erdf-spending-viz/"
 

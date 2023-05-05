@@ -25,7 +25,6 @@ p_load_gh("crsh/citr") # not on CRAN (as of Jan 2023!)
 # 2 use type shortcut: "cmd ' "
 ```
 
-
 # PNRR
 
 55 obiettivi (riforme e investimenti) entro il 2022
@@ -59,29 +58,19 @@ Titolare di 4 misure:
 
         + Miss 5 Inclusione e Coesione Comp 3.  **Interventi speciali per la coesione territoriale** ➜ (€ 1.70 Mld)  
         
-### MITE PNRR [roadmap](https://www.mite.gov.it/pagina/pnrr-roadmap) e [slide](https://www.mite.gov.it/sites/default/files/archivio/allegati/PNRR/slide_PNRR_agg2nov2021.pdf) \> 
+
+### MITE PNRR [roadmap](https://www.mite.gov.it/pagina/pnrr-roadmap) e [slide](https://www.mite.gov.it/sites/default/files/archivio/allegati/PNRR/slide_PNRR_agg2nov2021.pdf) \>
 
 ### MIPAAF - Investimento 4.3 \| Investimenti nella resilienza dell'agrosistema irriguo per una migliore gestione delle risorse idriche -\> 880 mln
 
-
-------------------------------------------------------------------------
-# Dotazione per Missione
-
-## Missione 1 (€ 40 mld) ➜ Digitalizzazione, Innov., Competit... (?) ➜ ? componenti
-
-## Missione 2 (60 mld) ➜ Transizione Ecologica (MITE) ➜ 4 componenti
-
-**COMPONENTI**
-
-1.  **Economia circolare e agricoltura sostenibile** ➜ (€ 2.3 Mld)
-2.  **Energia rinnovabile, idrogeno, rete e mobilita sostenibile** ➜ (€ 13.9 Mld)
-3.  **Efficienza energetica e riqualificazione degli edifici** ➜ (€ 14.1 Mld)
-4.  **Tutela del territorio e della risorsa idrica** ➜ (€ 4.1 Mld) [TOT = € 34.7 Mld]
-    -   riduzione dispersione risorse idriche
-
-**M&T** (Milestones e Targets) 89/527 (totali)
-
-------------------------------------------------------------------------
+|                                                                                                                                                                                                                                                                                                                                                               |
+|:-----------------------------------------------------------------------|
+| \# Dotazione per Missione                                                                                                                                                                                                                                                                                                                                     |
+| \## Missione 1 (€ 40 mld) ➜ Digitalizzazione, Innov., Competit... (?) ➜ ? componenti                                                                                                                                                                                                                                                                          |
+| \## Missione 2 (60 mld) ➜ Transizione Ecologica (MITE) ➜ 4 componenti                                                                                                                                                                                                                                                                                         |
+| **COMPONENTI**                                                                                                                                                                                                                                                                                                                                                |
+| 1\. **Economia circolare e agricoltura sostenibile** ➜ (€ 2.3 Mld) 2. **Energia rinnovabile, idrogeno, rete e mobilita sostenibile** ➜ (€ 13.9 Mld) 3. **Efficienza energetica e riqualificazione degli edifici** ➜ (€ 14.1 Mld) 4. **Tutela del territorio e della risorsa idrica** ➜ (€ 4.1 Mld) [TOT = € 34.7 Mld] - riduzione dispersione risorse idriche |
+| **M&T** (Milestones e Targets) 89/527 (totali)                                                                                                                                                                                                                                                                                                                |
 
 ### M2 C1. **Economia circolare e agricoltura sostenibile**
 
@@ -155,6 +144,8 @@ Titolare di 4 misure:
 
 ## Missione 6 (? mld) ➜ Salute (?) ➜ ? componenti
 
-# Status
+# STATUS
 
-xxx [@dipcoe2022] 
+-   E' caotico dall'inizio \>"Sia il NextGenEu, sia il Pnrr non si distinguono particolarmente per la chiarezza degli obiettivi e per i dettagli del programma di realizzazione. [...] Né essi si pongono il problema di valutare l'impatto economico e sociale dell'allocazione delle risorse e i benefici e i costi economici delle azioni proposte. [...] lo stato attuale del Pnrr dà l'impressione di un approccio caotico alla programmazione, con una molteplicità di progetti non coordinati, e di dubbia realizzabilità, e una gestione decentrata in difficoltà sia per la valutazione dei progetti stessi, sia per la loro implementazione. Mancano inoltre caratteristiche cruciali quali *modularità*, *replicabilità* e *rapidità di esecuzione* per un piano di investimenti che si propone realizzazioni di successo in tempi brevi. Queste condizioni sono inoltre particolarmente critiche nel Mezzogiorno." [@scandizzo_gli_2022]
+
+-   Servono più informazioni sulla: a) spesa, b) milestones (qualit) e c) target (quanti)... A partire dal 2023 cominceranno a prevalere i target consistenti in risultati effettivamente misurabili, in lavori concretamente eseguiti, che sono una sfida assai più difficile [@zanardi2022]

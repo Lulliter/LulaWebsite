@@ -1,4 +1,15 @@
 # CREATE NEW POST STRUCTURE
+library(distill)
+
+distill::create_post(title = "1st attempt at tidyeval",
+							collection = "posts",
+							author ="Luisa M. Mimmi",
+							slug = "tidyeval",
+							date =  Sys.Date(),
+							draft = TRUE,
+							#categories = "tools"
+)
+
 
 distill::create_post(title = "R notes: cluster analysis",
 							collection = "posts",
@@ -12,14 +23,6 @@ rmarkdown::render("_posts/2009-02-21-sussidiariet-e-sviluppo-lelettricit-nelle-f
 distill::rename_post_dir(post_dir = "_posts/2009-02-21-sussidiariet-e-sviluppo-lelettricit-nelle-favelas-dellamerica-latina/", slug = "2009-02-21-sussidiar")
 
 
-distill::create_post(title = "Github Pages & AWS",
-							collection = "posts",
-							author ="Luisa M. Mimmi",
-							slug = "GithubPages-AWS",
-							date =  Sys.Date(),
-							draft = FALSE,
-							#categories = "tools"
-)
 
 distill::create_post(
 	title = "Nerdy stuff", # mandatory
