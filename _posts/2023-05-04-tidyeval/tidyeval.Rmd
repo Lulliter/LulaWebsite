@@ -20,8 +20,6 @@ library(tidyverse)
 library(rlang)
 ```
 
-
-
 # Learning resources
 
 	+ [Bruno Rodriguez YT vid](https://www.youtube.com/watch?v=pcvWKVlRmwE)
@@ -37,7 +35,7 @@ Premise: `tidyverse` functions use tidy evaluation = *they don't evaluate the va
 
 ## NON STANDARD EVALUATION in TIDYVERSE
 
-			+ **DEFUSING** function arguments: I can create a "quosure" with `rlang::enquo()` /  `rlang::enquos()` so an expression can be examined, modified, and injected into other expressions.
+	+ **DEFUSING** function arguments: I can create a "quosure" with `rlang::enquo()` /  `rlang::enquos()` so an expression can be examined, modified, and injected into other expressions.
 
 
 ## TWO (comlpementary) FORMS of NSE used in the Tidyverse 
