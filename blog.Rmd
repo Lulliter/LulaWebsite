@@ -1,7 +1,10 @@
 ---
-title: "Featured Posts"
+title: "Miscellaneous Posts"
 listing: posts
 ---
 
 <br>Ipse dixit: [Advice to aspiring data scientists: start a blog](http://varianceexplained.org/r/start-blog/) _(by David Robinson)_
 <br>
+
+ 
+This is a mixed collection of technical posts, mostly related to R programming (category **tools**), along with brief posts  examining case studies or policies issues I wanted to discuss (hence the **ideas** category).

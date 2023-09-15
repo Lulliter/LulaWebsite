@@ -1,7 +1,7 @@
 ---
 title: "PNRR"
 description: |
-  Review and progress staatus of Italy's PNRR plan
+  Review and progress status of Italy's PNRR plan
 # author:
 #   - name: Luisa M. Mimmi
 #     url: {}
@@ -11,7 +11,7 @@ output:
     self_contained: false
 draft: false
 bibliography: _PNRR.bib
-categories: [ideas]    
+categories: [ideas, ITA 🇮🇹]    
 ---
 
 ```{r setup, include=FALSE}
@@ -149,3 +149,5 @@ Titolare di 4 misure:
 -   E' caotico dall'inizio \>"Sia il NextGenEu, sia il Pnrr non si distinguono particolarmente per la chiarezza degli obiettivi e per i dettagli del programma di realizzazione. [...] Né essi si pongono il problema di valutare l'impatto economico e sociale dell'allocazione delle risorse e i benefici e i costi economici delle azioni proposte. [...] lo stato attuale del Pnrr dà l'impressione di un approccio caotico alla programmazione, con una molteplicità di progetti non coordinati, e di dubbia realizzabilità, e una gestione decentrata in difficoltà sia per la valutazione dei progetti stessi, sia per la loro implementazione. Mancano inoltre caratteristiche cruciali quali *modularità*, *replicabilità* e *rapidità di esecuzione* per un piano di investimenti che si propone realizzazioni di successo in tempi brevi. Queste condizioni sono inoltre particolarmente critiche nel Mezzogiorno." [@scandizzo_gli_2022]
 
 -   Servono più informazioni sulla: a) spesa, b) milestones (qualit) e c) target (quanti)... A partire dal 2023 cominceranno a prevalere i target consistenti in risultati effettivamente misurabili, in lavori concretamente eseguiti, che sono una sfida assai più difficile [@zanardi2022]
+
+

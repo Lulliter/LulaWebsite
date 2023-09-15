@@ -113,12 +113,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft","categories","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Nerderland"]},{"type":"character","attributes":{},"value":["Useful R resources.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Luisa M. Mimmi"]}]}]},{"type":"character","attributes":{},"value":["2022-06-08"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["tools"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[100]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft","categories","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Nerderland"]},{"type":"character","attributes":{},"value":["Useful R resources.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Luisa M. Mimmi"]}]}]},{"type":"character","attributes":{},"value":["2022-06-08"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["tools"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[100]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["nerderland_files/anchor-4.2.2/anchor.min.js","nerderland_files/bowser-1.9.3/bowser.min.js","nerderland_files/distill-2.2.21/template.v2.js","nerderland_files/header-attrs-2.14/header-attrs.js","nerderland_files/jquery-3.6.0/jquery-3.6.0.js","nerderland_files/jquery-3.6.0/jquery-3.6.0.min.js","nerderland_files/jquery-3.6.0/jquery-3.6.0.min.map","nerderland_files/popper-2.6.0/popper.min.js","nerderland_files/tippy-6.2.7/tippy-bundle.umd.min.js","nerderland_files/tippy-6.2.7/tippy-light-border.css","nerderland_files/tippy-6.2.7/tippy.css","nerderland_files/tippy-6.2.7/tippy.umd.min.js","nerderland_files/webcomponents-2.0.0/webcomponents.js","toc-style.css","workflow.jpg"]}
+  {"type":"character","attributes":{},"value":["nerderland_files/anchor-4.2.2/anchor.min.js","nerderland_files/bowser-1.9.3/bowser.min.js","nerderland_files/distill-2.2.21/template.v2.js","nerderland_files/header-attrs-2.14/header-attrs.js","nerderland_files/header-attrs-2.21/header-attrs.js","nerderland_files/jquery-3.6.0/jquery-3.6.0.js","nerderland_files/jquery-3.6.0/jquery-3.6.0.min.js","nerderland_files/jquery-3.6.0/jquery-3.6.0.min.map","nerderland_files/popper-2.6.0/popper.min.js","nerderland_files/tippy-6.2.7/tippy-bundle.umd.min.js","nerderland_files/tippy-6.2.7/tippy-light-border.css","nerderland_files/tippy-6.2.7/tippy.css","nerderland_files/tippy-6.2.7/tippy.umd.min.js","nerderland_files/webcomponents-2.0.0/webcomponents.js","toc-style.css","workflow.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -189,6 +189,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1261,15 +1262,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1468,7 +1475,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="nerderland_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="nerderland_files/header-attrs-2.21/header-attrs.js"></script>
   <script src="nerderland_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="nerderland_files/popper-2.6.0/popper.min.js"></script>
   <link href="nerderland_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1520,49 +1527,35 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#start-at-the-kernel">Start at the
-<em>kernel</em>…</a></li>
-<li><a href="#geospatial-analysis-in-r">Geospatial Analysis… in R</a>
-<ul>
-<li><a href="#boh">boh</a></li>
-</ul></li>
+<li><a href="#start-at-the-kernel" id="toc-start-at-the-kernel">Start at the <em>kernel</em>…</a></li>
+<li><a href="#geospatial-analysis-in-r" id="toc-geospatial-analysis-in-r">Geospatial Analysis… in R</a></li>
 </ul>
 </nav>
 </div>
 <!-- needs the \ -->
 <figure>
-<img src="workflow.jpg" title="Artwork by @allison_horst"
-alt="Artwork by @allison_horst" />
+<img src="workflow.jpg" title="Artwork by @allison_horst" alt="Artwork by @allison_horst" />
 <figcaption aria-hidden="true">Artwork by @allison_horst</figcaption>
 </figure>
 <h1 id="start-at-the-kernel">Start at the <em>kernel</em>…</h1>
-<p>R was definitely my “gateway drug” to programming, but overtime I
-have been discovering the <em>magic</em> of the command line and I am
-progressively becoming more at ease with <em>command-line interfaces
-(CLI)</em> or <code>shell</code> scripting in all its flavors
-(<code>bash</code>, <code>zsh</code>, <code>git</code>,
-<code>make</code>) and enjoying their universal, dry and no-nonsense
-POWER!</p>
+<p>R was definitely my “gateway drug” to programming, but overtime I have been discovering the <em>magic</em> of the command line and I am progressively becoming more at ease with <em>command-line interfaces (CLI)</em> or <code>shell</code> scripting in all its flavors (<code>bash</code>, <code>zsh</code>, <code>git</code>, <code>make</code>) and enjoying their universal, dry and no-nonsense POWER!</p>
 <ul>
-<li>Jeroen Janssens - <strong>Set your R code free; turn it into a
-command-line tool</strong> - 2022 -
+<li>Jeroen Janssens - <strong>Set your R code free; turn it into a command-line tool</strong> - 2022 -
 <a href="https://www.youtube.com/watch?v=2G3FjofP87o" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> video</a></li>
 </ul>
 <h1 id="geospatial-analysis-in-r">Geospatial Analysis… in R</h1>
 <ul>
-<li>Josiah Parry - <strong>Exploratory Spatial Data Analysis in
-R</strong> - 2022 -
+<li>Josiah Parry - <strong>Exploratory Spatial Data Analysis in R</strong> - 2022 -
 <a href="https://www.youtube.com/watch?v=i_MA1U6SJ1Y&amp;t=1564s" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> video</a></li>
-<li>Zev Ross - <strong>[Workshop on] Modern Geospatial Data Analysis
-with R</strong> - 2022 -
+<li>Zev Ross - <strong>[Workshop on] Modern Geospatial Data Analysis with R</strong> - 2022 -
 <a href="http://files.zevross.com/workshops/spatial/slides/html/0-deck-list.html" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint"></i> slides</a></li>
 </ul>
-<h2 id="boh">boh</h2>
-<div class="layout-chunk" data-layout="l-body">
-<p><a href="https://github.com/Lulliter/slogan" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> repo</a><a href="https://lulliter.github.io/slogan/" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-link"></i> html</a></p>
-</div>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!-- ## boh  -->
+<!-- ```{r} -->
+<!-- distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/slogan") -->
+<!-- distilltools::icon_link("link", text = "html", "https://lulliter.github.io/slogan/") -->
+<!-- ``` -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -13,7 +13,11 @@ Below is a list of different projects using `r fontawesome::fa("r-project", fill
 										class = "icon-link",
 										target = "_blank")  -->
 										
++  **Static website for press review (2023)**  
+`r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/rassegna") `
+`r distilltools::icon_link("link", text = "html", "https://lulliter.github.io/rassegna/") `
 										
+
 +  **How slogans end up moving billions (2022)**  
 `r distilltools::icon_link("github", text = "repo", "https://github.com/Lulliter/slogan") `
 `r distilltools::icon_link("link", text = "html", "https://lulliter.github.io/slogan/") `

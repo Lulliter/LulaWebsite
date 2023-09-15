@@ -8,7 +8,7 @@ output:
     self_contained: false
 draft: true
 bibliography: Green_Ener_Resil.bib
-categories: [ideas]
+categories: [ideas, ITA 🇮🇹]
 ---
 
 ```{r setup, include=FALSE}

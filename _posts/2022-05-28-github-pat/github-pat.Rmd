@@ -10,7 +10,7 @@ output:
     toc: TRUE
     toc_depth: 2
     toc_float: TRUE
-draft: false
+draft: true
 categories: [tools]
 editor_options:
   markdown:

@@ -1,0 +1,95 @@
+
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      unset;
+  --body-size:       unset;
+  --code-size:       unset;
+  --aside-size:      unset;
+  --fig-cap-size:    unset;
+  /*-- Main font colors --*/
+  --title-color:     unset;
+  --header-color:    unset;
+  --body-color:      unset;
+  --aside-color:     unset;
+  --fig-cap-color:   unset;
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    unset; 
+  --mono-font:       unset; 
+  --body-font:       unset; 
+  --navbar-font:     unset; 
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    unset;
+  --heading-color:   unset;
+  --body-size:       unset;
+  --body-color:      unset;
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    unset;
+  --contents-size:   unset;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    unset;
+  --heading-color:   unset;
+  --text-size:       unset;
+  --text-color:      unset;
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       30px;    /* logo size */
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        30px;
+  --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
+  --bkgd-color:       #003266;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
+  --bkgd-color:       #003266;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+/*  CSS style of https://qntkhvn.netlify.app/projects.html */
+
+
+.distill-site-nav {
+  color:              rgba(255, 255, 255, 0.8);
+  background-color:   #003266; /* #0F2E3D; */
+  font-size:            30px;
+  font-weight:          300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color:              rgba(168,138,35,1.00); /* gold var(--color-tertiary);*/
+}

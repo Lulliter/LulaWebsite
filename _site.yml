@@ -37,7 +37,7 @@ navbar:
         # - text: "CV (ita)"
         #   href: https://raw.githubusercontent.com/Lulliter/cv/master/02_CV_Rmarkdown_ITA/Luisa-M-Mimmi_CV_ITA.pdf
         - text: "Résumé (eng)"
-          href: data/LMMimmi_RES_ENG.pdf # LMMimmi_RES_ITA.pdf
+          href: data/LMMimmi_RES_ENG_journ.pdf #data/LMMimmi_RES_ENG.pdf # LMMimmi_RES_ITA.pdf
 # === categories for posts %>%
 collections:
   posts:

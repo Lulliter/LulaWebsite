@@ -11,6 +11,8 @@ editor_options:
 
 <!-- # [setup] -->
 
+Below are various publications that I authored/co-authored in my professional career as Policy Analyst.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
@@ -325,6 +327,10 @@ source(here::here("R", "functions_publications.R"))
 ## SELECTED PRESENTATIONS
 <!-- # --- OKKIO: HERE I AM PULLING FROM A DIFFERENT ZOTERO COLLECTION SO I USE a ≠ FUNCTION /no do it manually  --- # -->
 
+reproducibility_2023.pdf
+
+
+**Mimmi, L. M.** (2023, July). _Principi, tecniche e strumenti per l’analisi riproducibile dei dati._ Seminar on reproducible data analysis offered to the PNRR Unit, within the Presidency of the Ministries Council, Rome. `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/reproducibility_2023.pdf")`<br>
 **Mimmi, L. M.** (2021, November). _Infrastructure maintenance among G20 top priorities._ Lesson presented at the WBG MOOC on “QII and green, resilient and inclusive development” [Online.](https://olc.worldbank.org/content/investing-quality-infrastructure-green-inclusive-and-resilient-recovery) `r distilltools::icon_link("file-powerpoint", text = "slides", "./data/MOOC_LuisaMimmi_pres_links_nov2021.pdf")`<br>
 __Mimmi, L. M.__ (2021, November). “Building a More Resilient Future: Quality Infrastructure for All - [Session on \"Resilient Infrastructure for the Recovery\"]”.<br>
 <!-- crap pres  -->

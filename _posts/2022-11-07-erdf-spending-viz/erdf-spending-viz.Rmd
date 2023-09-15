@@ -9,7 +9,7 @@ date: 2022-11-07
 output:
   distill::distill_article:
     self_contained: false
-categories: [articles]
+categories: [ideas]
 citation: false
 ---
 
