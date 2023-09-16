@@ -31,6 +31,10 @@ git status
 		git add images/portrait.jpg
 		git add docs/images/portrait.jpg
 
+ git add       data/LMMimmi_RES_ENG_journ.pdf
+ git add        data/reproducibility_2023.pdf
+ git add        docs/data/LMMimmi_RES_ENG_journ.pdf
+ git add        docs/data/reproducibility_2023.pdf
 
 # ....Create Std commit "message"....
 NOW=$(date +"%d-%b-%Y %R")
@@ -40,7 +44,7 @@ msg="rebuilt on $NOW"
 # ... Commit Those changes.
 git commit -m "$msg"
 		# git commit -m "upd  _posts/2022-05-13-ener-recap/ener-recap.Rmd & publications.Rmd"
-		# git commit -m "new post on tidy evall"
+		# git commit -m "ripulito x APPSILON + diff CV"
 		# git commit -m "small fix"
 		# git commit -m "add post docs/posts/2022-11-07-erdf-spending-viz/"
 		# git commit -m "change CV (from data/...) + added publ "
