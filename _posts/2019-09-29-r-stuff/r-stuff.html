@@ -109,12 +109,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","slug","date","output","draft","categories","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Useful R stuff"]},{"type":"character","attributes":{},"value":["2019-09-29-r-stuff"]},{"type":"character","attributes":{},"value":["2019-09-29"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["tools"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[100]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","slug","date","output","draft","categories","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Useful R stuff"]},{"type":"character","attributes":{},"value":["2019-09-29-r-stuff"]},{"type":"character","attributes":{},"value":["2019-09-29"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth","toc_float"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["tools"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["markdown"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["wrap"]}},"value":[{"type":"integer","attributes":{},"value":[100]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dilbertprogramming.png","r-stuff_files/anchor-4.2.2/anchor.min.js","r-stuff_files/bowser-1.9.3/bowser.min.js","r-stuff_files/distill-2.2.21/template.v2.js","r-stuff_files/header-attrs-2.13/header-attrs.js","r-stuff_files/header-attrs-2.14/header-attrs.js","r-stuff_files/jquery-3.6.0/jquery-3.6.0.js","r-stuff_files/jquery-3.6.0/jquery-3.6.0.min.js","r-stuff_files/jquery-3.6.0/jquery-3.6.0.min.map","r-stuff_files/popper-2.6.0/popper.min.js","r-stuff_files/tippy-6.2.7/tippy-bundle.umd.min.js","r-stuff_files/tippy-6.2.7/tippy-light-border.css","r-stuff_files/tippy-6.2.7/tippy.css","r-stuff_files/tippy-6.2.7/tippy.umd.min.js","r-stuff_files/webcomponents-2.0.0/webcomponents.js","Rcupcake.jpg"]}
+  {"type":"character","attributes":{},"value":["dilbertprogramming.png","r-stuff_files/anchor-4.2.2/anchor.min.js","r-stuff_files/bowser-1.9.3/bowser.min.js","r-stuff_files/distill-2.2.21/template.v2.js","r-stuff_files/header-attrs-2.13/header-attrs.js","r-stuff_files/header-attrs-2.14/header-attrs.js","r-stuff_files/header-attrs-2.21/header-attrs.js","r-stuff_files/jquery-3.6.0/jquery-3.6.0.js","r-stuff_files/jquery-3.6.0/jquery-3.6.0.min.js","r-stuff_files/jquery-3.6.0/jquery-3.6.0.min.map","r-stuff_files/popper-2.6.0/popper.min.js","r-stuff_files/tippy-6.2.7/tippy-bundle.umd.min.js","r-stuff_files/tippy-6.2.7/tippy-light-border.css","r-stuff_files/tippy-6.2.7/tippy.css","r-stuff_files/tippy-6.2.7/tippy.umd.min.js","r-stuff_files/webcomponents-2.0.0/webcomponents.js","Rcupcake.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -185,6 +185,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1257,15 +1258,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1464,7 +1471,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="r-stuff_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="r-stuff_files/header-attrs-2.21/header-attrs.js"></script>
   <script src="r-stuff_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="r-stuff_files/popper-2.6.0/popper.min.js"></script>
   <link href="r-stuff_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1511,113 +1518,72 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><img src="dilbertprogramming.png" /></p>
 <!-- <img src="Rcupcake.jpg" width="40%"> -->
 <p>Here are some useful links and resources for R programming.</p>
-<h3 id="r-from-terminal-automation">R from TERMINAL &amp;
-AUTOMATION</h3>
+<h3 id="r-from-terminal-automation">R from TERMINAL &amp; AUTOMATION</h3>
 <ul>
-<li><p>Various resources from the course <a
-href="https://stat545.stat.ubc.ca/notes/notes-b03/">STAT545</a></p></li>
-<li><p><a
-href="https://github.com/STAT545-UBC/STAT545-UBC-original-website/blob/master/automation01_slides/slides.md">Shaun
-Jackman and Jenny Bryan’s automation notes</a> for getting familiar with
-the command line.</p></li>
-<li><p>Great post <a
-href="https://jozefhajnala.gitlab.io/r/r905-rstudio-terminal/">Using
-rstudio-terminal/</a></p></li>
-<li><p>More on <a
-href="https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal">Using
-the RStudio Terminal</a></p></li>
+<li>Various resources from the course <a href="https://stat545.stat.ubc.ca/notes/notes-b03/">STAT545</a></li>
+<li><a href="https://github.com/STAT545-UBC/STAT545-UBC-original-website/blob/master/automation01_slides/slides.md">Shaun Jackman and Jenny Bryan’s automation notes</a> for getting familiar with the command line.</li>
+<li>Great post <a href="https://jozefhajnala.gitlab.io/r/r905-rstudio-terminal/">Using rstudio-terminal/</a></li>
+<li>More on <a href="https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal">Using the RStudio Terminal</a></li>
+<li>Jeroen Janssens - <strong>Set your R code free; turn it into a command-line tool</strong> - 2022 -
+<a href="https://www.youtube.com/watch?v=2G3FjofP87o" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> video</a></li>
 </ul>
 <h3 id="working-with-strings-regex">Working with strings, regex</h3>
 <ul>
-<li>Great post <a
-href="https://jozefhajnala.gitlab.io/r/r007-string-manipulation/">How to
-work with strings in base R…</a></li>
+<li>Great post <a href="https://jozefhajnala.gitlab.io/r/r007-string-manipulation/">How to work with strings in base R…</a></li>
 </ul>
 <h3 id="general">General</h3>
 <ul>
-<li><a href="https://community.rstudio.com/">Rstudio Community</a>:
-forum and discussions organized by macro-topic.</li>
+<li><a href="https://community.rstudio.com/">Rstudio Community</a>: forum and discussions organized by macro-topic.</li>
 <li><a href="https://rseek.org/">Rseek</a>: a sort of wiki R page!</li>
-<li><a href="https://www.littlemissdata.com/blog/rstudioconf2019">From
-rstudioconf2019</a>: a collection of R resources by <span
-class="citation" data-cites="littlemissdata">@littlemissdata</span></li>
-<li><a
-href="https://www.rstudio.com/resources/cheatsheets/">Cheatsheets</a>:
-self-explanatory</li>
-<li><a href="https://whattheyforgot.org/">WTF</a>.. or <em>“What They
-Forgot to Teach You About R”</em> :wink: Another life-changing guide
-from Jenny Bryan</li>
-<li><a href="https://google.github.io/styleguide/Rguide.xml">Google’s R
-Style Guide</a></li>
+<li><a href="https://www.littlemissdata.com/blog/rstudioconf2019">From rstudioconf2019</a>: a collection of R resources by <span class="citation" data-cites="littlemissdata">@littlemissdata</span></li>
+<li><a href="https://www.rstudio.com/resources/cheatsheets/">Cheatsheets</a>: self-explanatory</li>
+<li><a href="https://whattheyforgot.org/">WTF</a>.. or <em>“What They Forgot to Teach You About R”</em> :wink: Another life-changing guide from Jenny Bryan</li>
+<li><a href="https://google.github.io/styleguide/Rguide.xml">Google’s R Style Guide</a></li>
 </ul>
 <h3 id="project-management">Project Management</h3>
 <ul>
-<li>Best Practices <a
-href="https://blog.revolutionanalytics.com/2015/11/r-projects.html">Handling
-Packages</a></li>
-<li><a
-href="https://www.r-bloggers.com/%F0%9F%93%81-project-oriented-workflow/">R-Bloggers
-blog (scroll to) reference</a>: collection of links…</li>
-<li><a href="https://peerj.com/preprints/3192.pdf">analytical work
-reproducibly using R</a>: Pre-print article</li>
-<li><a
-href="http://kbroman.org/Tools4RR/assets/lectures/06_org_eda_withnotes.pdf">Karl
-Broman slides</a></li>
-<li>Joris Muller’s Blog on <a
-href="http://blog.jom.link/ten_rules_reproductible_research.html">The
-“ten simple rules for reproducible computational research” in R</a></li>
-<li>Joris Muller’s Blog on <a
-href="http://blog.jom.link/reproducible_analysis_my_principles.html">A
-basic reproducible data analysis workflow - principles</a></li>
+<li>Best Practices <a href="https://blog.revolutionanalytics.com/2015/11/r-projects.html">Handling Packages</a></li>
+<li><a href="https://www.r-bloggers.com/%F0%9F%93%81-project-oriented-workflow/">R-Bloggers blog (scroll to) reference</a>: collection of links…</li>
+<li><a href="https://peerj.com/preprints/3192.pdf">analytical work reproducibly using R</a>: Pre-print article</li>
+<li><a href="http://kbroman.org/Tools4RR/assets/lectures/06_org_eda_withnotes.pdf">Karl Broman slides</a></li>
+<li>Joris Muller’s Blog on <a href="http://blog.jom.link/ten_rules_reproductible_research.html">The “ten simple rules for reproducible computational research” in R</a></li>
+<li>Joris Muller’s Blog on <a href="http://blog.jom.link/reproducible_analysis_my_principles.html">A basic reproducible data analysis workflow - principles</a></li>
 </ul>
 <h3 id="databases-in-r">DATABASES in R</h3>
 <ul>
-<li>Databases using R <a href="https://db.rstudio.com/">RStudio
-list</a></li>
+<li>Databases using R <a href="https://db.rstudio.com/">RStudio list</a></li>
 </ul>
 <h3 id="api-r">API &amp; R</h3>
 <ul>
-<li>Amanda Gadrow <a
-href="https://github.com/ajmcoqui/webAPIsR">Resources</a></li>
-<li>Saving tokens <a
-href="https://blog.revolutionanalytics.com/2015/11/how-to-store-and-use-authentication-details-with-r.html">Various
-Ways</a></li>
-<li>Saving tokens <a
-href="https://whattheyforgot.org/r-startup.html#rprofile">WTF… to tell
-you</a></li>
+<li>Amanda Gadrow <a href="https://github.com/ajmcoqui/webAPIsR">Resources</a></li>
+<li>Saving tokens <a href="https://blog.revolutionanalytics.com/2015/11/how-to-store-and-use-authentication-details-with-r.html">Various Ways</a></li>
+<li>Saving tokens <a href="https://whattheyforgot.org/r-startup.html#rprofile">WTF… to tell you</a></li>
 </ul>
 <h3 id="ggplot2-graphs">ggplot2 &amp; GRAPHS</h3>
 <ul>
-<li>Great line by line tutorial <a
-href="https://evamaerey.github.io/ggplot_flipbook/">ggplot
-flipbook</a></li>
-<li>Modern Dive Chapter <a
-href="https://moderndive.com/3-viz.html#grammarofgraphics">Grammar of
-Graphics</a></li>
+<li>Great line by line tutorial <a href="https://evamaerey.github.io/ggplot_flipbook/">ggplot flipbook</a></li>
+<li>Modern Dive Chapter <a href="https://moderndive.com/3-viz.html#grammarofgraphics">Grammar of Graphics</a></li>
+</ul>
+<h3 id="geospatial-analysis-in-r">Geospatial Analysis… in R</h3>
+<ul>
+<li>Josiah Parry - <strong>Exploratory Spatial Data Analysis in R</strong> - 2022 -
+<a href="https://www.youtube.com/watch?v=i_MA1U6SJ1Y&amp;t=1564s" class="icon-link" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> video</a></li>
+<li>Zev Ross - <strong>[Workshop on] Modern Geospatial Data Analysis with R</strong> - 2022 -
+<a href="http://files.zevross.com/workshops/spatial/slides/html/0-deck-list.html" class="icon-link" target="_blank" rel="noopener"><i class="fas fa-file-powerpoint"></i> slides</a></li>
 </ul>
 <h3 id="table-packages-to-discover">Table Packages to discover</h3>
 <ul>
-<li><strong>DataExplorer</strong> EDA, See <a
-href="https://cran.r-project.org/web/packages/DataExplorer/vignettes/dataexplorer-intro.html">github</a></li>
-<li><strong>Formattable</strong> Tables, See <a
-href="https://www.littlemissdata.com/blog/prettytables">more
-info</a></li>
-<li><strong>table1</strong> Tables, See <a
-href="https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html">more
-info</a></li>
-<li><strong>ggstatsplot</strong> Graphs, See <a
-href="https://github.com/IndrajeetPatil/ggstatsplot">more info</a>
-Extension of ggplot2 package for creating graphics with details from
-statistical tests included in the plots themselves and targeted
-primarily at behavioral sciences community.</li>
+<li><strong>DataExplorer</strong> EDA, See <a href="https://cran.r-project.org/web/packages/DataExplorer/vignettes/dataexplorer-intro.html">github</a></li>
+<li><strong>Formattable</strong> Tables, See <a href="https://www.littlemissdata.com/blog/prettytables">more info</a></li>
+<li><strong>table1</strong> Tables, See <a href="https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html">more info</a></li>
+<li><strong>ggstatsplot</strong> Graphs, See <a href="https://github.com/IndrajeetPatil/ggstatsplot">more info</a>
+Extension of ggplot2 package for creating graphics with details from statistical tests included in the plots themselves and targeted primarily at behavioral sciences community.</li>
 </ul>
 <h3 id="silly">Silly</h3>
 <ul>
-<li><a href="https://www.webfx.com/tools/emoji-cheat-sheet/">EMOJI CHEAT
-SHEET</a>: for adding :gem:, :sparkles:, :cool: in markdown</li>
+<li><a href="https://www.webfx.com/tools/emoji-cheat-sheet/">EMOJI CHEAT SHEET</a>: for adding :gem:, :sparkles:, :cool: in markdown</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

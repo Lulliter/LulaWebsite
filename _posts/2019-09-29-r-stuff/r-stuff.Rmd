@@ -31,10 +31,10 @@ Here are some useful links and resources for R programming.
 
 + Various resources from the course [STAT545](https://stat545.stat.ubc.ca/notes/notes-b03/)
 + [Shaun Jackman and Jenny Bryan’s automation notes](https://github.com/STAT545-UBC/STAT545-UBC-original-website/blob/master/automation01_slides/slides.md) for getting familiar with the command line.
-
 + Great post [Using rstudio-terminal/](https://jozefhajnala.gitlab.io/r/r905-rstudio-terminal/)
 + More on [Using the RStudio Terminal](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal)
-
++  Jeroen Janssens - **Set your R code free; turn it into a command-line tool** - 2022 - 
+`r distilltools::icon_link("youtube", text = "video", "https://www.youtube.com/watch?v=2G3FjofP87o")`
 
 ### Working with strings, regex
 
@@ -77,7 +77,13 @@ Here are some useful links and resources for R programming.
 + Modern Dive Chapter [Grammar of Graphics](https://moderndive.com/3-viz.html#grammarofgraphics)
 
 
+### Geospatial Analysis... in R
 
++  Josiah Parry - **Exploratory Spatial Data Analysis in R** - 2022 - 
+`r distilltools::icon_link("youtube", text = "video", "https://www.youtube.com/watch?v=i_MA1U6SJ1Y&t=1564s")`
++ Zev Ross - **[Workshop on] Modern Geospatial Data Analysis with R** - 2022 - 
+`r distilltools::icon_link("file-powerpoint", text = "slides", "http://files.zevross.com/workshops/spatial/slides/html/0-deck-list.html")`                                        
+ 
 ### Table Packages to discover
 
 + **DataExplorer** EDA,  See [github](https://cran.r-project.org/web/packages/DataExplorer/vignettes/dataexplorer-intro.html)

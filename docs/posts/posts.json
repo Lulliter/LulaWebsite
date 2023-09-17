@@ -114,20 +114,6 @@
     "input_file": {}
   },
   {
-    "path": "posts/2019-09-29-r-stuff/",
-    "title": "Useful R stuff",
-    "description": {},
-    "author": [],
-    "date": "2019-09-29",
-    "categories": [
-      "tools"
-    ],
-    "contents": "\n\n\n\n\nHere are some useful links and resources for R programming.\nR from TERMINAL &\nAUTOMATION\nVarious resources from the course STAT545\nShaun\nJackman and Jenny Bryan’s automation notes for getting familiar with\nthe command line.\nGreat post Using\nrstudio-terminal/\nMore on Using\nthe RStudio Terminal\nWorking with strings, regex\nGreat post How to\nwork with strings in base R…\nGeneral\nRstudio Community:\nforum and discussions organized by macro-topic.\nRseek: a sort of wiki R page!\nFrom\nrstudioconf2019: a collection of R resources by @littlemissdata\nCheatsheets:\nself-explanatory\nWTF.. or “What They\nForgot to Teach You About R” :wink: Another life-changing guide\nfrom Jenny Bryan\nGoogle’s R\nStyle Guide\nProject Management\nBest Practices Handling\nPackages\nR-Bloggers\nblog (scroll to) reference: collection of links…\nanalytical work\nreproducibly using R: Pre-print article\nKarl\nBroman slides\nJoris Muller’s Blog on The\n“ten simple rules for reproducible computational research” in R\nJoris Muller’s Blog on A\nbasic reproducible data analysis workflow - principles\nDATABASES in R\nDatabases using R RStudio\nlist\nAPI & R\nAmanda Gadrow Resources\nSaving tokens Various\nWays\nSaving tokens WTF… to tell\nyou\nggplot2 & GRAPHS\nGreat line by line tutorial ggplot\nflipbook\nModern Dive Chapter Grammar of\nGraphics\nTable Packages to discover\nDataExplorer EDA, See github\nFormattable Tables, See more\ninfo\ntable1 Tables, See more\ninfo\nggstatsplot Graphs, See more info\nExtension of ggplot2 package for creating graphics with details from\nstatistical tests included in the plots themselves and targeted\nprimarily at behavioral sciences community.\nSilly\nEMOJI CHEAT\nSHEET: for adding :gem:, :sparkles:, :cool: in markdown\n\n\n\n",
-    "preview": {},
-    "last_modified": "2022-06-08T10:58:07+02:00",
-    "input_file": {}
-  },
-  {
     "path": "posts/2018-09-28-dirs-files/",
     "title": "Working with directories and lists of files",
     "description": "A short description of the post.",
