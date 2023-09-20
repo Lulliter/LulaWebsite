@@ -45,7 +45,7 @@ msg="rebuilt on $NOW"
 git commit -m "$msg"
 		# git commit -m "upd  _posts/2022-05-13-ener-recap/ener-recap.Rmd & publications.Rmd"
 		# git commit -m "ripulito x APPSILON + diff CV"
-		# git commit -m "small fix"
+		# git commit -m "small cleaning"
 		# git commit -m "add post docs/posts/2022-11-07-erdf-spending-viz/"
 		# git commit -m "change CV (from data/...) + added publ "
 

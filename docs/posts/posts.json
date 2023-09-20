@@ -34,7 +34,7 @@
     ],
     "contents": "\nHere I did some exploratory analysis on the EU funds and what percentage of them has been disbursed in Italy for the 2014-2020 funding cycle. Incidentally, I learned to use a fun R package reactable (based on the React Table JavaScript library).\nBelow links to:\nAnalysis:  Rpubs file & Code:  Github repo\n\n\n\n",
     "preview": {},
-    "last_modified": "2023-09-15T15:08:24+02:00",
+    "last_modified": "2023-09-17T18:05:29+02:00",
     "input_file": {}
   },
   {
