@@ -420,3 +420,6 @@ f_calcoli_date <- function(data, inizio_fase_prev, inizio_fase_eff, fine_fase_pr
 ```
 
 
+# MORE
+
+https://jonthegeek.com/2018/06/04/writing-custom-tidyverse-functions/
