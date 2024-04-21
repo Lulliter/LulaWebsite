@@ -26,9 +26,10 @@ git status
 # ..... Add site `/docs` items changes to git Index.
 			# cd docs
 			# git add docs/data/*
-		git add 	_posts/2023-05-04-tidyeval/
+		git add         _posts/2023-01-10-pnrr/CambioPNRR.jpg
+
 		git add docs/posts/2023-05-04-tidyeval/
-		git add images/portrait.jpg
+		git add         docs/posts/2023-01-10-pnrr/CambioPNRR.jpg
 		git add docs/images/portrait.jpg
 
  git add       data/LMMimmi_RES_ENG_journ.pdf
@@ -43,7 +44,7 @@ msg="rebuilt on $NOW"
 
 # ... Commit Those changes.
 git commit -m "$msg"
-		# git commit -m "upd  _posts/2022-05-13-ener-recap/ener-recap.Rmd & publications.Rmd"
+		# git commit -m "upd  _posts/2023-01-10-pnrr/"
 		# git commit -m "ripulito x APPSILON + diff CV"
 		# git commit -m "small cleaning"
 		# git commit -m "small fix Zotero links"
